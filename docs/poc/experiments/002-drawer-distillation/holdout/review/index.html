@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Primary navigation drawer specimen</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23304b7a' d='M12 2 22 12 12 22 2 12z'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+      --canvas: #e8edf4;
+      --drawer: #121a2a;
+      --drawer-raised: #1a2538;
+      --current: #304b7a;
+      --current-hover: #38588e;
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --subtle: #7f8da5;
+      --line: rgba(255, 255, 255, 0.10);
+      --focus: #9cc7ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 76% 14%, rgba(129, 153, 187, 0.20), transparent 32rem),
+        var(--canvas);
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    .drawer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      width: 304px;
+      min-height: 100vh;
+      flex-direction: column;
+      padding: 18px 14px 16px;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 15rem),
+        var(--drawer);
+      box-shadow: 18px 0 48px rgba(17, 24, 39, 0.18);
+    }
+
+    .identity {
+      display: flex;
+      min-height: 52px;
+      align-items: center;
+      gap: 12px;
+      padding: 3px 10px 15px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .identity-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 11px;
+      color: #cbe0ff;
+      background: #223250;
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .identity-copy {
+      min-width: 0;
+    }
+
+    .identity .compact-control {
+      margin-left: auto;
+    }
+
+    .identity-name {
+      display: block;
+      overflow: hidden;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 720;
+      letter-spacing: 0.01em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .identity-context {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav-groups {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 22px;
+      padding: 20px 0;
+    }
+
+    .nav-group-title {
+      margin: 0 10px 8px;
+      color: var(--subtle);
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .nav-list {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 44px;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 10px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: var(--muted);
+      background: transparent;
+      text-align: left;
+      text-decoration: none;
+      cursor: default;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+
+    a.nav-item:hover,
+    button.nav-item:hover {
+      color: var(--text);
+      background: var(--drawer-raised);
+    }
+
+    .nav-item[aria-current="page"] {
+      border-color: rgba(173, 203, 247, 0.17);
+      color: var(--text);
+      background: var(--current);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.06), 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-item[aria-current="page"]:hover {
+      background: var(--current-hover);
+    }
+
+    .icon {
+      display: inline-grid;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: #c5d1e3;
+    }
+
+    [aria-current="page"] .icon {
+      color: #e5efff;
+    }
+
+    .icon svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+
+    .item-label {
+      min-width: 0;
+      flex: 1;
+      overflow: hidden;
+      font-size: 14px;
+      font-weight: 610;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .current-tag {
+      flex: 0 0 auto;
+      padding: 3px 7px;
+      border: 1px solid rgba(224, 236, 255, 0.20);
+      border-radius: 999px;
+      color: #eaf2ff;
+      background: rgba(10, 21, 42, 0.18);
+      font-size: 9px;
+      font-weight: 760;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .chevron {
+      display: grid;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: var(--subtle);
+    }
+
+    .chevron svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+
+    .drawer-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-link {
+      flex: 1;
+    }
+
+    .compact-control {
+      display: inline-grid;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #c5d1e3;
+      background: transparent;
+      cursor: default;
+    }
+
+    .compact-control:hover {
+      color: var(--text);
+      background: var(--drawer-raised);
+    }
+
+    .nav-item:focus-visible,
+    .compact-control:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .review-state {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      margin: 0;
+      padding: 7px 10px;
+      border: 1px solid rgba(24, 38, 60, 0.12);
+      border-radius: 999px;
+      color: #536176;
+      background: rgba(255, 255, 255, 0.70);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: 0.03em;
+      backdrop-filter: blur(10px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="drawer" id="primary-navigation" aria-label="Workspace navigation">
+    <div class="identity" aria-label="Northstar workspace">
+      <span class="identity-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3.5 15 9l5.5 3-5.5 3-3 5.5L9 15l-5.5-3L9 9l3-5.5Z"/>
+          <circle cx="12" cy="12" r="2.2"/>
+        </svg>
+      </span>
+      <span class="identity-copy">
+        <span class="identity-name">Northstar</span>
+        <span class="identity-context">Team workspace</span>
+      </span>
+      <button class="compact-control" type="button" aria-label="Collapse navigation" aria-controls="primary-navigation" aria-expanded="true">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M9 4v16m6-11-3 3 3 3"/></svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="nav-groups">
+      <section aria-labelledby="workspace-group">
+        <h2 class="nav-group-title" id="workspace-group">Workspace</h2>
+        <ul class="nav-list">
+          <li>
+            <a class="nav-item" href="#overview" aria-current="page">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+              </span>
+              <span class="item-label">Overview</span>
+              <span class="current-tag" aria-hidden="true">Current</span>
+            </a>
+          </li>
+          <li>
+            <button class="nav-item" type="button" aria-expanded="false" aria-controls="collection-links">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7.5h6l2 2h8v9.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19V7.5Z"/><path d="M4 7.5V5.8a1.3 1.3 0 0 1 1.3-1.3h4.2l2 2H18"/></svg>
+              </span>
+              <span class="item-label">Collections</span>
+              <span class="chevron" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="m7.5 5 5 5-5 5"/></svg>
+              </span>
+            </button>
+            <ul id="collection-links" hidden aria-label="Collection destinations"></ul>
+          </li>
+          <li>
+            <button class="nav-item" type="button" aria-expanded="false" aria-controls="team-links">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.8 19.5v-1.2A5.2 5.2 0 0 1 9 13.1a5.2 5.2 0 0 1 5.2 5.2v1.2"/><path d="M15.2 5.3a3.1 3.1 0 0 1 0 5.8M16.7 13.5a5 5 0 0 1 3.5 4.8v1.2"/></svg>
+              </span>
+              <span class="item-label">Teams</span>
+              <span class="chevron" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="m7.5 5 5 5-5 5"/></svg>
+              </span>
+            </button>
+            <ul id="team-links" hidden aria-label="Team destinations"></ul>
+          </li>
+          <li>
+            <a class="nav-item" href="#activity">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 14.5h3l2.4-6 4.2 10 2.4-6h4"/></svg>
+              </span>
+              <span class="item-label">Activity</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="manage-group">
+        <h2 class="nav-group-title" id="manage-group">Manage</h2>
+        <ul class="nav-list">
+          <li>
+            <a class="nav-item" href="#reports">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 20V10m7 10V4m7 16v-7"/></svg>
+              </span>
+              <span class="item-label">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-item" href="#archive">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16v13H4z"/><path d="M3 4h18v3H3zM9 11h6"/></svg>
+              </span>
+              <span class="item-label">Archive</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="drawer-footer">
+      <a class="nav-item footer-link" href="#help">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.4 2.4 0 0 1 4.7.7c0 1.8-2.5 2.2-2.5 4M12 17.5h.01"/></svg>
+        </span>
+        <span class="item-label">Help center</span>
+      </a>
+    </div>
+  </nav>
+
+  <p class="review-state" aria-hidden="true">Static review specimen</p>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drawer states</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="review-harness">
+      <section class="state-example" aria-labelledby="expanded-state-label">
+        <h1 class="state-label" id="expanded-state-label">Expanded</h1>
+        <nav class="drawer drawer--expanded" aria-label="Primary navigation — expanded example">
+          <div class="drawer__topline">
+            <span class="drawer__title">Navigation</span>
+            <button class="icon-button" type="button" aria-label="Hide navigation">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 6 9 12l6 6"></path>
+                <path d="M5 4h14v16H5z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <ul class="nav-list nav-list--root">
+            <li>
+              <a class="nav-item nav-item--plain" href="#overview">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 11.5 12 5l8 6.5"></path>
+                  <path d="M6.5 10.5V20h11v-9.5"></path>
+                  <path d="M10 20v-5h4v5"></path>
+                </svg>
+                <span>Overview</span>
+              </a>
+            </li>
+
+            <li class="nav-group">
+              <div class="nav-group__label">Workspace</div>
+              <ul class="nav-list">
+                <li class="nav-parent">
+                  <div class="nav-parent__row">
+                    <a class="nav-item nav-item--parent" href="#projects">
+                      <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3.5 7.5h6l2-2h9v13h-17z"></path>
+                        <path d="M3.5 9.5h17"></path>
+                      </svg>
+                      <span>Projects</span>
+                    </a>
+                    <button class="disclosure-button" type="button" aria-label="Collapse Projects" aria-expanded="true" aria-controls="project-children">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m7 9 5 5 5-5"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <ul class="nav-list nav-list--children" id="project-children">
+                    <li>
+                      <a class="nav-item nav-item--child nav-item--current" href="#active-work" aria-current="page">
+                        <span class="current-marker" aria-hidden="true"></span>
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M5 5.5h14v13H5z"></path>
+                          <path d="M8 9h8M8 12h8M8 15h5"></path>
+                        </svg>
+                        <span>Active work</span>
+                        <span class="current-text">Current</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="nav-item nav-item--child" href="#archive">
+                        <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M4.5 7h15v12h-15z"></path>
+                          <path d="M3.5 4.5h17V8h-17zM9 12h6"></path>
+                        </svg>
+                        <span>Archive</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="nav-item nav-item--plain" href="#activity">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 17.5h3v-6H4zM10.5 17.5h3v-11h-3zM17 17.5h3v-8h-3z"></path>
+                    </svg>
+                    <span>Activity</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-group">
+              <div class="nav-group__label">Resources</div>
+              <ul class="nav-list">
+                <li>
+                  <a class="nav-item nav-item--plain" href="#library">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 4.5h5v15H5zM10 4.5h5v15h-5zM15.5 6l4-1 2.5 13.5-4 1z"></path>
+                    </svg>
+                    <span>Library</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-item nav-item--plain" href="#settings">
+                    <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M19 13.5v-3l-2-.5a7 7 0 0 0-.8-1.8l1-1.8-2.1-2.1-1.8 1a7 7 0 0 0-1.8-.8L11 2.5H8l-.5 2a7 7 0 0 0-1.8.8l-1.8-1-2.1 2.1 1 1.8A7 7 0 0 0 2 10l-2 .5v3l2 .5a7 7 0 0 0 .8 1.8l-1 1.8 2.1 2.1 1.8-1a7 7 0 0 0 1.8.8l.5 2h3l.5-2a7 7 0 0 0 1.8-.8l1.8 1 2.1-2.1-1-1.8A7 7 0 0 0 17 14z" transform="translate(2 0) scale(.83)"></path>
+                    </svg>
+                    <span>Settings</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="state-example" aria-labelledby="compact-state-label">
+        <h2 class="state-label" id="compact-state-label">Compact</h2>
+        <nav class="drawer drawer--compact" aria-label="Primary navigation — compact example">
+          <button class="icon-button icon-button--restore" type="button" aria-label="Show navigation">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m9 6 6 6-6 6"></path>
+              <path d="M5 4h14v16H5z"></path>
+            </svg>
+          </button>
+
+          <ul class="compact-list">
+            <li>
+              <a class="compact-item" href="#compact-overview" aria-label="Overview">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 11.5 12 5l8 6.5"></path>
+                  <path d="M6.5 10.5V20h11v-9.5"></path>
+                  <path d="M10 20v-5h4v5"></path>
+                </svg>
+              </a>
+            </li>
+            <li class="compact-divider" aria-hidden="true"></li>
+            <li>
+              <a class="compact-item compact-item--parent" href="#compact-projects" aria-label="Projects, child destinations available">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3.5 7.5h6l2-2h9v13h-17z"></path>
+                  <path d="M3.5 9.5h17"></path>
+                </svg>
+                <svg class="compact-cue" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 7 5 5-5 5"></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="compact-item compact-item--current" href="#compact-active" aria-label="Active work, current page" aria-current="page">
+                <span class="current-marker" aria-hidden="true"></span>
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 5.5h14v13H5z"></path>
+                  <path d="M8 9h8M8 12h8M8 15h5"></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="compact-item" href="#compact-activity" aria-label="Activity">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 17.5h3v-6H4zM10.5 17.5h3v-11h-3zM17 17.5h3v-8h-3z"></path>
+                </svg>
+              </a>
+            </li>
+            <li class="compact-divider" aria-hidden="true"></li>
+            <li>
+              <a class="compact-item" href="#compact-library" aria-label="Library">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4.5h5v15H5zM10 4.5h5v15h-5zM15.5 6l4-1 2.5 13.5-4 1z"></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
