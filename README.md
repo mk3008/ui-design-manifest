@@ -8,6 +8,8 @@ Visual and interaction decisions are often scattered across running code, refere
 
 The repository provides an OKF-compatible UI profile, two small starter bundles, reusable prompts, and an experiment ladder. These are a useful starting point, not evidence that a manifest improves fidelity. Product teams own the content and should revise it against observed implementation and human judgment.
 
+A manifest records durable direction, not executable truth. Concrete implementation values in the current product—such as CSS, component code, and runtime behavior—are the operational source of truth. Teams use the manifest alongside that code and any nominated reference, then tune the result for the actual screen. A deliberate local deviation from manifest guidance is allowed and is not, by itself, a defect.
+
 ## Precedence
 
 When sources disagree, apply this order:
@@ -18,6 +20,8 @@ When sources disagree, apply this order:
 4. Starter defaults.
 
 A nominated reference never overrides accessibility, security, business, or other requirements outside its declared scope. Record unresolved conflicts instead of silently choosing.
+
+This precedence avoids dual ownership. The project does not require code and manifest text to remain mechanically synchronized. Teams may update a manifest when that improves future guidance, but implementation correctness does not depend on doing so.
 
 ## PoC path
 
@@ -30,6 +34,7 @@ A nominated reference never overrides accessibility, security, business, or othe
 ## Explicit non-goals
 
 - A web editor, CLI, validator, schema registry, or runtime.
+- A static conformance checker, drift detector, contradiction checker, or code-to-manifest synchronization system.
 - A comprehensive design-system or option catalog.
 - A replacement for code, accessibility rules, security controls, or business requirements.
 - Guaranteed or numerically certified reproduction fidelity.

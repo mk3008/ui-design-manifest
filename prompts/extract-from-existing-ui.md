@@ -12,6 +12,7 @@ You are documenting reusable design knowledge from a bounded existing UI. Produc
 - `product_requirements`: accessibility, security, business, and other applicable constraints.
 - `profile`: the local UI Design Manifest profile.
 - `output_directory`: empty or existing `design-manifest/` bundle.
+- `business_application_lens`: optional authored perspective; never classify it as source observation.
 
 If the declared scope or evidence permission is missing, stop and request it.
 
@@ -23,12 +24,13 @@ If the declared scope or evidence permission is missing, stop and request it.
 4. Record each direct observation with its evidence location and context. Keep observations separate from interpretations.
 5. Write inferences only when they help application; label them as inferred and explain the supporting observation.
 6. Record unresolved gaps for unavailable viewports, states, roles, content conditions, conflicts, or ambiguous behavior. Never fill a gap with a starter assumption silently.
-7. Group only reusable, task-relevant knowledge into foundations, components, policies, and screen patterns. Avoid an option catalog and framework-specific vocabulary.
+7. Group only reusable, task-relevant knowledge into foundations, components, policies, and screen patterns. Avoid an option catalog and framework-specific vocabulary. Prefer relational descriptions of density, hierarchy contrast, and spacing over measured type sizes, dimensions, gaps, or breakpoints.
 8. Link related concepts with ordinary Markdown links and describe the relationship in prose.
 9. Emit a navigable bundle. Every non-`index.md` concept must have valid YAML front matter with a non-empty `type`; use `title` and `description` for routing.
-10. Review precedence: current implementation/code; nominated reference within scope; local manifest; starter defaults. Requirements constrain every layer.
+10. If a business-application lens is supplied, assess the extracted result only after recording source facts. Keep lens-based judgment in a separate authored or review section; do not normalize the observation to fit the lens.
+11. Review precedence: current implementation/code; nominated reference within scope; local manifest; starter defaults. Requirements constrain every layer.
 
-Do not copy source code, class names, CSS declarations, proprietary text beyond what is necessary to identify evidence, or assets without permission. Describe user-visible intent and behavior.
+Do not copy source code, class names, CSS declarations, proprietary text beyond what is necessary to identify evidence, or assets without permission. Describe user-visible intent and behavior. Do not capture numeric geometry or typography merely to reproduce a screenshot. A deliberately stable key color role may retain an exact value with provenance, but implementation code still takes precedence.
 
 ## Output contract
 
@@ -45,6 +47,8 @@ Return:
 ## Uncertainty handling
 
 Use `source: observed`, `inferred`, or `mixed` accurately. In mixed files, separate `# Evidence`, `# Inferences`, and `# Unresolved`. Do not use numeric confidence. When sources conflict, record the conflict and applicable precedence rather than blending them.
+
+The extracted manifest is directional knowledge. It is not expected to remain mechanically synchronized with code and does not establish a future conformance test.
 
 ## Stop conditions
 

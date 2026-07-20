@@ -10,6 +10,8 @@ source: authored
 
 This profile specializes Open Knowledge Format (OKF) v0.1 for UI design knowledge while retaining its permissive model. A bundle is a directory of linked Markdown concepts that a person or agent can discover progressively without a dedicated runtime.
 
+Read [Manifest authority and use](manifest-authority.md) before applying a bundle. Manifest concepts describe direction and rationale; current implementation and code remain the operational source of truth. For business-product work, use the separate [Business application lens](business-application-lens.md) as an authored evaluation perspective, never as fabricated source evidence.
+
 # Compatibility subset
 
 The profile adopts these OKF rules:
@@ -69,7 +71,7 @@ Use only sections that improve application. Useful headings include:
 - `# Unresolved` for gaps, conflicts, or unavailable states.
 - `# Relationships` for prose links to related concepts.
 
-Keep statements testable and scoped. Describe user-visible intent and behavior rather than framework or CSS mechanics. Use screenshots or source links as evidence references when permitted, not as substitutes for written guidance.
+Keep statements reviewable and scoped. Describe user-visible intent and behavior rather than framework or CSS mechanics. Prefer relational language over measurements for typography, spacing, layout, and density. Use screenshots or source links as evidence references when permitted, not as substitutes for written guidance.
 
 # Provenance and uncertainty
 
@@ -85,6 +87,8 @@ Resolve conflicts in this order:
 4. Starter defaults.
 
 Accessibility, security, business, and other applicable requirements remain constraints at every level. A reference UI does not override them outside its nominated scope. Surface unresolved conflicts to the implementer or owner.
+
+Manifest guidance is not a conformance target. A reviewer may reason about alignment or deviation, but a difference is not automatically an error or a mandatory correction. The profile defines no validator, drift detector, contradiction checker, or synchronization obligation. See [Manifest authority and use](manifest-authority.md).
 
 # Extensions
 
