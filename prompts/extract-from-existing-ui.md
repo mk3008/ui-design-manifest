@@ -21,9 +21,9 @@ If the declared scope or evidence permission is missing, stop and request it.
 1. Read the profile and existing root index, if present. Do not preload unrelated concepts.
 2. Restate the declared scope and exclusions. Do not follow links or flows outside it.
 3. Capture representative evidence for each permitted viewport, role, state, and interaction. Include default plus relevant loading, empty, error, disabled, focus, expanded, or confirmation states only when observable.
-4. Record each direct observation with its evidence location and context. Keep observations separate from interpretations.
+4. Record each direct observation with its evidence location and context. Keep observations separate from interpretations. For any observed state-bearing UI, record binding-model evidence when available: data or source of truth, possible state meaning, display condition, and update trigger.
 5. Write inferences only when they help application; label them as inferred and explain the supporting observation.
-6. Record unresolved gaps for unavailable viewports, states, roles, content conditions, conflicts, or ambiguous behavior. Never fill a gap with a starter assumption silently.
+6. Record unresolved gaps for unavailable viewports, states, roles, content conditions, conflicts, or ambiguous behavior. If a state-bearing element is visible but its binding model is not evidenced, record that model as unresolved; never fill the gap with a starter assumption silently.
 7. Group only reusable, task-relevant knowledge into foundations, components, policies, and screen patterns. Avoid an option catalog and framework-specific vocabulary. Prefer relational descriptions of density, hierarchy contrast, and spacing over measured type sizes, dimensions, gaps, or breakpoints.
 8. Link related concepts with ordinary Markdown links and describe the relationship in prose.
 9. Emit a navigable bundle. Every non-`index.md` concept must have valid YAML front matter with a non-empty `type`; use `title` and `description` for routing.
@@ -43,10 +43,15 @@ Return:
 5. An unresolved-gap list.
 6. A link and front-matter check result.
 7. A concise scope statement confirming what was not inspected.
+8. A state-binding evidence register for observed state-bearing UI, with unresolved fields stated explicitly.
 
 ## Uncertainty handling
 
 Use `source: observed`, `inferred`, or `mixed` accurately. In mixed files, separate `# Evidence`, `# Inferences`, and `# Unresolved`. Do not use numeric confidence. When sources conflict, record the conflict and applicable precedence rather than blending them.
+
+Do not silently infer a state model from appearance. A label, indicator, count, alert, progress signal, or other state-bearing element requires observed or otherwise authoritative evidence for what it represents and when it updates; otherwise keep the binding model unresolved. This extraction work records bounded knowledge; it does not establish completeness, exact reproduction, or missing product requirements.
+
+Record observed source copy with its evidence context when it is needed to identify what was observed. Do not turn descriptive guidance, scope prose, relationship prose, or explanatory manifest prose into a display authorization for later work. A later application must establish explicit display intent for each authored string independently.
 
 The extracted manifest is directional knowledge. It is not expected to remain mechanically synchronized with code and does not establish a future conformance test.
 
