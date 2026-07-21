@@ -10,7 +10,7 @@ source: authored
 
 This profile specializes Open Knowledge Format (OKF) v0.1 for UI design knowledge while retaining its permissive model. A bundle is a directory of linked Markdown concepts that a person or agent can discover progressively without a dedicated runtime.
 
-Read [Manifest authority and use](manifest-authority.md) before applying a bundle. Manifest concepts describe direction and rationale; current implementation and code remain the operational source of truth. For business-product work, use the separate [Business application lens](business-application-lens.md) as an authored evaluation perspective, never as fabricated source evidence.
+Read [Manifest authority and use](manifest-authority.md) before applying a bundle. A manifest is an abstract intermediate representation of design intent, independent from the original UI that informed extraction. Manifest concepts describe direction and rationale; current target-product implementation and code remain the operational source of truth. For business-product work, use the separate [Business application lens](business-application-lens.md) as an authored evaluation perspective, never as fabricated observation.
 
 # Compatibility subset
 
@@ -66,18 +66,18 @@ These are profile recommendations, not additional OKF conformance requirements. 
 Use only sections that improve application. Useful headings include:
 
 - `# Guidance` for the decision or invariant.
-- `# Evidence` for what was directly observed.
+- `# Provenance` for the non-identifying origin class of a statement.
 - `# Inferences` for interpretations that need confirmation.
 - `# Unresolved` for gaps, conflicts, or unavailable states.
 - `# Relationships` for prose links to related concepts.
 
-Keep statements reviewable and scoped. Describe user-visible intent and behavior rather than framework or CSS mechanics. Prefer relational language over measurements for typography, spacing, layout, and density. Use screenshots or source links as evidence references when permitted, not as substitutes for written guidance.
+Keep statements reviewable and scoped. Describe user-visible intent and behavior rather than framework or CSS mechanics. Prefer relational language over measurements for typography, spacing, layout, and density. Do not include original UI names, URLs, screenshots, copied product vocabulary, capture paths, or extraction evidence links in a manifest. Provenance classes such as `observed`, `inferred`, and `authored` may remain only when they cannot identify or expose the original UI.
 
-For added user-visible product information, meaning, or state, preserve a reviewable allowed-provenance trace to a requirement, current implementation, nominated reference within scope, manifest guidance, or an explicitly named fallback. This covers authored copy, controls with product meaning, indicators, statuses, counts, alerts, progress, and comparable semantic additions. A state-bearing element also needs a binding model: data or source of truth, possible state meaning, display condition, and update trigger. If evidence does not establish the model, record it as unresolved rather than silently authoring a status, count, alert, progress signal, control, or copy. Layout composition, spacing, borders, backgrounds, and visual treatment remain local implementation judgment unless they themselves communicate new product meaning or state.
+For added user-visible product information, meaning, or state, preserve a reviewable allowed-provenance trace to a requirement, current target-product implementation, manifest guidance, or an explicitly named fallback. A state-bearing element also needs a binding model: data or source of truth, possible state meaning, display condition, and update trigger. If that model is not established, record it as unresolved rather than silently authoring a state.
 
-An explicitly named fallback must pre-exist application in a requirement, current implementation, nominated reference within scope, local manifest, or task packet. An implementer may not invent, name, or promote a fallback during application to justify a chosen string, product meaning, control, or hierarchy slot.
+An explicitly named fallback must pre-exist application in a requirement, current target-product implementation, local manifest, or task packet. An implementer may not invent, name, or promote a fallback during application to justify a chosen string, product meaning, control, or hierarchy slot.
 
-Manifest design intent, scope prose, relationship descriptions, and explanatory prose do not authorize literal or paraphrased display copy. Preserve observed copy as evidence, but require explicit display intent from a requirement, current implementation, nominated reference within scope, or a pre-existing explicitly named display-copy fallback before showing each authored string. This applies to strings exposed visually or through accessibility semantics, including document titles, accessible names, and alternative text. An implementer-selected string not supplied verbatim by an authoritative input is a fixture or unsupported copy, even if generic or plausible. Application reporting must retain the exact string, exposure surface, and individual provenance; a broad concept trace is not enough. Fixture status and provenance are out-of-band evidence, not visible fixture-explanation copy. Neutral fixture content may fill only an already instructed semantic slot that cannot be meaningfully rendered empty; derive minimum cardinality from the smallest literal lower bound in authoritative input and report each string individually. A fixture may not create an uninstructed heading, caption, grouping label, helper, legend, or other hierarchy slot; structural grouping alone does not authorize such a visible slot. A neutral fixture label may not introduce product-domain meaning beyond its instructed slot; when a non-empty label is required, use only minimum generic or ordinal identification. Minimum accessibility naming, when required but not supplied verbatim, is an out-of-band-declared fixture. Do not add badges, eyebrow text, helper text, scope notes, captions, hidden values, or extra options solely to explain or make the fixture appear realistic.
+Manifest design intent, scope prose, relationship descriptions, and explanatory prose do not authorize literal or paraphrased display copy. Original copy and its evidence belong only to extraction or test-only evidence outside the manifest. Each displayed string needs explicit intent from a requirement, current target-product implementation, or a pre-existing explicitly named display-copy fallback. Any unsupplied string is an out-of-band-declared fixture or unsupported copy; a fixture may fill only an already instructed semantic slot and may not create an uninstructed heading, caption, helper, legend, or other hierarchy slot.
 
 # Provenance and uncertainty
 
@@ -89,12 +89,12 @@ Small local decisions may select implementation mechanics, but they do not autho
 
 Resolve conflicts in this order:
 
-1. Current implementation and code.
-2. An explicitly nominated reference UI within its declared visual and interaction scope.
+1. Current target-product implementation and repository guidance.
+2. Explicit product requirements, including accessibility, security, and business constraints.
 3. Local manifest guidance.
-4. Starter defaults.
+4. Explicit starter defaults, only when needed.
 
-Accessibility, security, business, and other applicable requirements remain constraints at every level. A reference UI does not override them outside its nominated scope. Surface unresolved conflicts to the implementer or owner.
+The original UI is never an application input or authority. Surface unresolved conflicts or insufficient abstraction to the implementer or owner.
 
 Manifest guidance is not a conformance target. A reviewer may reason about alignment or deviation, but a difference is not automatically an error or a mandatory correction. The profile defines no validator, drift detector, contradiction checker, or synchronization obligation. See [Manifest authority and use](manifest-authority.md).
 

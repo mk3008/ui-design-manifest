@@ -1,5 +1,11 @@
 # Experiment 002: Drawer distillation and cross-site holdout
 
+> Historical result under the prior source-aware rule. It has not been revalidated under the source-independent manifest boundary and does not demonstrate current validity.
+
+## Source-blind application packet
+
+Use only [apply-packet.md](apply-packet.md) with target-product inputs. The listed calibration and holdout materials are test-only and must not reach an implementer.
+
 This experiment tests whether a reusable extraction method can distill a primary navigation drawer from one successful business application and transfer to another without copying a complete page.
 
 ## Scope

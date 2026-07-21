@@ -1,24 +1,20 @@
 ---
 type: UI component guidance
 title: Workspace header
-description: Stable product identity, context title, and grouped utility controls across the bounded states.
+description: Stable product context and grouped utility controls.
 status: draft
-source: observed
-scope: Top application header in expanded and collapsed 1280x720 Overview states.
+source: mixed
+scope: A top-level workspace header.
 ---
 
 # Guidance
 
-Keep a persistent header that establishes product identity at the left, the workspace context alongside it, and a compact utility cluster at the right. Group language choice, file-related actions, and appearance control as distinct small controls rather than distributing them through the main content.
-
-# Evidence
-
-E-001 and E-002 preserve the same header while the sidebar changes. JP is visibly pressed; the controls for loading, saving, and appearance are grouped on the right.
+Keep a persistent header that establishes product context at the leading edge and a compact utility cluster at the trailing edge. Group utility controls as distinct small controls rather than distributing them through the main content.
 
 # Unresolved
 
-Control behavior, enabled states, file workflow, keyboard access, and small-screen arrangement were not inspected.
+Control behavior, enabled states, workflows, keyboard access, and small-screen arrangement are target-product decisions.
 
 # Relationships
 
-Use the shared [workspace density](../foundations/workspace-density.md) posture and preserve the header during [sidebar visibility](../policies/sidebar-visibility.md).
+Use the shared [workspace density](../foundations/workspace-density.md) posture and preserve the header during [navigation visibility](../policies/sidebar-visibility.md).

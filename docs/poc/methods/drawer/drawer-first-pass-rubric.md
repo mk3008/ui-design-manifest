@@ -1,5 +1,7 @@
 # Primary navigation drawer first-pass rubric
 
+> Test-only rubric: it may compare extraction and application results with source-aware evidence, but none of that evidence may be passed to an implementer or linked from an application packet.
+
 ## Purpose
 
 Evaluate a first-pass drawer extraction separately from any reconstruction. This rubric judges whether the method produced a traceable and usable design-language input; it does not certify visual fidelity, runtime behavior, or accessibility conformance.

@@ -1,5 +1,11 @@
 # Experiment 004: Result-table distillation and anonymous reconstruction
 
+> Historical result under the prior source-aware rule. It has not been revalidated under the source-independent manifest boundary and does not demonstrate current validity.
+
+## Source-blind application packet
+
+Use the explicit [application-packet.md](apply-packet.md) allowlist. All calibration evidence, source-aware contracts, and reviews are test-only and must not reach an implementer.
+
 This calibration experiment tests whether a bounded, read-only result-table direction can be extracted from observed source evidence and applied by a fresh implementer without exposing source-specific copy or product data.
 
 ## Scope

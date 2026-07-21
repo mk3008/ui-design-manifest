@@ -1,3 +1,3 @@
 # Screen patterns
 
-- [Overview workspace](overview-workspace.md) — header, optional navigation rail, lead card, and explanatory main sections.
+- [Explanatory workspace](explanatory-workspace.md) — header, optional navigation, lead context, and explanatory sections.

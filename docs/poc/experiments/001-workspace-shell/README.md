@@ -1,5 +1,11 @@
 # Experiment 001: Workspace shell extraction
 
+> Historical result under the prior source-aware rule. It has not been revalidated under the source-independent manifest boundary and does not demonstrate current validity.
+
+## Source-blind application packet
+
+Use the explicit [application-packet.md](apply-packet.md) allowlist. All other experiment artifacts are extraction/evaluation-only.
+
 This Gate 2 experiment documents one bounded desktop workspace shell from permitted visible UI evidence. It is an extraction artifact, not a reconstruction or a claim of visual fidelity.
 
 ## Scope

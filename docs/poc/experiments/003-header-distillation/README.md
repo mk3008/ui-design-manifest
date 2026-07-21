@@ -1,5 +1,11 @@
 # Experiment 003: Global Header distillation and cross-site holdout
 
+> Historical result under the prior source-aware rule. It has not been revalidated under the source-independent manifest boundary and does not demonstrate current validity.
+
+## Source-blind application packet
+
+Use only [apply-packet.md](apply-packet.md) with target-product inputs. Calibration and holdout artifacts are test-only and must not reach an implementer.
+
 This experiment tests whether a reusable Global Header extraction method can distill one product-wide Header and transfer to a second public product without copying source labels, implementation, or complete-page composition.
 
 ## Scope

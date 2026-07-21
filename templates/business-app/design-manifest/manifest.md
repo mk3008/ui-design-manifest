@@ -13,13 +13,13 @@ requires:
 
 This fictional workspace helps an operations user scan records, identify status, and act on one record. The bundle covers one desktop list pattern and does not define navigation, authentication, mobile behavior, or a full component library.
 
-# Evidence boundary
+# Source-independence boundary
 
-All content is authored to demonstrate structure. It is not extracted evidence and should be replaced by product-local observation.
+All content is authored to demonstrate structure. It contains no original-UI evidence and must be applicable without an original UI, URL, screenshot, or extraction trace.
 
 # Precedence
 
-Current implementation comes first; a nominated reference applies only within its declared scope; this local manifest follows; starter guidance is last. Accessibility, security, and business requirements continue to constrain every source.
+Target-product implementation and repository guidance come first; explicit accessibility, security, and business requirements follow; this local manifest is next; explicit starter guidance is last. Original or reference UI is not an application authority.
 
 # Relationships
 

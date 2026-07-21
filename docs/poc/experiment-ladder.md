@@ -1,5 +1,7 @@
 # UI Design Manifest PoC experiment ladder
 
+> Experiments may use original UI evidence only as test oracles. Standard application receives a source-blind manifest packet and target-product inputs; accepted historical results require revalidation before they demonstrate this boundary.
+
 The ladder tests small, observable claims in order. Passing one gate permits the next experiment; it does not prove overall utility or fidelity. Keep raw artifacts so an independent evaluator can distinguish observation from interpretation.
 
 ## Gate 1 — Structure discovery

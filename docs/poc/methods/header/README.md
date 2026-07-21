@@ -1,5 +1,9 @@
 # Global Header distillation method
 
+## Boundary
+
+This is extraction and evaluation method material, not a standard application input. Source observations, captures, correction logs, and evidence matrices may be used only in the test context. A resulting manifest or application packet must contain only source-independent abstractions and must report gaps rather than direct an implementer back to these materials.
+
 This method extracts a product-wide Global Header as a bounded UI region. It is narrower than a complete application shell and excludes project context, local navigation, Drawer contents, and page content.
 
 ## Use

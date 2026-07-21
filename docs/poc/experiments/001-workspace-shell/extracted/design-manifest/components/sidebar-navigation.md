@@ -1,28 +1,20 @@
 ---
 type: UI component guidance
 title: Sidebar navigation
-description: A grouped navigation rail with one clearly active entry and an explicit visibility control.
+description: A grouped navigation region with a distinct current location.
 status: draft
 source: mixed
-scope: Expanded 1280x720 Overview state and the one observed collapse transition.
+scope: An optional navigation region and its visibility change.
 ---
 
 # Guidance
 
-When visible, present navigation as a dedicated left rail with an immediately recognizable active entry and labelled groups beneath it. Keep the rail independent of the main reading area. Offer an explicit header control for hiding and restoring this navigation.
-
-# Evidence
-
-E-001 shows Overview as the active entry and groups headed Foundations, Components, Interaction Policies, and Screen Patterns. The header control exposes an expanded state before the transition; E-002 no longer exposes the complementary navigation landmark.
-
-# Inferences
-
-The grouped rail is intended to support scanning and orientation across a rules-oriented workspace.
+When visible, present navigation as a dedicated leading region with an immediately recognizable current location and readable grouping. Keep it independent of the main reading area. Provide an explicit control when the target product requires navigation visibility to change.
 
 # Unresolved
 
-Destination behavior, all sidebar content, keyboard traversal, scrolling behavior, and responsive alternatives were not inspected.
+Destination behavior, content, keyboard traversal, scrolling, and responsive alternatives are target-product decisions.
 
 # Relationships
 
-The state change is governed by [sidebar visibility](../policies/sidebar-visibility.md) and contributes to [the Overview workspace](../screen-patterns/overview-workspace.md).
+The state change is governed by [navigation visibility](../policies/sidebar-visibility.md) and contributes to [the workspace pattern](../screen-patterns/explanatory-workspace.md).

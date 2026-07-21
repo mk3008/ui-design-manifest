@@ -1,26 +1,26 @@
 ---
 type: UI design manifest
 title: Bounded workspace shell
-description: User-visible hierarchy and state guidance for one light desktop Overview slice.
+description: User-visible hierarchy and state guidance for a bounded desktop workspace.
 status: draft
 source: mixed
-scope: 1280x720 desktop Overview in light theme with JP active and the sidebar expanded or collapsed.
+scope: A bounded desktop workspace with an expanded or reduced navigation representation.
 requires:
   - foundations/workspace-density
   - components/workspace-header
   - components/sidebar-navigation
-  - components/overview-lead-card
+  - components/lead-context-card
   - policies/sidebar-visibility
-  - screen-patterns/overview-workspace
+  - screen-patterns/explanatory-workspace
 ---
 
 # Guidance
 
-Treat this as a restrained business-application workspace, not a marketing surface. Preserve a stable top header, a distinct navigation area when available, and a readable main work area. The initial Overview state uses a lead card before structured explanatory sections.
+Treat this as a restrained business-application workspace, not a marketing surface. Preserve a stable top header, a distinct navigation area when available, and a readable main work area. The initial workspace state uses a lead card before structured explanatory sections.
 
-# Evidence
+# Provenance
 
-E-001 shows the expanded arrangement; E-002 shows the same bounded workspace after navigation is hidden. See the experiment [evidence register](../../evidence-register.md).
+The guidance is an abstracted, non-identifying extraction. It intentionally does not link to the original UI or extraction evidence.
 
 # Inferences
 

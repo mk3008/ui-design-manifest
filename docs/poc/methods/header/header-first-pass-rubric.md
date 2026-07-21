@@ -1,5 +1,7 @@
 # Global Header First-Pass Rubric
 
+> Test-only rubric: it may compare extraction and application results with source-aware evidence, but none of that evidence may be passed to an implementer or linked from an application packet.
+
 ## Scoring labels
 
 - `sufficient`: a fresh static implementer can act on the rule without source-local knowledge.

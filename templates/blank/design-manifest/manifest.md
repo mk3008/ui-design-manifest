@@ -9,15 +9,15 @@ scope: Replace with the screens, states, roles, and interactions covered.
 
 # Product and scope
 
-Describe the product, intended user, bounded UI area, and exclusions.
+Describe the target product, intended user, bounded UI area, and exclusions without naming an original UI or its evidence.
 
-# Evidence boundary
+# Source-independence boundary
 
-List available evidence and important states or viewports that were not observed.
+This bundle must stand alone for application. Do not include original UI names, URLs, screenshots, copied product vocabulary, capture paths, or extraction-evidence links. Record any information that cannot be abstracted as unresolved.
 
 # Precedence
 
-Confirm or refine the repository precedence policy for this bundle without weakening applicable requirements.
+Use: target-product implementation and repository guidance; explicit product requirements; this local manifest; then explicit starter defaults. Do not include an original or reference UI.
 
 # Unresolved
 
