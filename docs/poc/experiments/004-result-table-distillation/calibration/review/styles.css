@@ -1,0 +1,106 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6f8;
+  color: #17212b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 0;
+  background: #f4f6f8;
+}
+
+.review-surface {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 40px);
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #d7dde3;
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(23, 33, 43, 0.06);
+}
+
+th, td {
+  min-width: 0;
+  padding: 15px 16px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+th {
+  background: #f7f9fb;
+  color: #52606d;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+td {
+  border-top: 1px solid #e6eaee;
+  color: #384754;
+  font-size: 0.91rem;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 20%; }
+th:nth-child(2), td:nth-child(2) { width: 28%; }
+th:nth-child(3), td:nth-child(3) { width: 24%; }
+th:nth-child(4), td:nth-child(4) { width: 28%; }
+
+.record-state {
+  color: #2d4051;
+  font-weight: 650;
+}
+
+.primary-record {
+  color: #17212b;
+  font-weight: 750;
+}
+
+.identity-context { color: #52606d; }
+
+.grouped-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.grouped-summary span {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 9px;
+  border: 1px solid #cbd4dc;
+  border-radius: 999px;
+  background: #f7f9fb;
+  color: #52606d;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .review-surface { padding: 12px; }
+  th, td { padding: 12px 10px; }
+  th { font-size: 0.66rem; letter-spacing: 0.025em; }
+  td { font-size: 0.82rem; }
+  .grouped-summary { gap: 3px; }
+  .grouped-summary span { padding: 3px 5px; font-size: 0.68rem; }
+}
