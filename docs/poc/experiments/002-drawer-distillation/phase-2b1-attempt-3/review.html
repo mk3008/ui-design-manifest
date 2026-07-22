@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phase 2B1 Drawer review</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172033; background: #eef2f7; }
+      body { margin: 0; }
+      main { max-width: 1480px; margin: 0 auto; padding: 24px; }
+      header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: end; margin-bottom: 18px; }
+      h1 { margin: 0 0 6px; font-size: 24px; }
+      p { margin: 0; line-height: 1.5; }
+      .tag { font-size: 13px; color: #516076; }
+      .notice { margin: 16px 0; padding: 12px 14px; border-left: 4px solid #667fa9; background: #fff; border-radius: 4px; }
+      .frame { background: #fff; border: 1px solid #cad3df; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 24px rgb(23 32 51 / 10%); }
+      iframe { display: block; width: 100%; height: 900px; border: 0; }
+      .meta { margin-top: 16px; padding: 16px; border: 1px solid #cad3df; border-radius: 8px; background: #fff; }
+      .meta ul { margin: 8px 0 0; padding-left: 20px; }
+      code { font-family: ui-monospace, monospace; }
+      @media (max-width: 640px) { main { padding: 12px; } header { display: block; } iframe { height: 844px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Phase 2B1 — frozen static Drawer reconstruction</h1>
+          <p class="tag">Primary human-review surface. The iframe is the unchanged initial implementation generated from the source-blind manifest and supplied application inputs.</p>
+        </div>
+        <div class="tag">Visible-open state · wide review</div>
+      </header>
+
+      <section class="notice">
+        Review hierarchy, current location, group boundaries, reading order, scan rhythm, density, and responsibility boundaries. Do not infer closed, responsive, persistent, animated, focus, keyboard, destination, or operational behavior from this static result.
+      </section>
+
+      <section class="frame" aria-label="Frozen static implementation preview">
+        <iframe src="implementation/index.html" title="Frozen static Drawer reconstruction"></iframe>
+      </section>
+
+      <section class="meta">
+        <strong>Fixture boundary</strong>
+        <ul>
+          <li>Neutral labels only: <code>Group 1</code>, <code>Group 2</code>, <code>Item 1</code>, <code>Parent 1</code>, <code>Child 1</code>, <code>Item 2</code>.</li>
+          <li>No product copy, destination, person, status, aggregate, permission, or behavior is supplied.</li>
+          <li>The original oracle remains outside this repository and is shown only in the controlled review context.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

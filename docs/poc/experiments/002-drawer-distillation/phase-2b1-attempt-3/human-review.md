@@ -44,11 +44,15 @@ The Implementer received only the profile, prompt, packet, and source-blind mani
 
 The fixed neutral fixture uses two groups and four non-link items: `Group 1`, `Group 2`, `Item 1`, `Parent 1`, `Child 1`, and `Item 2`. It supplies no product identity, destination, status, aggregate, person, permission, or behavior.
 
+## Primary review surface
+
+Open the [static reconstruction review](review.html) first. It embeds the unchanged initial implementation generated from the source-blind manifest and the fixed Application Input Contract. The Manifest is supporting evidence; the reconstructed HTML is the primary surface for human judgment.
+
 ## State and viewport evidence
 
 | State / viewport | Result | Scope |
 | --- | --- | --- |
-| Visible-open / wide | [View rendering](implementation/wide.png) | Exercised. |
+| Visible-open / wide | [Interactive static reconstruction](review.html) and [recorded rendering](implementation/wide.png) | Exercised. |
 | Visible-open / narrow | [View rendering](implementation/narrow.png) | Captured only; responsive behavior is not exercised. |
 | Closed representation | No rendering | Not exercised. |
 | Persistence, motion, focus, keyboard | No rendering | Not exercised. |
