@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  background: #f7f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.shell {
+  display: flex;
+  min-width: 390px;
+  min-height: 100vh;
+  background: #f7f8fa;
+}
+
+.navigation-region {
+  flex: 0 0 272px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e3e6ea;
+}
+
+.workspace {
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 100vh;
+  background: #f7f8fa;
+}
