@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drawer fixture</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell" aria-label="Static drawer fixture">
+      <aside class="drawer" aria-label="Navigation fixture">
+        <div class="context-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="rule"></div>
+        <div class="search-affordance" aria-hidden="true"><span class="magnifier"></span></div>
+        <nav aria-label="Fixture navigation">
+          <section class="nav-group" aria-labelledby="group-1">
+            <h2 id="group-1">Group 1</h2>
+            <div class="nav-row"><span class="marker" aria-hidden="true"></span><span>Item 1</span></div>
+            <div class="nav-row parent selected"><span class="marker" aria-hidden="true"></span><span>Parent 1</span><span class="disclosure" aria-hidden="true">⌄</span></div>
+            <div class="nav-row child current"><span class="marker" aria-hidden="true"></span><span>Child 1</span></div>
+          </section>
+          <div class="rule group-rule"></div>
+          <section class="nav-group" aria-labelledby="group-2">
+            <h2 id="group-2">Group 2</h2>
+            <div class="nav-row"><span class="marker" aria-hidden="true"></span><span>Item 2</span></div>
+          </section>
+        </nav>
+      </aside>
+      <section class="content" aria-label="Independent content region">
+        <div class="content-rail"></div>
+        <div class="content-title"></div>
+        <div class="content-lines"><i></i><i></i><i></i><i></i></div>
+        <div class="content-card"><b></b><b></b><b></b></div>
+      </section>
+    </main>
+  </body>
+</html>
