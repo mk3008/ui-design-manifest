@@ -25,12 +25,14 @@ Evaluate a first-pass drawer extraction separately from any reconstruction. This
 | Subject boundary | The output names the primary drawer and explicitly excludes unrelated regions and complete-page rules. | `missing` or `out-of-scope` |
 | Evidence separation | Every kept recommendation identifies its evidence class; observed, inferred, and unknown claims are not merged. | `unsupported` |
 | Taxonomy | Group, parent item, disclosure, child list/item, plain item, toggle, and current item are distinguished when evidence shows them. | `missing` or `partial` |
+| Coverage inventory | The role-and-relationship coverage inventory classifies expandable parent, top-level leaf without shown children, child, independent/direct item, selected/non-selected contrast, Drawer trigger, row rhythm, and region-edge relationship as observed and retained, observed but not exercised, not observed, out of scope, or unresolved. | `missing` or `partial` |
 | Four-view coverage | Component/control, component layout, region composition, and accessibility each have a drawer-only entry or an explicit `unknown`. | `missing` |
 | Current state | A visible current destination has a distinct-state description and an explicit programmatic-validation need. | `missing` or `partial` |
 | Disclosure state | Disclosure is not confused with group membership or drawer visibility; behavior unproven by static evidence remains `unknown`. | `unsupported` or `partial` |
 | Visibility-mode axes | `presentation`, `closedRepresentation`, `toggleLocation`, and `persistence` are each recorded as an allowed value with evidence, or as `unknown`. | `missing` or `partial` |
 | Visibility causality | The extraction does not derive one axis from another or treat a static state as runtime persistence. | `unsupported` |
 | Accessible naming | Icon-only or compact controls have a discernible-name requirement; icon familiarity is not assumed without context. | `missing` or `unsupported` |
+| Reconstruction restraint | Unobserved group captions and groups are absent; ambiguous square or checkbox-like icon placeholders and rounded navigation items are not introduced by default. A meaningful icon has a declared semantic slot, a discernible name, and an already-approved/project-available inline SVG source when no asset is supplied. | `implementation-defect` or `unsupported` |
 | Distillation restraint | No copied source labels/data, exhaustive geometry/palette, implementation mechanism, or framework detail is used as a Contract rule. | `out-of-scope` |
 | Generalization boundary | Every recommended rule is marked stable, contextual, source-specific, or unconfirmed. | `unsupported` |
 | Freeze discipline | The output states that the extractor must be frozen before cross-site drawer validation. | `missing` |
@@ -55,6 +57,7 @@ Use this gate after the generated static evidence exists. The re-extractor recei
 | Check | Pass condition | Failure classification if not met |
 | --- | --- | --- |
 | Claim inventory | Each material kept Drawer statement maps to a required claim or an explicit justified omission in the matrix. | `missing` |
+| Retained-relationship witness | Every observed-and-retained material relationship has a neutral fixture witness and generated-evidence re-extraction check, or a concrete justified omission. A single selected row cannot stand in for retained broader organization. | `missing` or `implementation-defect` |
 | Omission justification | Every claim not exercised names a bounded safety, missing-input, or scope reason; unknown source behavior is not filled with convention. | `unsupported` |
 | Re-extraction independence | A reviewer can identify the claimed role or relationship from generated static evidence and matrix terms alone, without source-aware material. | `partial` or `implementation-defect` |
 | Semantic equivalence | Re-extracted exercised claims preserve the matrix role and relationship; source-specific pixels, labels, counts, geometry, colors, and icons are not comparison targets. | `implementation-defect` |
