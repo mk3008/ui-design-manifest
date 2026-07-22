@@ -1,6 +1,13 @@
 # Logs
 logs
 *.log
+
+# Local orchestration control-plane data can contain private notification routes.
+# Keep all temporary run state out of version control; repository evidence must be sanitized.
+tmp/
+
+# Browser automation session snapshots are transient local test state.
+.playwright-cli/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

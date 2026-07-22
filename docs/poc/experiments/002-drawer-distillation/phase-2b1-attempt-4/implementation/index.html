@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="drawer-layout">
+      <aside class="drawer">
+        <nav>
+          <ul class="navigation-list">
+            <li class="navigation-row">Item 1</li>
+            <li class="navigation-row navigation-parent" data-expanded="true">
+              <span>Parent 1</span>
+              <span class="disclosure" aria-hidden="true"></span>
+            </li>
+            <li class="navigation-row navigation-child" aria-current="page">Child 1</li>
+            <li class="navigation-row">Item 2</li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="content-canvas"></main>
+    </div>
+  </body>
+</html>
