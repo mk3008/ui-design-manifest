@@ -10,5 +10,6 @@ This directory preserves a corrected source-independent extraction pass for the 
 - [Fixed initial implementation](implementation/initial-result.html) — initial result; do not overwrite.
 - [Evaluator comparison](evaluator-comparison.md) — comparison after the initial result was fixed.
 - [Human review](human-review.md) — the single review entry point; status: human review required.
+- [Human review decision](human-review-decision.md) — conditional acceptance record and follow-on conditions; does not alter the fixed run.
 
 The attempt-1 bundle is preserved separately and is not changed by this correction.

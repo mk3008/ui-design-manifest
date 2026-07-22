@@ -79,11 +79,48 @@ An explicitly named fallback must pre-exist application in a requirement, curren
 
 Manifest design intent, scope prose, relationship descriptions, and explanatory prose do not authorize literal or paraphrased display copy. Original copy and its evidence belong only to extraction or test-only evidence outside the manifest. Each displayed string needs explicit intent from a requirement, current target-product implementation, or a pre-existing explicitly named display-copy fallback. Any unsupplied string is an out-of-band-declared fixture or unsupported copy; a fixture may fill only an already instructed semantic slot and may not create an uninstructed heading, caption, helper, legend, or other hierarchy slot.
 
+## Source-blind fixtures
+
+Use a fixture only when an application input contract already identifies the semantic slot that needs a value. A safe fixture is neutral: it demonstrates the slot's shape or state without introducing product meaning, a new hierarchy slot, a product-specific label, or source-derived copy. Record its provenance as the applicable requirement, current target-product implementation, pre-existing named fallback, or explicitly declared test fixture. Do not derive fixture values from an original UI, capture, evaluation material, remembered source vocabulary, or a source-specific data model.
+
+A fixture cannot supply an identity, status, destination, aggregate, or other business meaning that the application inputs leave unresolved. Omit the dependent UI and report the gap instead.
+
 # Provenance and uncertainty
 
 Never present inference as observation. For mixed concepts, label individual statements under `Evidence`, `Inferences`, and `Unresolved`. Record the viewport, state, role, data condition, or interaction that bounded an observation. If evidence does not support a decision, leave a gap rather than filling it with a starter default.
 
+## Extraction source inputs and observation boundary
+
+Extraction accepts a URL, one image, an image set, a recording, or a local build as formal `source_ui` input forms. Images are first-class inputs, not a fallback: when supplied images establish the needed declared screens, viewports, and states, extraction does not access a URL. A recording or local build may be observed only for the declared visual scope. A URL is observed only when supplied visual inputs are insufficient, and then only to the minimum extent needed for that scope.
+
+URL use is not a standard permission to crawl, scrape, broadly traverse, bulk-capture DOM or CSS, or extract source values. Extraction does not inspect undeclared routes, roles, states, or data. It records the input modality, non-identifying provenance reference, declared visual scope, and requested additional input in extraction or evaluation evidence only; a source-blind manifest never retains these details.
+
+Visual inputs establish only what they visibly show. An operation, focus behavior, update condition, responsive change, or transition not visibly established by the supplied scope remains unresolved. Request the smallest additional visual input—such as another viewport image, state image, or bounded recording—rather than inventing the missing behavior.
+
 Small local decisions may select implementation mechanics, but they do not authorize new user-visible meaning. The profile does not judge completeness, exact reproduction, or missing requirements; current implementation and applicable requirements remain authoritative under the precedence policy below.
+
+# Evaluation vocabulary
+
+Evaluation findings use the following terms for an explicitly bounded claim:
+
+- **Preserved**: the claimed behavior or relationship was exercised with the declared inputs and evidence supports that it remains present.
+- **Partial**: the claim was exercised and evidence shows a bounded portion is present, with the missing or divergent portion named.
+- **Failure**: the claim was exercised and evidence shows the expected behavior or relationship is absent or contradicted.
+- **Not exercised**: the claim was not evaluated. This is neither preservation, partial preservation, nor failure, and it must not be summarized as a result for the claim.
+
+A `not exercised` finding records the reason it was not run, the intended input or condition, the evidence available about non-execution, and the next owner or condition needed to evaluate it. It preserves the gap for later work; it is not evidence of product behavior.
+
+# Application input contract
+
+The application owner supplies a bounded input contract with the implementation task. The contract is distinct from the manifest and must state, when relevant:
+
+- **State model**: the source of truth, allowed states, display conditions, and update triggers.
+- **Primary-record value**: the record or value the screen is centered on and its allowed provenance.
+- **Identity context**: the permitted actor, account, workspace, or record identity context and whether it may be displayed.
+- **Aggregate information**: totals, counts, summaries, or derived values, including their source and update behavior.
+- **Optional destinations**: routes, external targets, or action destinations, including whether each may be shown or invoked.
+
+For every missing, conflicting, or intentionally absent field, the contract names the unresolved behavior: omit the dependent UI, render a pre-existing product-defined fallback, or stop for a decision. The application owner owns this contract and unresolved decisions; the implementer may apply it but may not invent product data, hierarchy, state, or destinations to complete it.
 
 # Precedence
 

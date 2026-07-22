@@ -19,6 +19,10 @@ This bundle must stand alone for application. Do not include original UI names, 
 
 Use: target-product implementation and repository guidance; explicit product requirements; this local manifest; then explicit starter defaults. Do not include an original or reference UI.
 
+# Application input contract
+
+The application owner supplies the task-level state model, primary-record value, identity context, aggregate information, optional destinations, and behavior for unresolved fields. This manifest does not invent those inputs. A neutral, source-blind fixture may fill only an already instructed semantic slot with recorded allowed provenance; it cannot add product meaning, source-specific copy, or a new hierarchy slot.
+
 # Unresolved
 
 List gaps and conflicts that an implementer must not guess away.

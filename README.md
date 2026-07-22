@@ -21,6 +21,10 @@ When sources disagree, apply this order:
 
 The original UI is not an application input or authority. Record unresolved conflicts or missing guidance instead of consulting it.
 
+## Evaluation and application conditions
+
+Use the profile's [evaluation vocabulary](profile/ui-profile.md#evaluation-vocabulary) to distinguish a claim that is preserved, partial, failed, or not exercised. `Not exercised` records a gap and its next condition; it is never evidence of preservation or failure. Before application, the application owner supplies the [application input contract](profile/ui-profile.md#application-input-contract) for state, primary-record value, identity context, aggregates, optional destinations, and unresolved behavior. A source-blind fixture may demonstrate only an already instructed semantic slot with declared provenance; it cannot invent product meaning, hierarchy, or source-derived copy.
+
 This precedence avoids dual ownership. The project does not require code and manifest text to remain mechanically synchronized. Teams may update a manifest when that improves future guidance, but implementation correctness does not depend on doing so.
 
 ## PoC path

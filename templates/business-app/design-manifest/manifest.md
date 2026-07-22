@@ -21,6 +21,10 @@ All content is authored to demonstrate structure. It contains no original-UI evi
 
 Target-product implementation and repository guidance come first; explicit accessibility, security, and business requirements follow; this local manifest is next; explicit starter guidance is last. Original or reference UI is not an application authority.
 
+# Application input contract
+
+The application owner must provide the task-level state model, primary-record value, identity context, aggregate information, optional destinations, and behavior for unresolved fields. This illustrative manifest does not authorize an implementer to invent them. If a neutral, source-blind fixture is allowed, it may fill only an already instructed semantic slot with recorded provenance; it must not create product meaning, source-specific copy, or a new hierarchy slot.
+
 # Relationships
 
 Use the [compact work surface](foundations/compact-work-surface.md), [status badge](components/status-badge.md), [destructive-action policy](policies/confirm-destructive-action.md), and [record list](screen-patterns/record-list.md) together only when the task needs them.
