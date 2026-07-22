@@ -1,0 +1,14 @@
+AGENTS.md
+profile/index.md
+profile/ui-profile.md
+profile/manifest-authority.md
+profile/business-application-lens.md
+prompts/apply-manifest.md
+docs/poc/methods/drawer/README.md
+docs/poc/methods/drawer/drawer-first-pass-rubric.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-3/drawer/index.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-3/drawer/manifest.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-3/drawer/application-input-contract.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-3/drawer/fixture-trace.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-3/drawer/claim-matrix.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-3/drawer/exercised-classification.md

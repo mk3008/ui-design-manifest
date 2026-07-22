@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drawer fixture evidence</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="frame" data-drawer-state="open">
+      <aside class="drawer" aria-label="Navigation">
+        <button class="visibility-control" type="button" aria-label="Change navigation visibility">
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 4h10M3 8h10M3 12h10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="1.4"/></svg>
+        </button>
+        <nav>
+          <ul class="navigation-list">
+            <li><a class="navigation-row parent current" href="#parent-a" aria-current="page" aria-expanded="true">Parent A</a></li>
+            <li><a class="navigation-row child" href="#child-a">Child A</a></li>
+            <li><a class="navigation-row" href="#leaf-a">Leaf A</a></li>
+            <li><a class="navigation-row" href="#direct-a">Direct A</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="work-surface" aria-label="Adjacent work surface"></section>
+    </main>
+  </body>
+</html>
