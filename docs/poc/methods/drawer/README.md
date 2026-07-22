@@ -17,6 +17,8 @@ The method separates component/control, component layout, region composition, an
 
 ## Semantic round-trip gate
 
+The [shared source-blind semantic round-trip review](../semantic-roundtrip-review.md) defines the common claim matrix, neutral-fixture discipline, status vocabulary, human-review packet boundary, and non-empty material-relationship obligation for bounded UI areas. The Drawer-specific requirements below remain stricter where they add detail; the shared method does not replace or weaken this gate.
+
 Before reconstruction, turn every kept Contract statement into a semantic claim matrix. The matrix identifies the required visual intent claim, its source-to-Manifest trace, its allowed source-blind fixture slot (if any), and the generated evidence needed to exercise it. It is a completeness review, not a request to fill unknowns by convention: a required observed relationship may be omitted only with a recorded justification that says why it is out of scope or cannot safely be exercised.
 
 After generating static evidence, a reviewer who sees only the generated evidence and the matrix re-extracts the exercised claims. Compare that re-extraction with the matrix by semantic role and relationship, not pixels. The result fails if a required claim is contradicted, if an omission has no justification, or if no meaningful scoped Drawer relationship is exercised. A blank region that preserves only a navigation/workspace boundary therefore cannot pass as a successful Drawer reconstruction.
