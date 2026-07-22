@@ -38,6 +38,19 @@ This is implementation-evaluation status, not source-observation coverage. No HT
 | `C7` | not exercised | No generated reconstruction exists. | Frozen four-row fixture with adjacent workspace. | Rendered open Drawer image permits region-edge review. | Implementer |
 | `C8` | not exercised | No generated reconstruction or semantic inspection exists. | Frozen one-SVG fixture and exact control name. | Rendered image plus semantic inspection permits meaningful-SVG review. | Implementer |
 
-# Unexercised axes
+# Future evaluation conditions for unresolved axes
 
-Presentation mode, closed representation, persistence, responsive behavior, keyboard/focus behavior, animation, and contrast conformance are unresolved. They are not exercised and need the smallest additional state, viewport, sequence, or accessibility input appropriate to the axis. This is not evidence of their absence or of a default behavior.
+These are source-observation conditions, not C1-C8 implementation-evaluation results. They do not alter the frozen fixture or infer a runtime result from the open static state.
+
+| Axis | Observation status | Bounded missing evidence | Smallest later input or verification condition | Owner |
+| --- | --- | --- | --- | --- |
+| Presentation mode | unresolved | A single open state cannot establish whether the Drawer overlays or persistently occupies layout. | A paired visibility state at the same viewport that shows the adjacent workspace response. | Product owner / evaluator |
+| Closed representation | not observed | No closed Drawer is represented. | One closed-state image at the same viewport. | Product owner / evaluator |
+| Toggle location | observed | The open-state compact control is visibly inside the Drawer; its operation is not established. | No additional input for the visible location; a bounded interaction sequence is needed only to evaluate operation. | Product owner / evaluator |
+| Persistence | unresolved | No state-retention evidence is represented. | A bounded sequence that changes context and shows whether Drawer state is retained. | Product owner / evaluator |
+| Responsive behavior | unresolved | Only one wide viewport is represented. | One narrow-viewport image of the same Drawer state. | Product owner / evaluator |
+| Focus behavior | unresolved | No focused state or keyboard sequence is represented. | One focused-state image plus a bounded keyboard sequence. | Product owner / evaluator |
+| Motion | unresolved | No transition sequence is represented. | One bounded interaction recording that includes the relevant transition. | Product owner / evaluator |
+| Overflow behavior | unresolved | No content-pressure or clipped/scrolling condition is represented. | One same-viewport overflow-pressure state with the Drawer content exceeding its available region. | Product owner / evaluator |
+| Accessibility semantics | unresolved | Visual evidence cannot establish names, relationships, current-state exposure, or disclosure semantics. | Semantic inspection of the rendered control and navigation structure. | Implementer / accessibility reviewer |
+| Contrast conformance | unresolved | Visual evidence does not establish measurable contrast or forced-colors behavior. | Contrast and forced-colors inspection of the rendered result. | Implementer / accessibility reviewer |

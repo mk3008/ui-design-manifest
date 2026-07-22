@@ -28,3 +28,7 @@ The application may use neutral fixtures only for already-declared slots and onl
 For the isolated reconstruction, the exact synthetic values and asset decision are frozen in [the fixture trace](fixture-trace.md). They are harness inputs only and do not become product defaults.
 
 Keep visibility axes independent. Presentation, closed representation, toggle location, and persistence require their own product inputs or remain unresolved. Current implementation and applicable requirements override this contract and [the Manifest](manifest.md).
+
+# Future-axis input boundary
+
+The contract does not infer runtime axes from the frozen open fixture. If a product later needs presentation, closed representation, persistence, responsive behavior, focus, motion, or overflow behavior, its owner must supply a separate state model and the smallest corresponding evidence or verification condition recorded in [the coverage classification](exercised-classification.md#source-observation-inventory). Those future inputs do not change the accepted fixture.

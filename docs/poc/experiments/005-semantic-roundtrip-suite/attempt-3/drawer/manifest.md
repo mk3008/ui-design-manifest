@@ -23,9 +23,11 @@ Use an icon only when the application supplies a meaningful semantic icon slot a
 
 # Boundaries and unresolved areas
 
-No rule covers header, main content, right-side utilities, footer, complete-page composition, animations, keyboard/focus behavior, contrast conformance, narrow viewports, closed representation, presentation mode, toggle location beyond the visible open-state position, or persistence.
+No rule covers header, main content, right-side utilities, footer, or complete-page composition. The bounded wide open state establishes visible hierarchy, current-state comparison, rhythm, and edge relationships, but does not establish presentation mode, closed representation, persistence, responsive behavior, focus behavior, motion, overflow behavior, or contrast conformance.
 
-No group caption, section label, badge, count, permission, destination, or additional hierarchy role is retained. Product-owned navigation meaning and topology must be supplied through the [Application Input Contract](application-input-contract.md).
+The bounded state visibly has no retained non-destination group caption or group container. That is an observed absence for this state only, not a universal prohibition. No badge, count, permission, destination, or additional hierarchy role is retained. Product-owned navigation meaning and topology must be supplied through the [Application Input Contract](application-input-contract.md).
+
+Each unresolved axis needs its own smallest later input: a paired visibility state for presentation mode; a closed-state image for closed representation; a state-retention sequence for persistence; a narrow-viewport image for responsive behavior; a focused-state image or keyboard sequence for focus; a bounded interaction sequence for motion; an overflow-pressure state for overflow; and semantic or contrast inspection for accessibility claims. The complete status inventory is in [the coverage classification](exercised-classification.md#source-observation-inventory).
 
 # Relationships
 
