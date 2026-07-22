@@ -2,11 +2,16 @@
 type: human-review
 title: Phase 2B1 Drawer source-blind static reconstruction review
 description: Human decision packet for the corrected neutral Drawer reconstruction.
-status: human review required
+status: accepted
 source: authored
 ---
 
-# Human review required
+# Human review decision
+
+**Decision: accepted.** The human reviewer accepted the bounded static Drawer
+reconstruction on 2026-07-22. This decision applies only to the documented
+source-blind, visibly open wide-state claim; it does not accept or establish
+responsive or interactive behavior.
 
 ## Decision requested
 
