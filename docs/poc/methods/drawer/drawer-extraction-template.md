@@ -73,6 +73,16 @@ Do not derive one visibility axis from another. A static image may establish onl
 | --- | --- | --- | --- | --- |
 | | | | | |
 
+## 6. Semantic claim matrix for reconstruction review
+
+Complete this matrix before an implementer receives the application packet. A required claim is a material Drawer relationship needed to demonstrate the scoped extraction; it is not a requirement to invent an unobserved state or source-specific treatment.
+
+| Matrix ID | Required visual-intent claim | Source-to-Manifest trace | Claim status | Generated evidence needed for re-extraction | Source-blind fixture slot and neutral value, if used | If not exercised: justified omission and required input | Re-extraction result: preserved / contradicted / not exercised / unresolved |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| | | | `required` / `justified omission` / `unknown` | | | | |
+
+Fixture constraints: use a fixture only in a declared semantic slot. Mark its value neutral and synthetic. Do not use a fixture to reproduce source display copy, product identity, destination data, item count, hierarchy shape, exact visual treatment, assets, or behavior. `Not exercised` is acceptable only with the recorded justification; it is never evidence that the claim was preserved.
+
 ## Completion gate
 
-The extraction is ready for reconstruction only when every kept statement is traceable, every unknown remains explicit, and no rule crosses the subject boundary. Freeze the template and prompt before applying them to a different successful product’s drawer; the second source tests the extractor and must not quietly edit it mid-run.
+The extraction is ready for reconstruction only when every kept statement is traceable, every unknown remains explicit, no rule crosses the subject boundary, and every material kept statement is represented in the semantic claim matrix as `required` or a justified omission. Freeze the template and prompt before applying them to a different successful product’s drawer; the second source tests the extractor and must not quietly edit it mid-run.

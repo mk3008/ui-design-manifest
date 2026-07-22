@@ -48,6 +48,22 @@ Use this only after an implementation exists. It must not be used to rewrite a s
 | Icon treatment | Rendered state evidence and accessible-name inspection | Missing discernible naming or visibly indistinct meaningful icons is an `implementation-defect` against a clear requirement; contrast conformance remains unconfirmed without measurement. |
 | Boundary preservation | Change review plus rendered evidence | New full-page, source-copy, geometry, or framework rules are `out-of-scope`, not improved drawer fidelity. |
 
+## C. Semantic round-trip and completeness gate
+
+Use this gate after the generated static evidence exists. The re-extractor receives only that evidence, the source-blind semantic claim matrix, and any declared neutral fixture disclosure. They must not receive source captures, source-aware notes, or an external oracle. This is semantic comparison, not pixel matching.
+
+| Check | Pass condition | Failure classification if not met |
+| --- | --- | --- |
+| Claim inventory | Each material kept Drawer statement maps to a required claim or an explicit justified omission in the matrix. | `missing` |
+| Omission justification | Every claim not exercised names a bounded safety, missing-input, or scope reason; unknown source behavior is not filled with convention. | `unsupported` |
+| Re-extraction independence | A reviewer can identify the claimed role or relationship from generated static evidence and matrix terms alone, without source-aware material. | `partial` or `implementation-defect` |
+| Semantic equivalence | Re-extracted exercised claims preserve the matrix role and relationship; source-specific pixels, labels, counts, geometry, colors, and icons are not comparison targets. | `implementation-defect` |
+| Fixture safety | Any fixture is in a declared semantic slot, explicitly neutral, and does not reproduce source copy or structure. | `out-of-scope` or `unsupported` |
+| Meaningful exercise threshold | At least one required material Drawer relationship beyond a bare navigation-region/workspace boundary is exercised and preserved. A claim marked only `not exercised` does not count. | `implementation-defect` |
+| Gate result | No required claim is contradicted; all omissions are justified; and the meaningful exercise threshold passes. | Reconstruction `fails` |
+
+The gate may report an otherwise boundary-respecting reconstruction as `failed` when the available source-blind inputs cannot exercise a meaningful Drawer claim. That outcome identifies an application-input or product-decision gap; it does not authorize an implementer to invent content or behavior.
+
 ## Decision rule
 
-A first pass is acceptable for human review when every material extraction-quality row is `sufficient`, `partial` with an explicit gap, `source-specific`, or `out-of-scope` for a documented reason; no material row may remain silently `missing` or `unsupported`. A reconstruction can be evaluated only after that review, and a different successful product can test generalization only after the extractor is frozen.
+A first pass is acceptable for human review when every material extraction-quality row is `sufficient`, `partial` with an explicit gap, `source-specific`, or `out-of-scope` for a documented reason; no material row may remain silently `missing` or `unsupported`. A reconstruction can be evaluated only after that review and after the semantic round-trip gate passes. Future human-review packets must pair the matrix, generated-evidence re-extraction, and gate result with a bounded read-only display of the external oracle. That display remains outside the repository and all source-blind Manifest and Implementer inputs. A different successful product can test generalization only after the extractor is frozen.

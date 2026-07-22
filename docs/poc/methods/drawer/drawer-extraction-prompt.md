@@ -22,7 +22,9 @@ Distill a first-pass design-language description for the **primary navigation dr
 8. **Run the gap check.** Ask: Did the extraction distinguish group from parent? Is a current destination addressed when visible? Is a disclosure state separate from drawer visibility? Does each visibility axis have evidence or `unknown`? Are icon-only controls given a discernible-name requirement? Are every unknown behavior and accessibility gap explicit?
 9. **Run the contradiction check.** Reject a rule if it conflicts with an observed fact, treats a static image as runtime proof, derives `compact-rail` from an inside toggle, derives `dismissed` from an outside toggle, makes an exact source treatment universal, or has no source and boundary. When evidence conflicts, preserve `contextual` variants rather than average them into a false universal rule.
 10. **Write the output.** Produce concise Contract-ready statements plus a decision log. For each statement, give evidence classes and one classification: `stable`, `contextual`, `source-specific`, or `unconfirmed`. Use relational language, not measurements or implementation instructions.
-11. **Freeze for validation.** After human acceptance, freeze this extractor version before applying it to another successful product’s drawer. The later cross-site result may evaluate and classify the frozen extractor, but it may not silently alter the prompt or template while testing.
+11. **Prepare the completeness matrix.** For each kept observed or inferred Drawer statement, name the visual-intent claim that a reconstruction must demonstrate, its traceable source-to-Manifest statement, and the minimum generated evidence that would exercise it. Mark an unexercisable claim only as `justified omission` with a boundary, missing-input, or safety reason; do not silently downgrade it to optional.
+12. **Define safe fixtures only when needed.** A fixture may occupy a declared semantic slot using a neutral value solely to exercise a claim. It must be clearly identified as a fixture and must not encode source copy, identity, structure, count, geometry, color, icon, or behavior. If no declared slot can safely exercise the claim, leave it unexercised and record the input gap.
+13. **Freeze for validation.** After human acceptance, freeze this extractor version before applying it to another successful product’s drawer. The later cross-site result may evaluate and classify the frozen extractor, but it may not silently alter the prompt or template while testing.
 
 ## Required output shape
 
@@ -30,7 +32,8 @@ Distill a first-pass design-language description for the **primary navigation dr
 2. Completed four-view template.
 3. Candidate Contract statements with evidence and generalization boundaries.
 4. Explicit unknowns and validation needs.
-5. A short freeze record naming the extractor version and stating that the next source is a holdout test, not a new source of unreviewed rules.
+5. A semantic claim matrix with explicit required claims, justified omissions, and source-blind fixture constraints.
+6. A short freeze record naming the extractor version and stating that the next source is a holdout test, not a new source of unreviewed rules.
 
 ## Stop conditions
 
