@@ -1,0 +1,8 @@
+profile/ui-profile.md
+docs/poc/methods/semantic-roundtrip-review.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-1/drawer/manifest.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-1/drawer/application-input-contract.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-1/drawer/fixture-trace.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-1/drawer/claim-matrix.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-1/drawer/exercised-classification.md
+docs/poc/experiments/005-semantic-roundtrip-suite/attempt-1/drawer/apply-packet.md

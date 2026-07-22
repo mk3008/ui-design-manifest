@@ -1,0 +1,58 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fa;
+}
+
+.evidence-canvas {
+  padding: 24px;
+}
+
+.condition-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) 24px auto;
+  gap: 8px;
+  align-items: center;
+  width: min(100%, 760px);
+  padding: 12px;
+  border: 1px solid #8a95a5;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+select,
+input,
+button {
+  min-width: 0;
+  min-height: 34px;
+  border: 1px solid #667085;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #182230;
+  font: inherit;
+  padding: 5px 8px;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-color: #344054;
+  background: #344054;
+  color: #ffffff;
+  white-space: nowrap;
+}
