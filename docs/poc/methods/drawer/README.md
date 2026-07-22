@@ -15,6 +15,14 @@ This method extracts a primary navigation drawer as a bounded UI region. It is i
 
 The method separates component/control, component layout, region composition, and accessibility. Drawer visibility is recorded through four independent axes: presentation, closed representation, toggle location, and persistence. Unobserved values remain unknown. For `closedRepresentation`, `dismissed` and `compact-rail` are the two observable representations; `unknown` means no representation was observed, not a third visual pattern. None of those values is interchangeable with another axis or with an inferred default.
 
+## Required observation distinctions
+
+Record a current destination's observed cues as separate facts: whether a state accent is present, its placement (including a leading or left edge when observed), its shape or role, and whether it coexists with fill, text, or icon cues. Record `not observed` or `unresolved` when the evidence does not establish a cue; do not turn a color value, dimension, or one source treatment into a default.
+
+Distinguish a non-destination caption, a top-level leaf, and an expandable parent. For an observed parent, record the disclosure indicator's presence, placement, direction, state synchronization, icon responsibility, and accessible expanded/collapsed state. The parent structurally owns its child group; leaves and captions do not acquire disclosure state. Only when an Application Input Contract declares an expandable parent but supplies no asset may an implementation use a meaningful inline SVG chevron or caret with `currentColor`: right when collapsed and down when expanded. It is not a text glyph, placeholder, checkbox-like mark, or source-derived icon.
+
+For each closed representation, record its own minimum evidence. `dismissed` needs evidence that the Drawer is fully absent and that a restore affordance is available outside it or remains unknown. `compact-rail` needs evidence that a reduced Drawer remains plus any retained internal control; shortcut icons require declared Application Input Contract inputs and must not be invented. A dismissed Drawer normally places the reopen trigger under later Header ownership. A compact rail may retain a Drawer-owned internal visibility control and contract-declared shortcuts. This records an ownership seam only: a later Header+Drawer composite validation must prove trigger placement, accessible name, state coordination, and persistence without changing the separate Header or Drawer extraction scopes.
+
 ## Semantic round-trip gate
 
 The [shared source-blind semantic round-trip review](../semantic-roundtrip-review.md) defines the common claim matrix, neutral-fixture discipline, status vocabulary, human-review packet boundary, and non-empty material-relationship obligation for bounded UI areas. The Drawer-specific requirements below remain stricter where they add detail; the shared method does not replace or weaken this gate.

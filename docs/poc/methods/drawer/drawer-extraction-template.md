@@ -19,14 +19,14 @@ Use this template for one primary navigation drawer and nothing outside it. For 
 | Element or relation | Status | Observation or inference | Evidence IDs | Generalization status | Unknown / validation need |
 | --- | --- | --- | --- | --- | --- |
 | Container classification: drawer, panel, rail, or unknown | | | | | |
-| Drawer toggle / restore affordance | | | | | |
-| Navigation section/group (non-destination) | | | | | |
+| Drawer toggle / restore affordance and ownership seam | | | | | |
+| Navigation section/group or non-destination caption | | | | | |
 | Independent/direct navigation item / destination, if observed | | | | | |
 | Expandable parent navigation item with shown children, if observed | | | | | |
 | Top-level leaf with no shown children, if observed | | | | | |
-| Disclosure trigger, indicator, and controlled child list | | | | | |
+| Disclosure trigger/indicator: presence, placement, direction, synchronization, icon responsibility, and controlled child list | | | | | |
 | Child navigation item | | | | | |
-| Current navigation item | | | | | |
+| Current navigation item: accent presence, placement, shape/role, and coexistence with fill/text/icon cues | | | | | |
 | Divider or section label, if material | | | | | |
 | Icon-led control, if present | | | | | |
 
@@ -36,6 +36,7 @@ Use this template for one primary navigation drawer and nothing outside it. For 
 | --- | --- | --- | --- | --- | --- |
 | Presentation axis: `overlay`, `persistent`, or `unknown` | | | | | |
 | Closed-representation axis: `dismissed`, `compact-rail`, or `unknown` | | | | | |
+| Closed representation evidence: dismissed absence/external restore owner, or compact-rail retained region/internal control/declared shortcuts | | | | | |
 | Toggle-location axis: `inside-drawer`, `outside-drawer`, `none-observed`, or `unknown` | | | | | |
 | Persistence axis: `persistent`, `non-persistent`, or `unknown` | | | | | |
 | Grouping and reading order | | | | | |
@@ -57,6 +58,7 @@ Do not derive one visibility axis from another. A static image may establish onl
 | Drawer’s orientation role relative to the adjacent workspace | | | | | |
 | Drawer visibility effect on the adjacent workspace, if observable | | | | | |
 | Boundary between persistent navigation and source-specific page content | | | | | |
+| Header–Drawer control seam: later Header-owned external restore trigger versus Drawer-owned compact-rail internal control | | | | | |
 | Scope stop: no rule about header, main, right utility, footer, or full page | | | | | |
 
 ## 4. Accessibility view
@@ -66,9 +68,9 @@ Do not derive one visibility axis from another. A static image may establish onl
 | Navigation purpose / landmark naming requirement | | | | | |
 | Discernible name for each interactive control, including icon-only controls | | | | | |
 | Current destination exposed programmatically | | | | | |
-| Disclosure expanded/collapsed state and control relationship | | | | | |
+| Disclosure expanded/collapsed state, parent-owned child group, indicator synchronization, and accessible state | | | | | |
 | Visible state distinctions not solely conveyed by color | | | | | |
-| Icon semantic responsibility, discernible naming, and omission when no approved/project-available asset is supplied | | | | | |
+| Icon semantic responsibility, discernible naming, and omission when no approved/project-available asset is supplied; contract-declared parent fallback only: meaningful `currentColor` inline SVG chevron/caret right when collapsed and down when expanded | | | | | |
 | Keyboard, focus, contrast, forced-colors, responsive, and assistive-technology validation | `unknown` unless tested | | | | |
 
 ## 5. Output decision log
@@ -88,7 +90,10 @@ Complete this inventory before claiming that a reconstruction exercises retained
 | Child navigation item | | | | |
 | Independent/direct navigation item | | | | |
 | Selected and non-selected comparable-item contrast | | | | |
+| Current-item accent cue and any coexistence with fill, text, or icon cues | | | | |
+| Parent disclosure indicator and parent-to-child ownership | | | | |
 | Drawer trigger and its declared responsibility | | | | |
+| Closed representation and Header–Drawer control seam | | | | |
 | Repeated row rhythm | | | | |
 | Relationship to the Drawer region edge | | | | |
 
@@ -100,7 +105,7 @@ Complete this matrix before an implementer receives the application packet. A re
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | `required` / `justified omission` / `unknown` | | | |
 
-Fixture constraints: use a fixture only in a declared semantic slot. Mark its value neutral and synthetic. Do not use a fixture to reproduce source display copy, product identity, destination data, item count, hierarchy shape, exact visual treatment, assets, or behavior. Do not add group captions or groups that were not observed and retained. Do not use square or checkbox-like placeholders as icons, and do not use rounded navigation items unless the accepted Contract retains that treatment. A meaningful icon is allowed only for a declared semantic slot; when the slot requires an icon but does not supply an asset, use an already-approved or project-available inline SVG icon source with a discernible name, otherwise omit it. `Not exercised` is acceptable only with the recorded concrete justification; it is never evidence that the claim was preserved.
+Fixture constraints: use a fixture only in a declared semantic slot. Mark its value neutral and synthetic. Do not use a fixture to reproduce source display copy, product identity, destination data, item count, hierarchy shape, exact visual treatment, assets, or behavior. Do not add group captions or groups that were not observed and retained. Do not use square or checkbox-like placeholders as icons, and do not use rounded navigation items unless the accepted Contract retains that treatment. A meaningful icon is allowed only for a declared semantic slot; when a contract-declared expandable parent requires a disclosure indicator but no asset is supplied, use a meaningful `currentColor` inline SVG chevron/caret, right when collapsed and down when expanded; the parent control has a discernible name and synchronized accessible state. Otherwise omit it. Never use this fallback for captions or leaves, as text glyphs, or as placeholder boxes. `Not exercised` is acceptable only with the recorded concrete justification; it is never evidence that the claim was preserved.
 
 ## Completion gate
 
