@@ -15,4 +15,8 @@ This method extracts a primary navigation drawer as a bounded UI region. It is i
 
 The method separates component/control, component layout, region composition, and accessibility. Drawer visibility is recorded through four independent axes: presentation, closed representation, toggle location, and persistence. Unobserved values remain unknown.
 
+## Human review packet
+
+Human review of a reconstruction must include a bounded, read-only display of the external source oracle next to the generated static evidence. An opaque ID and digest alone are not sufficient for visual review. Keep that display outside the repository and outside every source-blind Manifest and Implementer allowlist; it is evaluation-only material. The packet must also identify which rendered claims are exercised, not exercised, or unresolved, so a blank or omission-only output is not mistaken for successful reconstruction.
+
 The accepted calibration and cross-site holdout are recorded in [Experiment 002](../../experiments/002-drawer-distillation/README.md).

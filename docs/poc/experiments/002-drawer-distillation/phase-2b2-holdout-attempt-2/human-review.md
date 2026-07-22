@@ -2,7 +2,7 @@
 type: Human Review
 title: Source-independent drawer holdout review
 description: Human decision record for a bounded, source-blind drawer application.
-status: human review required
+status: rejected
 source: mixed
 ---
 
@@ -101,4 +101,8 @@ Cannot be claimed:
 
 Choose one: `accepted` / `conditionally accepted` / `rejected`.
 
-Decision: _Human reviewer to complete._
+Decision: `rejected`.
+
+Reason: the static reconstruction is visually blank, so it does not demonstrate successful extraction or application of a Drawer. Its omission behavior avoided unsupported invention, but that is insufficient evidence that the design intent can be reconstructed.
+
+Follow-up requirement: any future human-review request must include a bounded, read-only display of the external oracle alongside the static reconstruction. The oracle display must remain outside the repository and source-blind implementation allowlist; its opaque ID and digest alone are not enough for visual evaluation.
