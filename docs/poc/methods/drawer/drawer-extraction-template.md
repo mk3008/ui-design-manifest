@@ -2,7 +2,7 @@
 
 ## Use
 
-Use this template for one primary navigation drawer and nothing outside it. For every substantive field, write one of `observed`, `inferred`, or `unknown`, plus at least one evidence ID from [evidence-matrix.md](evidence-matrix.md). `Inferred` is never promoted to an observed source fact.
+Use this template for one primary navigation drawer and nothing outside it. For every substantive field, write one of `observed`, `inferred`, or `unknown`, plus at least one evidence ID from [evidence-matrix.md](evidence-matrix.md). `Inferred` is never promoted to an observed source fact. Every retained claim also has exactly one provenance classification: `observed`, `method-default`, `unresolved/not observed`, or `product input required`; method-default is never observed.
 
 ## 0. Subject boundary
 
@@ -24,9 +24,9 @@ Use this template for one primary navigation drawer and nothing outside it. For 
 | Independent/direct navigation item / destination, if observed | | | | | |
 | Expandable parent navigation item with shown children, if observed | | | | | |
 | Top-level leaf with no shown children, if observed | | | | | |
-| Disclosure trigger/indicator: presence, placement, direction, synchronization, icon responsibility, and controlled child list | | | | | |
+| Disclosure trigger/indicator: presence, placement, direction, synchronization, icon responsibility, controlled child list, and guarded method-default fallback when indicator treatment is unobservable | | | | | |
 | Child navigation item | | | | | |
-| Current navigation item: accent presence, placement, shape/role, and coexistence with fill/text/icon cues | | | | | |
+| Current navigation item: accent presence, placement, shape/role, coexistence with fill/text/icon cues, and guarded method-default fallback when accent treatment is unobservable | | | | | |
 | Divider or section label, if material | | | | | |
 | Icon-led control, if present | | | | | |
 
@@ -70,14 +70,14 @@ Do not derive one visibility axis from another. A static image may establish onl
 | Current destination exposed programmatically | | | | | |
 | Disclosure expanded/collapsed state, parent-owned child group, indicator synchronization, and accessible state | | | | | |
 | Visible state distinctions not solely conveyed by color | | | | | |
-| Icon semantic responsibility, discernible naming, and omission when no approved/project-available asset is supplied; contract-declared parent fallback only: meaningful `currentColor` inline SVG chevron/caret right when collapsed and down when expanded | | | | | |
+| Icon semantic responsibility, discernible naming, and omission when no approved/project-available asset is supplied; contract-declared parent with unobservable indicator treatment fallback only: meaningful `currentColor` inline SVG chevron/caret right when collapsed and down when expanded | | | | | |
 | Keyboard, focus, contrast, forced-colors, responsive, and assistive-technology validation | `unknown` unless tested | | | | |
 
 ## 5. Output decision log
 
-| Candidate Contract statement | Evidence classes used | Classification: stable / contextual / source-specific / unconfirmed | Keep, hold, or omit | Why |
+| Candidate Contract statement | Provenance: observed / method-default / unresolved/not observed / product input required | Evidence classes used | Classification: stable / contextual / source-specific / unconfirmed | Keep, hold, or omit | Why |
 | --- | --- | --- | --- | --- |
-| | | | | |
+| | | | | | |
 
 ## 6. Role-and-relationship coverage inventory
 
@@ -105,7 +105,7 @@ Complete this matrix before an implementer receives the application packet. A re
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | `required` / `justified omission` / `unknown` | | | |
 
-Fixture constraints: use a fixture only in a declared semantic slot. Mark its value neutral and synthetic. Do not use a fixture to reproduce source display copy, product identity, destination data, item count, hierarchy shape, exact visual treatment, assets, or behavior. Do not add group captions or groups that were not observed and retained. Do not use square or checkbox-like placeholders as icons, and do not use rounded navigation items unless the accepted Contract retains that treatment. A meaningful icon is allowed only for a declared semantic slot; when a contract-declared expandable parent requires a disclosure indicator but no asset is supplied, use a meaningful `currentColor` inline SVG chevron/caret, right when collapsed and down when expanded; the parent control has a discernible name and synchronized accessible state. Otherwise omit it. Never use this fallback for captions or leaves, as text glyphs, or as placeholder boxes. `Not exercised` is acceptable only with the recorded concrete justification; it is never evidence that the claim was preserved.
+Fixture constraints: use a fixture only in a declared semantic slot. Mark its value neutral and synthetic. Do not use a fixture to reproduce source display copy, product identity, destination data, item count, hierarchy shape, exact visual treatment, assets, or behavior. Do not add group captions or groups that were not observed and retained. Do not use square or checkbox-like placeholders as icons, and do not use rounded navigation items unless the accepted Contract retains that treatment. A meaningful icon is allowed only for a declared semantic slot; when a contract-declared expandable parent requires a disclosure indicator and the source cannot establish indicator treatment, use the explicit `method-default` meaningful `currentColor` inline SVG chevron/caret, right when collapsed and down when expanded; the parent control has a discernible name and synchronized accessible state. Otherwise omit it. Never use this fallback for captions or leaves, as text glyphs, or as placeholder boxes, and never invent a parent. `Not exercised` is acceptable only with the recorded concrete justification; it is never evidence that the claim was preserved.
 
 ## Completion gate
 
