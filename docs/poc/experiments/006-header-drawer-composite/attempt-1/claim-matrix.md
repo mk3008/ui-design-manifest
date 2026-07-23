@@ -1,7 +1,7 @@
 ---
 type: Semantic Claim Matrix
 title: Header–Drawer composite reconstruction claims
-description: Source-blind claims for static comparison and later semantic re-extraction.
+description: Evaluator-only source-blind claims for static comparison and re-extraction.
 status: draft
 source: authored
 ---
@@ -16,3 +16,5 @@ source: authored
 | `HD6` | Header title and orientation remain continuous across state-specific captures. | all | exercised |
 | `HD7` | The Drawer-to-content relation is visibly represented only as supplied by the Contract. | all | exercised |
 | `HD8` | Focus, keyboard, motion, persistence, presentation, backdrop, and viewport policy are not simulated without input. | all | not exercised |
+
+This matrix is not an Implementer input.

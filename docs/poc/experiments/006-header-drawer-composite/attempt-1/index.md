@@ -8,4 +8,10 @@ source: authored
 
 # Source-blind bundle
 
-Read the [Manifest](manifest.md), [Application Input Contract](application-input-contract.md), [fixture trace](fixture-trace.md), [claim matrix](claim-matrix.md), and [Implementer apply packet](implementer-apply-packet.md). This bundle is independently usable and contains only source-blind application guidance.
+## Implementer input
+
+Read only the [Manifest](manifest.md), [Application Input Contract](application-input-contract.md), and [apply instruction](apply-instruction.md). These three files are independently generatable source-blind application guidance.
+
+## Evaluator material
+
+[Fixture trace](fixture-trace.md) and [claim matrix](claim-matrix.md) remain source-blind but are evaluator-only.

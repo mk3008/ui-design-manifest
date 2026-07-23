@@ -6,18 +6,19 @@ status: draft
 source: authored
 ---
 
-# Required declarations
+# Static calibration inputs
 
-| Slot | Required declaration | Unknown handling |
-| --- | --- | --- |
-| `patternSelection` | `header-hidden` or `drawer-rail`; adaptive or always-visible cases are separately classified. | Stop for decision. |
-| `drawerSide` | `left` or `right`. | Stop for decision. |
-| `initialState` and `allowedStates` | One declared initial state and only valid states for the selected policy. | Stop for decision. |
-| `triggerOwner` and `triggerPlacement` | The single authoritative owner region and placement for each state. | Omit dependent control. |
-| `closedRepresentation` | `fully-hidden` for Pattern A or `icon-rail` for Pattern B. | Stop for decision. |
-| `presentation`, `contentDisplacement`, `backdrop` | Independent product declarations. | Use pre-existing product fallback or stop. |
-| `viewportMapping` | Optional mapping from viewport to declared mode; no inferred breakpoint. | Mark unresolved. |
-| `persistence` | Product-owned retention rule. | Mark unresolved. |
-| `accessibleControlRelationship` | Accessible name, controlled region identifier, and expanded-state relationship for each control. | Omit dependent control. |
+Use a left Drawer with `inline` presentation, `content-displaced` relation, and `no-backdrop`. State persistence, viewport mapping, focus, keyboard, and motion are unresolved and must not be simulated.
 
-`drawerShortcutIcons` is required only for Pattern B and declares neutral labels plus meaningful inline `currentColor` SVG semantics. The Contract must prohibit duplicate independent controllers unless an explicit synchronization contract identifies the authoritative control per state.
+| Witness | Initial / allowed state | Sole controller and placement | Controlled region / accessible relationship |
+| --- | --- | --- | --- |
+| `A-open` | `expanded`; `[expanded, fully-hidden]` | Header, leading position | `header-drawer-a`; name `Open navigation`; `aria-expanded=true`; `aria-controls=header-drawer-a`. |
+| `A-hidden` | `fully-hidden`; `[expanded, fully-hidden]` | Header, leading position | `header-drawer-a`; name `Open navigation`; `aria-expanded=false`; `aria-controls=header-drawer-a`. |
+| `B-open` | `expanded`; `[expanded, icon-rail]` | Drawer, interior top edge | `drawer-b`; name `Change navigation visibility`; `aria-expanded=true`; `aria-controls=drawer-b`. |
+| `B-rail` | `icon-rail`; `[expanded, icon-rail]` | Drawer, interior top edge | `drawer-b`; name `Change navigation visibility`; `aria-expanded=false`; `aria-controls=drawer-b`. |
+
+For the exercised patterns, an unknown controller placement or accessible relationship means stop for decision; do not omit the sole controller. Pattern A has `header-hidden` selection and `fully-hidden` closure. Pattern B has `drawer-rail` selection and `icon-rail` closure. Duplicate independent controllers are prohibited.
+
+# Neutral fixture inputs
+
+Use the same Header title `Workspace` and navigation in every witness: expanded parent `Parent A` with child `Child A`, top-level leaf `Leaf A`, independent direct item `Direct A`, and current/non-current comparison with current item `Parent A`. Other rows are non-current. Pattern B retains two named shortcuts, `Home` and `Files`, each with a meaningful inline `currentColor` SVG. Use no caption, badge, count, permission, status, or product identity.
