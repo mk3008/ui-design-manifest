@@ -14,9 +14,13 @@ source: authored
 | Trigger existence | | |
 | Trigger owner region | | |
 | Trigger placement | | |
+| Owner and slot stability | | |
+| Title/landmark anchor stability | | |
 | Trigger visibility by state | | |
 | Open state | | |
 | Closed representation | | |
+| Dismiss-vs-compact action semantics | | |
+| Icon direction | | |
 | Presentation | | |
 | Content displacement | | |
 | Backdrop | | |

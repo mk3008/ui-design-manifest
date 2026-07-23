@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Header–Drawer composite — human review, attempt 3</title>
+  <style>body{max-width:1100px;margin:32px auto;padding:0 20px;font:16px/1.45 system-ui,sans-serif;color:#17202b} .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}figure{margin:0;border:1px solid #d7dde5;padding:10px}img{display:block;width:100%;height:auto}figcaption{margin-top:8px;font-weight:650}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+  <main>
+    <h1>Header–Drawer correction review</h1>
+    <p>Compare each paired static state directly. Pattern A keeps the Header control and title in the same positions while only the Drawer disappears. Pattern B uses a left chevron to compact a left Drawer and a right chevron to expand the retained rail.</p>
+    <div class="grid">
+      <figure><img src="implementation-attempt-2/A-open.png" alt="Pattern A open: Header control, Workspace title, and expanded Drawer"><figcaption>A-open</figcaption></figure>
+      <figure><img src="implementation-attempt-2/A-hidden.png" alt="Pattern A hidden: same Header control and Workspace title, with Drawer absent"><figcaption>A-hidden</figcaption></figure>
+      <figure><img src="implementation-attempt-2/B-open.png" alt="Pattern B open: Drawer with left-pointing compact control at its trailing top edge"><figcaption>B-open</figcaption></figure>
+      <figure><img src="implementation-attempt-2/B-rail.png" alt="Pattern B rail: retained icon rail with right-pointing expand control"><figcaption>B-rail</figcaption></figure>
+    </div>
+    <p>Wide and narrow captures are static comparison evidence only; they do not establish a responsive mode policy.</p>
+  </main>
+</body>
+</html>

@@ -12,12 +12,12 @@ Use a left Drawer with `inline` presentation, `content-displaced` relation, and 
 
 | Witness | Initial / allowed state | Sole controller and placement | Controlled region / accessible relationship |
 | --- | --- | --- | --- |
-| `A-open` | `expanded`; `[expanded, fully-hidden]` | Header, leading position | `header-drawer-a`; name `Open navigation`; `aria-expanded=true`; `aria-controls=header-drawer-a`. |
-| `A-hidden` | `fully-hidden`; `[expanded, fully-hidden]` | Header, leading position | `header-drawer-a`; name `Open navigation`; `aria-expanded=false`; `aria-controls=header-drawer-a`. |
-| `B-open` | `expanded`; `[expanded, icon-rail]` | Drawer, interior top edge | `drawer-b`; name `Change navigation visibility`; `aria-expanded=true`; `aria-controls=drawer-b`. |
-| `B-rail` | `icon-rail`; `[expanded, icon-rail]` | Drawer, interior top edge | `drawer-b`; name `Change navigation visibility`; `aria-expanded=false`; `aria-controls=drawer-b`. |
+| `A-open` | `expanded`; `[expanded, fully-hidden]` | Header, stable leading slot; stable title anchor | `header-drawer-a`; name `Open navigation`; `aria-expanded=true`; `aria-controls=header-drawer-a`. |
+| `A-hidden` | `fully-hidden`; `[expanded, fully-hidden]` | Header, same stable leading slot; same title anchor | `header-drawer-a`; name `Open navigation`; `aria-expanded=false`; `aria-controls=header-drawer-a`. |
+| `B-open` | `expanded`; `[expanded, icon-rail]` | Drawer, interior top edge at trailing/top edge; left-pointing collapse chevron | `drawer-b`; name `Compact navigation`; `aria-expanded=true`; `aria-controls=drawer-b`. |
+| `B-rail` | `icon-rail`; `[expanded, icon-rail]` | Drawer, interior top edge; right-pointing expand chevron | `drawer-b`; name `Expand navigation`; `aria-expanded=false`; `aria-controls=drawer-b`. |
 
-For the exercised patterns, an unknown controller placement or accessible relationship means stop for decision; do not omit the sole controller. Pattern A has `header-hidden` selection and `fully-hidden` closure. Pattern B has `drawer-rail` selection and `icon-rail` closure. Duplicate independent controllers are prohibited.
+For the exercised patterns, an unknown controller placement or accessible relationship means stop for decision; do not omit the sole controller. Pattern A has `header-hidden` selection and `fully-hidden` closure, with the Header slot and title anchor stable across its paired witnesses. Pattern B has `drawer-rail` selection and `icon-rail` closure: its one Drawer control compacts left with a left-pointing chevron and expands right with a right-pointing chevron. An X-shaped affordance is reserved only for an explicitly contracted full dismissal with no retained rail. Duplicate independent controllers are prohibited.
 
 # Neutral fixture inputs
 

@@ -12,11 +12,11 @@ Apply a Global Header and primary navigation Drawer using the accepted component
 
 # Pattern A: Header trigger with fully hidden Drawer
 
-The expanded state shows the declared Drawer. In the fully hidden state, the Drawer is absent and the single authoritative reopen control remains in the Header. The Header control's placement, accessible name, `aria-expanded`, and `aria-controls` come from the Contract. Do not add a second Drawer control for this state.
+The expanded state shows the declared Drawer. In the fully hidden state, the Drawer alone is absent while the single authoritative reopen control remains in the same Contract-declared Header slot and the Header title anchor remains unchanged. The Header control's placement, accessible name, `aria-expanded`, and `aria-controls` come from the Contract. Do not add a second Drawer control for this state.
 
 # Pattern B: Drawer control with icon rail
 
-The expanded state shows the declared Drawer control within the Drawer. The compact state retains an icon-only rail with that same single authoritative Drawer control and Contract-declared meaningful icon shortcuts. Do not add a Header trigger for this policy.
+The expanded state shows one declared Drawer control near the Drawer trailing/top edge. Its left-pointing chevron compacts a left Drawer to the retained icon rail. The compact state retains that same single authoritative Drawer control, now with a right-pointing chevron that expands the rail, and Contract-declared meaningful icon shortcuts. Do not add a Header trigger for this policy. Reserve an X-shaped control for a separately Contract-declared full dismissal with no retained rail; it is not the compact/expand control.
 
 # Separate cases
 

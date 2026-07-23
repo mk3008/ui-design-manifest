@@ -11,7 +11,7 @@ source: mixed
 | Pattern | Classification | Bounded evidence |
 | --- | --- | --- |
 | A: Header trigger + fully hidden closure | required-pattern | User-required calibration policy. The Header retains the declared trigger while the Drawer is absent. |
-| B: Drawer control + icon rail closure | required-pattern | User-required calibration policy. The Drawer retains a compact rail, its declared control, and declared icon shortcuts. |
+| B: Drawer control + icon rail closure | required-pattern | User-required calibration policy. One Drawer control compacts a left Drawer with a left-pointing chevron and expands its retained rail with a right-pointing chevron; an X is reserved for full dismissal without a rail. |
 
 # Primary-guidance corroboration
 
