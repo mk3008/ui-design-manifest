@@ -20,7 +20,9 @@ Complete each row before handoff. `Observed` means visibly established; `not obs
 | Grouping and boundaries | Section and control membership | No conditional relationship unless visible |
 | Reading and tab order | Visible reading sequence; tab order classification | Tab sequence is not visible in a static image |
 | Density and rhythm | Qualitative repetition and separation | No measurements |
-| Actions | Primary/secondary ownership and placement | No action outcome |
+| Action responsibility | Visible action ownership and role | No action outcome |
+| Action-group alignment | Visible horizontal or regional alignment of the action set | No action behavior |
+| Action order | Visible order within the action set | When Clear or order is absent, use the authored default Search then Clear without claiming observation |
 | State visibility | Visible defaults, selections, or empty state | No state model or update trigger |
 | Help and validation | Visible inline help or error responsibility | Absence does not prove none exists |
 | Advanced or saved conditions | Visible collapse, expansion, or saving responsibility | Do not invent controls |

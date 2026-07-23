@@ -13,11 +13,11 @@ requires:
 
 Use the available main-content width for a single condition panel. Maintain a repeated horizontal row rhythm: each row owns a field choice, comparison choice, value entry, and enabled state. Keep those responsibilities aligned so a person can scan and adjust multiple conditions without treating each row as an independent card.
 
-The panel owns adding another condition. Place the primary apply action after the condition work, and distinguish the supplied clear or reset action as secondary. Establish a clear regional boundary before any separately owned results content without prescribing the results themselves.
+Place the left-aligned primary Search action before the secondary Clear action. Establish a clear regional boundary before any separately owned results content without prescribing the results themselves.
 
 # Unresolved
 
-The panel does not establish product terminology, an exact number of conditions, a per-row removal affordance, value formats, requiredness, validation, action outcomes, result updates, saved conditions, keyboard or focus behavior, motion, persistence, or narrow-layout transformation. At a narrow width, preserve the declared row responsibilities through a product-owned transformation; do not infer a particular wrapping, stacking, hiding, or overflow rule.
+The panel does not establish product terminology, a per-row removal affordance, value formats, requiredness, validation, action outcomes, result updates, saved conditions, keyboard or focus behavior, motion, persistence, or narrow-layout transformation. At a narrow width, preserve the declared row responsibilities through a product-owned transformation; do not infer a particular wrapping, stacking, hiding, or overflow rule.
 
 # Relationships
 

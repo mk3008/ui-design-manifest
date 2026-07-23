@@ -26,7 +26,9 @@ scope: Declared visible condition-entry region and its immediate results boundar
 | Reading order | observed | A stable top-to-bottom row sequence and left-to-right within-row sequence are visible. |
 | Tab order | unresolved | Not observable in a static image. |
 | Density and rhythm | observed | Multiple aligned rows make a compact, repeated scan rhythm across wide content. |
-| Primary/secondary actions | observed | The panel has apply responsibility and a distinct clear or reset responsibility; visual outcome is not established. |
+| Action responsibility | observed | The panel has Search and Clear responsibility; action outcomes are not established. |
+| Action-group alignment | observed | The action group is left-aligned within the panel. |
+| Action order | observed | Search appears before Clear in the action group. |
 | Default/state visibility | observed | Enabled states and populated control states are visible; their data model is unresolved. |
 | Inline help | not observed | No reusable help responsibility is established. |
 | Validation/error responsibility | unresolved | No validation or error state is visible. |
@@ -36,11 +38,11 @@ scope: Declared visible condition-entry region and its immediate results boundar
 | Results relationship | observed | A regional boundary separates the condition panel from lower result content; result ownership and updates are unresolved. |
 | Narrow/responsive policy | unresolved | The static wide image does not establish a narrow transformation. |
 | Focus/keyboard/motion | unresolved | Not observable in a static image. |
-| Application Input Contract needs | observed | Product-owned labels, values, enabled state, row lifecycle, action behavior, and results model must be supplied externally. |
+| Application Input Contract needs | observed | Product-owned labels, values, enabled state, action behavior, and results model must be supplied externally. |
 
 # Abstraction decisions
 
-Preserve wide horizontal use, repeated row rhythm, row-level responsibility, add-condition ownership, apply versus clear/reset distinction, and the boundary to results. Exclude a per-row removal control, product vocabulary, exact condition count, dimensions, colors, copy, and all non-static behavior.
+Preserve wide horizontal use, repeated row rhythm, row-level responsibility, left-aligned Search then Clear action order, and the boundary to results. Exclude a per-row removal control, product vocabulary, dimensions, colors, copy, and all non-static behavior.
 
 # Information loss and additional input needs
 

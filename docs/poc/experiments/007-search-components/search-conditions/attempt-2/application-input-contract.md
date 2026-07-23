@@ -28,13 +28,12 @@ Each row has a visible label or caption associated with every interactive contro
 
 | ID | Declaration | Ownership | Visual role | Behavior owner |
 | --- | --- | --- | --- | --- |
-| add-condition | One supplied action that adds a declared row | Condition panel | Secondary | Application owner |
-| apply-conditions | One supplied Apply action | Condition panel | Primary | Application owner supplies outcome and update trigger |
-| clear-conditions | One supplied Clear or reset action | Condition panel | Secondary | Application owner supplies reset scope and update trigger |
+| search-conditions | One supplied Search action | Condition panel | Primary, first in the left-aligned action group | Application owner supplies outcome and update trigger |
+| clear-conditions | One supplied Clear action | Condition panel | Secondary, after Search in the left-aligned action group | Application owner supplies reset scope and update trigger |
 
 # Static fixture allowance
 
-For a non-product static exercise only, neutral fixtures may fill the already declared semantic slots: `Attribute`, `Comparison`, `Text value`, `Enabled`, `Add condition`, `Apply`, and `Clear`. They demonstrate row responsibility and association only; they do not supply domain meaning, destinations, results, or behavior.
+For a non-product static exercise only, neutral fixtures may fill the already declared semantic slots: `Attribute`, `Comparison`, `Text value`, `Enabled`, `Search`, and `Clear`. They demonstrate row responsibility and association only; they do not supply domain meaning, destinations, results, or behavior.
 
 # Unresolved inputs
 
