@@ -1,3 +1,12 @@
+---
+type: Bundle Index
+title: Search conditions bundle
+description: Progressive discovery index for one bounded condition-entry handoff.
+status: draft
+source: authored
+scope: One bounded static condition-entry region.
+---
+
 # Search conditions bundle
 
 This source-blind handoff covers one bounded static condition-entry region.

@@ -17,7 +17,7 @@ function Forbid-Text([string]$relativePath, [string]$pattern) {
   if ((Test-Path $path) -and (Select-String -Path $path -Pattern $pattern -Quiet)) { Add-Failure "${relativePath}: prohibited '$pattern'" }
 }
 
-$concepts = @('manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')
+$concepts = @('manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md','index.md')
 foreach ($name in $concepts) { Require-Text "$bundle/$name" '^---$'; Require-Text "$bundle/$name" '^type:' }
 foreach ($name in @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')) { Require-Text "$method/$name" '^---$'; Require-Text "$method/$name" '^type:' }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) { if ($file.Name -notin $allowedBundle) { Add-Failure "invalid allowlist path: $($file.FullName)" } }
