@@ -18,9 +18,13 @@ Human review required. The source-blind output preserves the bounded condition-e
 | Source independence | preserved | The Manifest, Contract, and apply instruction supplied role-level guidance; the implementation uses only their neutral static fixtures. |
 | Intent preservation | preserved | A bounded group with selections, text entry, boolean caption, compact reading order, and group-owned primary action remains recoverable. |
 | Abstraction quality | preserved | The handoff retains reusable structural responsibility while excluding product-specific prose, nouns, colors, exact dimensions, and exact layout. |
-| Application quality | partial | Visible labels, checkbox caption, grouping, compact density, and primary-action ownership are clear in wide and narrow static evidence; behavior, validation, keyboard/focus, and state transitions are not exercised. |
+| Application quality — exercised static scope | preserved | Visible labels, checkbox caption, grouping, compact density, and primary-action ownership are clear in wide and narrow static evidence. |
+| Interaction, validation, focus/keyboard, and state transitions | not exercised | The review did not exercise these behaviors; static images and HTML association evidence cannot establish their runtime quality. |
+| Source-responsive claims | not exercised | The available evidence does not establish a source responsive policy or transformation. |
 | Unsupported invention | preserved | No secondary action, advanced condition, result UI, product copy, validation, or unsupported responsive rule was added. |
-| Information loss | not applicable | Omitted source-specific wording, visual treatment, exact placement, and exact dimensions are intentional abstraction exclusions, not required clone data. |
+| Information loss — intentional source-specific exclusions | not applicable | Omitted source-specific wording, visual treatment, exact placement, and exact dimensions are intentional abstraction exclusions, not required clone data. |
+| Information loss — unresolved or not-exercised claims | unresolved | Behavior and source-responsive policy remain unresolved or not exercised rather than being treated as lost static intent. |
+| Information loss — missed abstract intent | preserved | No missed abstract intent was found in the bounded group responsibility, role inventory, label association, compact rhythm, or primary-action ownership. |
 | Requiredness, validation, and dependencies | unresolved | Static evidence and the Contract do not establish them. |
 | Results relationship | not applicable | The bounded region explicitly excludes results. |
 
