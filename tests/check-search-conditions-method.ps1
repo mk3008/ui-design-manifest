@@ -4,6 +4,7 @@ $failures = [System.Collections.Generic.List[string]]::new()
 $bundle = 'docs/poc/experiments/007-search-components/search-conditions/attempt-1'
 $method = 'docs/poc/methods/search-conditions'
 $allowedBundle = @('manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md','index.md')
+$allowedImplementation = @('implementation/initial.html','implementation/initial.css','implementation/wide.png','implementation/narrow.png','implementation/implementation-report.md')
 $allowedMethod = @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')
 
 function Add-Failure([string]$message) { $failures.Add($message) }
@@ -20,7 +21,10 @@ function Forbid-Text([string]$relativePath, [string]$pattern) {
 $concepts = @('manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md','index.md')
 foreach ($name in $concepts) { Require-Text "$bundle/$name" '^---$'; Require-Text "$bundle/$name" '^type:' }
 foreach ($name in @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')) { Require-Text "$method/$name" '^---$'; Require-Text "$method/$name" '^type:' }
-foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) { if ($file.Name -notin $allowedBundle) { Add-Failure "invalid allowlist path: $($file.FullName)" } }
+foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) {
+  $relativePath = $file.FullName.Substring((Join-Path $root $bundle).Length).TrimStart('\', '/') -replace '\\', '/'
+  if ($relativePath -notin $allowedBundle -and $relativePath -notin $allowedImplementation) { Add-Failure "invalid allowlist path: $($file.FullName)" }
+}
 foreach ($file in Get-ChildItem (Join-Path $root $method) -Recurse -File) { if ($file.Name -notin $allowedMethod) { Add-Failure "invalid allowlist path: $($file.FullName)" } }
 Require-Text "$bundle/manifest.md" 'label'
 Require-Text "$bundle/application-input-contract.md" 'Boolean choice'
@@ -33,7 +37,10 @@ foreach ($name in @('manifest.md','application-input-contract.md','apply-instruc
 foreach ($name in @('manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')) { Require-Text "$bundle/$name" '^---$' }
 foreach ($link in @('manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')) { Require-Text "$bundle/$link" '\.md\)' }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -Filter *.md) { foreach ($match in [regex]::Matches((Get-Content -Raw $file.FullName), '\]\(([^)#]+\.md)(?:#[^)]+)?\)')) { if (-not (Test-Path (Join-Path $file.DirectoryName $match.Groups[1].Value))) { Add-Failure "broken local link: $($file.FullName) -> $($match.Groups[1].Value)" } } }
-if (Get-ChildItem -Path (Join-Path $root 'docs/poc/experiments/007-search-components') -Recurse -File -Include *.png,*.jpg,*.jpeg,*.gif,*.webp -ErrorAction SilentlyContinue) { Add-Failure 'oracle or image file found in experiment directory' }
+foreach ($image in Get-ChildItem -Path (Join-Path $root 'docs/poc/experiments/007-search-components') -Recurse -File -Include *.png,*.jpg,*.jpeg,*.gif,*.webp -ErrorAction SilentlyContinue) {
+  $relativePath = $image.FullName.Substring((Join-Path $root $bundle).Length).TrimStart('\', '/') -replace '\\', '/'
+  if ($relativePath -notin @('implementation/wide.png','implementation/narrow.png')) { Add-Failure "oracle or unapproved image file found: $($image.FullName)" }
+}
 
 if ($failures.Count -gt 0) { $failures | ForEach-Object { Write-Error $_ }; exit 1 }
 Write-Output 'Search Conditions method static checks passed.'

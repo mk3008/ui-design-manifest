@@ -16,6 +16,7 @@ unresolved_gaps: "Application-owned options, behavior, validation, and narrow po
 guidance_trace: "One bordered condition group, labeled controls in order, primary Apply action after conditions."
 fixture_trace: "Contract static fixture allowance only."
 unsupported_invention: "None."
+correction: "Removed the unsupplied visible heading; static-check allowlist now permits only the five required implementation evidence files."
 ---
 
-The local static render contains only the declared condition controls and primary action. The wide and narrow captures show the same single-column component; no separate narrow mode was added.
+The local static render contains only the declared condition controls and primary action. The wide and narrow captures show the same single-column component; no separate narrow mode was added. The correction removed the visible group heading because it was not supplied by the Contract.
