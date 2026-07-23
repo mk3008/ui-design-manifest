@@ -1,24 +1,36 @@
-# Global Header distillation method
+---
+type: Header Observation Method
+title: Global Header observation method
+description: Image-first, source-blind method for extracting a bounded global Header.
+status: active
+source: authored
+---
 
-## Boundary
+# Purpose
 
-This is extraction and evaluation method material, not a standard application input. Source observations, captures, correction logs, and evidence matrices may be used only in the test context. A resulting manifest or application packet must contain only source-independent abstractions and must report gaps rather than direct an implementer back to these materials.
+This method records a product-wide Global Header without turning a source UI into an application dependency. It is extraction and evaluation guidance only; the resulting Manifest and Implementer packet must be source-blind.
 
-This method extracts a product-wide Global Header as a bounded UI region. It is narrower than a complete application shell and excludes project context, local navigation, Drawer contents, and page content.
+# Boundary and responsibility
 
-## Use
+Include the Header region, its product or screen identity title slot, and any visibly established global navigation, search, utility, account, or Drawer-trigger roles. Exclude page-local context, breadcrumbs, local navigation, Drawer body content, main content, and footer.
 
-1. Record source evidence in the [evidence matrix](header-evidence-matrix.md).
-2. Apply the [extraction prompt](header-extraction-prompt.md) with the [extraction template](header-extraction-template.md).
-3. Evaluate the first pass with the [rubric](header-first-pass-rubric.md).
-4. Record material human corrections in the [correction log](header-correction-log.md).
+The title slot is required. Its value, destination, and all optional roles are supplied by the Application Input Contract. Do not turn a missing optional role into a default.
 
-The method preserves observation class and unknowns. It records only coarse role order and material visual roles, not source labels, implementation details, measurements, exhaustive colors, or unobserved responsive and interaction behavior.
+When a visible Drawer trigger is established, Header owns its placement, visible treatment, and accessible name. Drawer owns its content, presentation, current visibility, closed representation, persistence, and transitions. Left and right Drawer possibilities are independent Contract inputs. Never create a Drawer trigger, target side, state, or behavior unless it is observed or Contract-supplied.
 
-The Header–Drawer seam is explicit: Header owns a visible Drawer trigger's placement, treatment, and accessible name; Drawer owns its content, presentation, closed representation, visibility state, and persistence. A Header trigger establishes `outside-drawer` toggle location only when that relationship is visibly supported in the same context. Trigger absence or presence is contextual and must not be inferred across contexts.
+# Use
 
-## Semantic round-trip review
+1. Record extraction-only facts with the [observation schema](header-observation-schema.md).
+2. Use the [extraction prompt](header-extraction-prompt.md) and [template](header-extraction-template.md).
+3. Apply the [first-pass rubric](header-first-pass-rubric.md).
+4. Keep prior evidence matrices and experiments historical; do not overwrite them.
 
-Use the [shared source-blind semantic round-trip review](../semantic-roundtrip-review.md) after a Header Contract is ready for bounded static evidence. It requires a claim matrix that keeps observed intent, Manifest claim, Application Input Contract need, fixture support, generated evidence, and a source-blind re-extraction result separate. For Header scope, at least one declared material Header role relationship must be visibly exercised and preserved; a blank header boundary cannot pass. A visible Header-owned Drawer trigger may be exercised only as its declared trigger-to-controlled-region relationship. Its placement must not be used to invent Drawer presentation, closed representation, persistence, or other state.
+Every applicable observation axis has one status: `observed`, `not observed`, `unresolved`, or `not applicable`. Source-blind statements separately use one provenance: `observed`, `method-default`, or `product input required`.
 
-The accepted calibration and cross-site holdout are recorded in [Experiment 003](../../experiments/003-header-distillation/README.md).
+# Static-image limit
+
+A still image can support region boundary, title prominence, grouping, order, density, surface/edge relation, visible placement, and icon responsibility. It cannot prove a target, transition, persistence, responsive transformation, focus, keyboard behavior, motion, or overflow behavior. Preserve those gaps.
+
+# Round-trip gate
+
+A source-blind static fixture must be visibly nonblank and permit re-extraction of each material exercised claim. It must use meaningful inline `currentColor` SVG for icon-only controls and put the accessible name on the interactive control. Text glyphs, empty boxes, placeholder shapes, and source-specific icon names are not acceptable.
