@@ -45,7 +45,7 @@ foreach ($link in @('manifest.md','application-input-contract.md','apply-instruc
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -Filter *.md) { foreach ($match in [regex]::Matches((Get-Content -Raw $file.FullName), '\]\(([^)#]+\.md)(?:#[^)]+)?\)')) { if (-not (Test-Path (Join-Path $file.DirectoryName $match.Groups[1].Value))) { Add-Failure "broken local link: $($file.FullName) -> $($match.Groups[1].Value)" } } }
 foreach ($image in Get-ChildItem -Path (Join-Path $root 'docs/poc/experiments/007-search-components') -Recurse -File -Include *.png,*.jpg,*.jpeg,*.gif,*.webp -ErrorAction SilentlyContinue) {
   $relativePath = $image.FullName.Substring((Join-Path $root $bundle).Length).TrimStart('\', '/') -replace '\\', '/'
-  if ($relativePath -notin @('implementation/wide.png','implementation/narrow.png')) { Add-Failure "oracle or unapproved image file found: $($image.FullName)" }
+  if ($relativePath -notin @('implementation/wide.png','implementation/narrow.png','implementation-action-policy/wide.png','implementation-action-policy/narrow.png')) { Add-Failure "oracle or unapproved image file found: $($image.FullName)" }
 }
 
 if ($failures.Count -gt 0) { $failures | ForEach-Object { Write-Error $_ }; exit 1 }
