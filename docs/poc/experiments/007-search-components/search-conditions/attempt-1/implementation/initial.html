@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search conditions</title>
+    <link rel="stylesheet" href="initial.css">
+  </head>
+  <body>
+    <main class="canvas">
+      <section class="condition-group" aria-labelledby="conditions-title">
+        <h1 id="conditions-title">Search conditions</h1>
+        <form>
+          <div class="field">
+            <label for="condition-kind">Criterion</label>
+            <select id="condition-kind" name="condition-kind">
+              <option selected>Option 1</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comparison">Match rule</label>
+            <select id="comparison" name="comparison">
+              <option selected>Option 1</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="condition-value">Value</label>
+            <input id="condition-value" name="condition-value" type="text">
+          </div>
+          <label class="choice" for="related-content">
+            <input id="related-content" name="related-content" type="checkbox">
+            <span>Include related content</span>
+          </label>
+          <button type="button">Apply</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
