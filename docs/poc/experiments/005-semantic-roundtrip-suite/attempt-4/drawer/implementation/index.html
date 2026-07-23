@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Static Drawer fixture</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell" aria-label="Static Drawer fixture">
+      <aside class="drawer" aria-label="Primary navigation">
+        <button class="visibility-control" type="button" aria-label="Change navigation visibility" data-state-owner="application">
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 4.5h10M3 8h10M3 11.5h10"/></svg>
+          <span>Change navigation visibility</span>
+        </button>
+        <nav aria-label="Primary navigation">
+          <ul class="navigation-list">
+            <li class="navigation-item parent-item">
+              <button class="navigation-row is-current disclosure" type="button" aria-current="page" aria-expanded="true" aria-controls="children-parent-a">
+                <span class="current-marker" aria-hidden="true"></span>
+                <span class="row-label">Parent A</span>
+                <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4"/></svg>
+              </button>
+              <ul id="children-parent-a" class="child-list" aria-label="Parent A items">
+                <li class="navigation-item child-item"><span class="navigation-row"><span class="row-label">Child A</span></span></li>
+              </ul>
+            </li>
+            <li class="navigation-item"><span class="navigation-row"><span class="row-label">Leaf A</span></span></li>
+            <li class="navigation-item"><span class="navigation-row"><span class="row-label">Direct A</span></span></li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="workspace" aria-label="Workspace"></section>
+    </main>
+  </body>
+</html>
