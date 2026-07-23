@@ -21,7 +21,9 @@ foreach ($term in $forbidden) { if ($all.Contains($term)) { throw "Source-bounda
 $manifest = Get-Content -Raw (Join-Path $bundle 'manifest.md')
 if (-not $manifest.Contains('single authoritative') -or -not $manifest.Contains('Do not add a second Drawer control') -or -not $manifest.Contains('Do not add a Header trigger')) { throw 'Duplicate-controller guard is missing' }
 $implementation = Join-Path $bundle 'implementation-attempt-2'
-foreach ($file in @('index.html','styles.css','A-open.png','A-hidden.png','B-open.png','B-rail.png','wide.png','narrow.png')) { if (-not (Test-Path -LiteralPath (Join-Path $implementation $file))) { throw "Missing corrected implementation artifact: $file" } }
+foreach ($file in @('index.html','styles.css','implementation-report.md','A-open.png','A-hidden.png','B-open.png','B-rail.png','wide.png','narrow.png')) { if (-not (Test-Path -LiteralPath (Join-Path $implementation $file))) { throw "Missing corrected implementation artifact: $file" } }
+$implementationReport = Get-Content -Raw (Join-Path $implementation 'implementation-report.md')
+if ($implementationReport -notmatch '(?s)^---\s*\r?\ntype:') { throw 'Corrected implementation report is missing front matter' }
 $html = Get-Content -Raw (Join-Path $implementation 'index.html')
 $css = Get-Content -Raw (Join-Path $implementation 'styles.css')
 foreach ($needle in @('Compact navigation','Expand navigation','collapse-icon','expand-icon','header-drawer-a','drawer-b')) { if (-not $html.Contains($needle)) { throw "Corrected implementation is missing: $needle" } }
