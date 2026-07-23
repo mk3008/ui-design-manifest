@@ -11,9 +11,11 @@ $files = @(
   (Join-Path $method 'header-first-pass-rubric.md'),
   (Join-Path $bundle 'manifest.md'),
   (Join-Path $bundle 'application-input-contract.md'),
-  (Join-Path $bundle 'extraction-evaluation-record.md'),
+  (Join-Path $bundle 'fixture-trace.md'),
   (Join-Path $bundle 'claim-matrix.md'),
-  (Join-Path $bundle 'implementer-apply-packet.md')
+  (Join-Path $bundle 'implementer-apply-packet.md'),
+  (Join-Path $bundle 'implementer-prompt.md'),
+  (Join-Path $bundle 'index.md')
 )
 
 foreach ($file in $files) {
@@ -24,7 +26,7 @@ foreach ($file in $files) {
 
 $all = ($files | ForEach-Object { Get-Content -Raw -LiteralPath $_ }) -join "`n"
 $requirements = @(
-  'single static image', 'URL used', 'identityTitle', 'globalNavigation', 'globalSearch', 'utilities', 'accountActions',
+  'Verify the supplied image digest', 'URL was used', 'identityTitle', 'globalNavigation', 'globalSearch', 'utilities', 'accountActions',
   'observed`, `not observed`, `unresolved`, or `not applicable', 'observed`, `method-default`, or `product input required',
   'currentColor', 'accessible name', 'Drawer', 'closed representation', 'persistence', 'responsive', 'keyboard', 'motion', 'overflow',
   'semantic re-extraction', 'visibly nonblank'

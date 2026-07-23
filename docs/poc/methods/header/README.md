@@ -34,3 +34,7 @@ A still image can support region boundary, title prominence, grouping, order, de
 # Round-trip gate
 
 A source-blind static fixture must be visibly nonblank and permit re-extraction of each material exercised claim. It must use meaningful inline `currentColor` SVG for icon-only controls and put the accessible name on the interactive control. Text glyphs, empty boxes, placeholder shapes, and source-specific icon names are not acceptable.
+
+# Verification boundary
+
+`tests/check-header-method.ps1` is safe for source-blind review: it reads only generic Header method files and Implementer-visible source-blind bundle files. `tests/check-header-source-aware-record.ps1` is Extractor/Evaluator-only: it validates the opaque extraction record separately and must not be included in a source-blind packet.

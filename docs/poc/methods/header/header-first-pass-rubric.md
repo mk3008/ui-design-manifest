@@ -23,3 +23,5 @@ Use `sufficient`, `partial`, `missing`, `unsupported`, `source-specific`, or `ou
 | Static limits | Responsive, focus, keyboard, motion, and overflow are unresolved unless visibly proven. |
 | Round trip | A nonblank fixture exercises material claims and permits semantic re-extraction; unproved Drawer semantics are not exercised. |
 | Source boundary | No source identity, copied copy, path, URL, icon name, or searchable identifier enters the source-blind handoff. |
+
+Run `tests/check-header-method.ps1` for source-blind review. Run `tests/check-header-source-aware-record.ps1` only as Extractor/Evaluator verification of the separate opaque record.
