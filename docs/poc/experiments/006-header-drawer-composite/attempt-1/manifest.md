@@ -16,7 +16,7 @@ The expanded state shows the declared Drawer. In the fully hidden state, the Dra
 
 # Pattern B: Drawer control with icon rail
 
-The expanded state shows one declared Drawer control near the Drawer trailing/top edge. Its left-pointing chevron compacts a left Drawer to the retained icon rail. The compact state retains that same single authoritative Drawer control, now with a right-pointing chevron that expands the rail, and Contract-declared meaningful icon shortcuts. Do not add a Header trigger for this policy. Reserve an X-shaped control for a separately Contract-declared full dismissal with no retained rail; it is not the compact/expand control.
+The expanded state shows one declared Drawer control near the Drawer trailing/top edge. Its left-pointing chevron compacts a left Drawer to the retained icon rail. The compact state retains that same single authoritative Drawer control, now with a right-pointing chevron that expands the rail, and Contract-declared meaningful icon shortcuts. When the Contract supplies no Drawer-header content, do not invent a title, logo, context selector, search field, or explanatory label. A control-only row may therefore contain only the control; keep it distinct from the first navigation row and no more visually prominent than needed for a clear accessible target. Do not add a Header trigger for this policy. Reserve an X-shaped control for a separately Contract-declared full dismissal with no retained rail; it is not the compact/expand control.
 
 # Separate cases
 
