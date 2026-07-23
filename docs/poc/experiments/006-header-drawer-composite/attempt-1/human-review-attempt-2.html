@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Header–Drawer composite — human review, attempt 2</title>
+</head>
+<body>
+  <main>
+    <h1>HUMAN_BLOCKER — human review required</h1>
+    <p>Bounded reference: Pattern A requires a Header trigger after the Drawer is fully hidden. Pattern B requires a Drawer control retained in an icon rail. This is an image-first, source-blind review.</p>
+
+    <h2>Evidence</h2>
+    <figure><img src="implementation/A-open.png" alt="A-open capture: Header and expanded Drawer"><figcaption>A-open</figcaption></figure>
+    <figure><img src="implementation/A-hidden.png" alt="A-hidden capture under Header/controller observation discrepancy review"><figcaption>A-hidden</figcaption></figure>
+    <figure><img src="implementation/B-open.png" alt="B-open capture: Header and expanded Drawer"><figcaption>B-open</figcaption></figure>
+    <figure><img src="implementation/B-rail.png" alt="B-rail capture: Header and icon rail"><figcaption>B-rail</figcaption></figure>
+    <figure><img src="implementation/wide.png" alt="Wide static capture"><figcaption>wide (capture only)</figcaption></figure>
+    <figure><img src="implementation/narrow.png" alt="Narrow static capture"><figcaption>narrow (capture only)</figcaption></figure>
+
+    <h2>Concise findings</h2>
+    <ul>
+      <li><strong>Conflicted / human review required:</strong> the frozen Stage 1 observation reports no Header/controller in A-hidden, while a parent original-resolution inspection of this exact image reports a dark Header in the top ~64 px, a hamburger near x=39/y=34, and <code>Workspace</code> near x=77/y=34. Do not treat Pattern A as an unqualified machine failure.</li>
+      <li><strong>Conditionally accepted:</strong> B-open/B-rail visibly show Drawer-region control ownership, rail shortcuts, no leading expanded-row icons, a trailing chevron, square current row, and neutral fixture.</li>
+      <li><strong>Unresolved:</strong> images cannot prove accessible names, ARIA values/relationships, controlled IDs, or sole-controller behavior.</li>
+      <li><strong>No unsupported invention observed:</strong> no visible extra caption, badge, count, status, product identity, or declared-unresolved behavior. Wide/narrow do not prove viewport policy.</li>
+    </ul>
+
+    <h2>Human questions and decision choices</h2>
+    <ol>
+      <li>For A-hidden, choose: <strong>accepted</strong> if human inspection confirms the retained Header/controller; <strong>conditionally accepted</strong> if a clarified capture/re-extraction is needed; or <strong>rejected</strong> only if human inspection confirms it is absent under the current Contract.</li>
+      <li>For Pattern B semantics, choose: <strong>accepted</strong> after a source/assistive-technology check proves the named sole controller and ARIA relationship; <strong>conditionally accepted</strong> pending that check; or <strong>rejected</strong> if it cannot be demonstrated.</li>
+      <li>For adaptive behavior, choose: <strong>not applicable</strong> unless product supplies a viewport-to-mode policy; the wide/narrow captures alone are not evidence.</li>
+    </ol>
+  </main>
+</body>
+</html>
