@@ -1,0 +1,90 @@
+:root {
+  color: #18212f;
+  background: #f6f7f9;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 680px;
+  overflow-x: hidden;
+}
+
+.global-header {
+  min-width: 680px;
+  background: #ffffff;
+  border-bottom: 1px solid #cfd5dd;
+  box-shadow: 0 1px 0 rgba(24, 33, 47, 0.03);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  height: 58px;
+  gap: 8px;
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+.identity-title {
+  margin: 0 24px 0 0;
+  color: #142238;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.global-navigation,
+.search-group,
+.utility-group {
+  display: flex;
+  align-items: center;
+}
+
+.search-group {
+  margin-left: 18px;
+  padding-left: 18px;
+  border-left: 1px solid #d9dee5;
+}
+
+.utility-group {
+  margin-left: auto;
+  padding-left: 18px;
+  border-left: 1px solid #d9dee5;
+}
+
+.text-control,
+.icon-control {
+  border: 0;
+  color: #40506a;
+  background: transparent;
+  font: inherit;
+  cursor: default;
+}
+
+.text-control {
+  padding: 7px 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.icon-control {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  place-items: center;
+}
+
+.icon-control svg {
+  width: 18px;
+  height: 18px;
+}
+
+.work-surface {
+  min-height: calc(100vh - 59px);
+  background: #f6f7f9;
+}
