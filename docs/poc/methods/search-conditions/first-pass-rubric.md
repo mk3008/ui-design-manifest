@@ -16,3 +16,7 @@ scope: Reusable method.
 - The Contract, not the source, supplies all product meaning, values, defaults, and behavior.
 - The handoff contains no source identifiers, copied prose, exact visual values, or source-aware links.
 - Unknown behavior is recorded as unresolved; it is not converted into implementation guidance.
+
+# Business calibration eligibility
+
+A business calibration oracle is eligible only when its declared scope visibly exercises purposeful wide-content use, repeated or sufficiently varied conditions, readable field/operator/value responsibility, action responsibility, and the boundary to results. A sparse narrow simple-search form that leaves most wide content unused is rejected or explicitly scoped out of this calibration.

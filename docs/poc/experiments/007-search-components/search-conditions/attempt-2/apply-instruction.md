@@ -12,7 +12,7 @@ requires:
 
 # Allowed inputs
 
-Use only the [Manifest](manifest.md) and [Application Input Contract](application-input-contract.md), plus this instruction. Render the four declared neutral condition rows as one wide, repeated horizontal panel. Associate every field, operator, value, enabled choice, and remove action with a visible label or caption; do not use placeholder-only labels.
+Use only the [Manifest](manifest.md) and [Application Input Contract](application-input-contract.md), plus this instruction. Render the four declared neutral condition rows as one wide, repeated horizontal panel. Associate every field, operator, value, and enabled choice with a visible label or caption; do not use placeholder-only labels.
 
 Keep add-condition with the panel. Render the supplied Apply action as primary and the supplied Clear or reset action as secondary. Mark a boundary before separately owned results content, but do not render results without product inputs.
 

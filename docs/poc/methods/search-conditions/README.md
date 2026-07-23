@@ -21,3 +21,7 @@ Use this method to preserve a condition group's responsibility, labelled control
 # Boundary
 
 Static evidence establishes visible structure only. It cannot establish interaction, conditional logic, validation, focus, keyboard behavior, motion, persistence, or responsive transformation.
+
+# Business calibration source-selection gate
+
+Before using an oracle to calibrate a business condition-entry method, confirm that the bounded visual evidence exercises all of the following: purposeful use of wide main-content space; repeated or sufficiently varied conditions; readable field, operator, and value responsibility; action responsibility; and a visible boundary to results. Reject the source for this calibration, or explicitly narrow its scope, when it is a sparse or narrow simple-search form that leaves most available wide content unused. This gate selects evidence for calibration; it does not turn unobserved behavior into a claim.

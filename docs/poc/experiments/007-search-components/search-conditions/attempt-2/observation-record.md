@@ -19,7 +19,7 @@ scope: Declared visible condition-entry region and its immediate results boundar
 | Axis | Classification | Record |
 | --- | --- | --- |
 | Region responsibility | observed | A local panel supports repeated condition entry and condition-level enablement. |
-| Field inventory | observed | Repeated rows visibly combine field, operator, value, enabled state, and removal responsibility. |
+| Field inventory | observed | Repeated rows visibly combine field, operator, value, and enabled state. |
 | Labels and association | observed | Visible labels or captions are adjacent to the exercised controls and their row roles. |
 | Required indication | not observed | No visible required cue is established. |
 | Grouping and boundaries | observed | Repeated rows belong to one panel, which has a distinct boundary before separately owned lower content. |
@@ -30,7 +30,7 @@ scope: Declared visible condition-entry region and its immediate results boundar
 | Default/state visibility | observed | Enabled states and populated control states are visible; their data model is unresolved. |
 | Inline help | not observed | No reusable help responsibility is established. |
 | Validation/error responsibility | unresolved | No validation or error state is visible. |
-| Conditional dependencies | unresolved | Static evidence does not establish dependencies between rows or values. |
+| Conditional dependencies | unresolved | Static evidence does not establish dependencies between rows or values. A per-row removal affordance is not observed. |
 | Collapsed/advanced conditions | not observed | No such responsibility is visible in scope. |
 | Saved-filter responsibility | not observed | No saving responsibility is visible in scope. |
 | Results relationship | observed | A regional boundary separates the condition panel from lower result content; result ownership and updates are unresolved. |
@@ -40,7 +40,7 @@ scope: Declared visible condition-entry region and its immediate results boundar
 
 # Abstraction decisions
 
-Preserve wide horizontal use, repeated row rhythm, row-level responsibility, add-condition ownership, apply versus clear/reset distinction, and the boundary to results. Exclude product vocabulary, exact condition count, dimensions, colors, copy, and all non-static behavior.
+Preserve wide horizontal use, repeated row rhythm, row-level responsibility, add-condition ownership, apply versus clear/reset distinction, and the boundary to results. Exclude a per-row removal control, product vocabulary, exact condition count, dimensions, colors, copy, and all non-static behavior.
 
 # Information loss and additional input needs
 

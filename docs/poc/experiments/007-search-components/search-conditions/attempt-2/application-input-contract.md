@@ -15,14 +15,14 @@ Render the declared condition rows in the available main-content width as a repe
 
 # Condition-row inventory
 
-Each row has a visible label or caption associated with every interactive control. `Enabled` is a Boolean choice with a visible caption, and `Remove condition` is the row-owned removal responsibility.
+Each row has a visible label or caption associated with every interactive control. `Enabled` is a Boolean choice with a visible caption.
 
-| Row ID | Required supplied field label | Required supplied operator label | Required supplied value label | Enabled caption and state | Remove responsibility |
-| --- | --- | --- | --- | --- | --- |
-| condition-a | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and text value | Required supplied caption and Boolean state | Required supplied accessible label |
-| condition-b | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and selected or text value | Required supplied caption and Boolean state | Required supplied accessible label |
-| condition-c | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and selected or text value | Required supplied caption and Boolean state | Required supplied accessible label |
-| condition-d | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and selected or text value | Required supplied caption and Boolean state | Required supplied accessible label |
+| Row ID | Required supplied field label | Required supplied operator label | Required supplied value label | Enabled caption and state |
+| --- | --- | --- | --- | --- |
+| condition-a | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and text value | Required supplied caption and Boolean state |
+| condition-b | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and selected or text value | Required supplied caption and Boolean state |
+| condition-c | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and selected or text value | Required supplied caption and Boolean state |
+| condition-d | Required supplied label and selected value | Required supplied label and selected value | Required supplied label and selected or text value | Required supplied caption and Boolean state |
 
 # Panel actions
 
@@ -34,7 +34,7 @@ Each row has a visible label or caption associated with every interactive contro
 
 # Static fixture allowance
 
-For a non-product static exercise only, neutral fixtures may fill the already declared semantic slots: `Attribute`, `Comparison`, `Text value`, `Enabled`, `Remove condition`, `Add condition`, `Apply`, and `Clear`. They demonstrate row responsibility and association only; they do not supply domain meaning, destinations, results, or behavior.
+For a non-product static exercise only, neutral fixtures may fill the already declared semantic slots: `Attribute`, `Comparison`, `Text value`, `Enabled`, `Add condition`, `Apply`, and `Clear`. They demonstrate row responsibility and association only; they do not supply domain meaning, destinations, results, or behavior.
 
 # Unresolved inputs
 
