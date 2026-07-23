@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Header–Drawer composite calibration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="canvas" aria-label="Header drawer composite calibration">
+    <header class="global-header">
+      <button class="header-trigger" aria-label="Open navigation" aria-expanded="true" aria-controls="header-drawer-a">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <h1>Workspace</h1>
+    </header>
+    <aside id="header-drawer-a" class="drawer drawer-a" aria-label="Primary navigation">
+      <nav>
+        <a class="nav-row current" href="#parent">Parent A <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a class="nav-row child" href="#child">Child A</a>
+        <a class="nav-row" href="#leaf">Leaf A</a>
+        <a class="nav-row" href="#direct">Direct A</a>
+      </nav>
+    </aside>
+    <aside id="drawer-b" class="drawer drawer-b" aria-label="Primary navigation">
+      <button class="drawer-trigger" aria-label="Change navigation visibility" aria-expanded="true" aria-controls="drawer-b">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav>
+        <a class="nav-row current" href="#parent-b">Parent A <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a class="nav-row child" href="#child-b">Child A</a>
+        <a class="nav-row" href="#leaf-b">Leaf A</a>
+        <a class="nav-row" href="#direct-b">Direct A</a>
+      </nav>
+      <div class="rail-links" aria-label="Shortcuts">
+        <a aria-label="Home" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a>
+        <a aria-label="Files" href="#files"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h5l2 2h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg></a>
+      </div>
+    </aside>
+    <section class="content" aria-label="Content area"><div></div><div></div><div></div></section>
+  </main>
+  <script>
+    const state = new URLSearchParams(location.search).get('state') || 'A-open';
+    document.body.dataset.state = state;
+    const a = document.querySelector('.header-trigger');
+    const b = document.querySelector('.drawer-trigger');
+    a.setAttribute('aria-expanded', state === 'A-hidden' ? 'false' : 'true');
+    b.setAttribute('aria-expanded', state === 'B-rail' ? 'false' : 'true');
+  </script>
+</body>
+</html>
