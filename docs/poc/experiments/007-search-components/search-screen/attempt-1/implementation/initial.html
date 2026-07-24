@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search screen composite</title>
+  <link rel="stylesheet" href="initial.css">
+</head>
+<body>
+  <main class="workspace" aria-label="Search">
+    <h1>Search</h1>
+    <section class="conditions" aria-label="Search conditions">
+      <div class="condition-head" aria-hidden="true"><span>Field</span><span>Comparison</span><span>Value</span><span>Enabled</span></div>
+      <div class="condition-row"><label><span class="visually-hidden">Field</span><select><option>Attribute</option></select></label><label><span class="visually-hidden">Comparison</span><select><option>Comparison</option></select></label><label><span class="visually-hidden">Value</span><input value="Text value"></label><label class="enabled"><input type="checkbox" checked><span>Enabled</span></label></div>
+      <div class="condition-row"><label><span class="visually-hidden">Field</span><select><option>Attribute</option></select></label><label><span class="visually-hidden">Comparison</span><select><option>Comparison</option></select></label><label><span class="visually-hidden">Value</span><input value="Text value"></label><label class="enabled"><input type="checkbox" checked><span>Enabled</span></label></div>
+      <div class="condition-row"><label><span class="visually-hidden">Field</span><select><option>Attribute</option></select></label><label><span class="visually-hidden">Comparison</span><select><option>Comparison</option></select></label><label><span class="visually-hidden">Value</span><input value="Text value"></label><label class="enabled"><input type="checkbox"><span>Enabled</span></label></div>
+      <div class="condition-row"><label><span class="visually-hidden">Field</span><select><option>Attribute</option></select></label><label><span class="visually-hidden">Comparison</span><select><option>Comparison</option></select></label><label><span class="visually-hidden">Value</span><input value="Text value"></label><label class="enabled"><input type="checkbox" checked><span>Enabled</span></label></div>
+      <div class="actions"><button type="button">Search</button><button class="secondary" type="button">Clear</button></div>
+    </section>
+    <section class="results" aria-label="Results">
+      <table>
+        <colgroup><col class="select-col"><col class="text-col"><col class="sorted-col"><col class="number-col"><col></colgroup>
+        <thead><tr><th scope="col"><input aria-label="Select all" type="checkbox"></th><th scope="col">Text</th><th scope="col"><span class="sort">Attribute <span aria-hidden="true">↑</span></span></th><th scope="col" class="numeric">Value</th><th aria-hidden="true"></th></tr></thead>
+        <tbody>
+          <tr class="selected"><td><input aria-label="Select row one" type="checkbox" checked></td><td>Text value</td><td>Text value</td><td class="numeric">128</td><td></td></tr>
+          <tr><td><input aria-label="Select row two" type="checkbox"></td><td>Text value</td><td>Text value</td><td class="numeric">64</td><td></td></tr>
+          <tr><td><input aria-label="Select row three" type="checkbox"></td><td>Text value</td><td>Text value</td><td class="numeric">32</td><td></td></tr>
+          <tr class="selected"><td><input aria-label="Select row four" type="checkbox" checked></td><td>Text value</td><td>Text value</td><td class="numeric">16</td><td></td></tr>
+          <tr><td><input aria-label="Select row five" type="checkbox"></td><td>Text value</td><td>Text value</td><td class="numeric">8</td><td></td></tr>
+        </tbody>
+      </table>
+      <footer class="grid-footer"><div class="pagination" aria-label="Pagination"><button type="button">Previous</button><span>Position</span><button type="button">Next</button><span class="boundary"><button type="button" disabled>Previous</button><span>Position</span><button type="button">Next</button></span></div></footer>
+    </section>
+  </main>
+</body>
+</html>
