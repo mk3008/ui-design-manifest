@@ -2,7 +2,7 @@
 
 ## Status
 
-done — static source-blind calibration fixture created and rendered.
+ready_for_review — source-blind calibration fixture corrected, rendered, and verified.
 
 ## Opened files
 
@@ -17,6 +17,7 @@ done — static source-blind calibration fixture created and rendered.
 
 - The Contract's selection slot supplies one checked native checkbox and one unchecked native checkbox.
 - The Contract's text, numeric, and sorted-column slots supply placeholder-only labels and values; no product data, identity, status, or aggregate is asserted.
+- Five neutral repeated rows make the compact repeated rhythm reviewable without adding a new semantic slot.
 - The active sorted text header uses one meaningful inline ascending SVG at the control's right edge. Other headers have no persistent sort icon.
 - The supplied remaining-space direction is trailing table-surface whitespace. The table has three semantic columns only; no filler column was added.
 - CSS retains a compact, single-line, vertically centered table rhythm with text left, numeric values right, and selection centered.
@@ -35,4 +36,4 @@ done — static source-blind calibration fixture created and rendered.
 
 ## Commit
 
-Created after the checks above with the five files in `implementation/` only.
+The correction commit contains the five files in this experiment-local `implementation/` directory only; root-level copies were removed.
