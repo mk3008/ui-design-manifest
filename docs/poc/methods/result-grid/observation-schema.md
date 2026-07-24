@@ -15,6 +15,7 @@ Complete every row. `Observed` means visibly established in the declared state; 
 | --- | --- | --- |
 | Sort affordance, state, and direction | Sortable header treatment; active column; direction; inactive treatment | Do not infer sort results or toggling behavior |
 | Multi-selection | Leading selection control and whether multiple rows may be selected | Do not infer bulk actions or select-all behavior |
+| Header selection control | Whether the selection-column header is empty or contains select-all/indeterminate state | Presence does not establish update behavior |
 | Selected and unselected row state | Visible distinction and which records show each state | No persistence or update trigger |
 | Selection versus activation | Separate control, row activation, or neither | A selectable row is not thereby activatable |
 | Horizontal alignment | Header/body alignment by text, numeric, selection, and icon role | Do not convert relative alignment to fixed dimensions |
@@ -22,7 +23,7 @@ Complete every row. `Observed` means visibly established in the declared state; 
 | Text, numeric, and icon treatment | Content roles and their alignment | Do not assign business meanings |
 | Density and row rhythm | Repetition, row height impression, separators, and padding relationship | No measurements |
 | Header and body typography | Independent hierarchy, contrast, and emphasis | Do not infer identical weight |
-| Grid/container width and remaining space | Container relation, stretch, trailing space, or content width | Do not infer a breakpoint |
+| Grid/container width and remaining space | Assigned container relation, surface fill, meaningful flexible columns, trailing space, and host-owned outer spacing | Do not infer a breakpoint or page margin |
 | Overflow | Visible clipping, wrapping, scrolling, or absence of evidence | One width cannot establish a policy |
 | Empty and narrow states | Visible empty or narrow treatment | Unshown states remain unresolved |
 | Accessibility | Visible labels, sort state, and selection state | Focus, keyboard, and announcements remain unresolved unless shown |
@@ -31,3 +32,5 @@ Complete every row. `Observed` means visibly established in the declared state; 
 # Authored defaults
 
 When target-product inputs and observations do not decide otherwise, an active sorted header places its direction icon at the right edge of the header control. Do not persist inactive sort icons. Headers follow their content; text, identifiers, and status values align left; numbers align right; selection controls and standalone icons center. Use single-line vertical centering unless evidence or the Contract says otherwise. A restrained header distinction may be authored without forcing a matching font weight.
+
+The grid surface fills the inline size assigned by its host; the host owns page-level top, left, and right spacing. Prefer a meaningful flexible text column to absorb remaining width while compact selection and numeric columns retain role-appropriate widths. Do not invent a semantic filler column or arbitrary component margin. Leave the selection header empty unless the Contract declares a select-all control; when declared, render a checkbox with its checked or indeterminate state and accessible name.
