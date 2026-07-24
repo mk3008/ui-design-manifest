@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagination fixture</title>
+    <link rel="stylesheet" href="initial.css">
+  </head>
+  <body>
+    <main class="canvas" aria-label="Pagination fixtures">
+      <section class="specimen" aria-label="Normal pagination state">
+        <div class="result-surface" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <nav class="pagination" aria-label="Pagination">
+          <span class="position">Page 2</span>
+          <button type="button" aria-label="Previous page">Previous</button>
+          <button type="button" aria-label="Next page">Next</button>
+        </nav>
+      </section>
+
+      <section class="specimen" aria-label="Beginning pagination state">
+        <div class="result-surface" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <nav class="pagination" aria-label="Pagination at beginning">
+          <span class="position">Page 1</span>
+          <button type="button" aria-label="Previous page" disabled>Previous</button>
+          <button type="button" aria-label="Next page">Next</button>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
