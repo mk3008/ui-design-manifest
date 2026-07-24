@@ -1,3 +1,12 @@
+---
+type: Implementation Report
+title: Result-grid static reconstruction report
+description: Source-blind implementation inputs, decisions, gaps, and verification for the first corrected static result-grid evidence.
+status: ready_for_review
+source: authored
+scope: One neutral static result-grid reconstruction.
+---
+
 # Result Grid Calibration Report
 
 ## Status

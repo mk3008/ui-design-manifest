@@ -13,16 +13,16 @@ scope: One visible table surface.
 
 | Axis | Classification | Knowledge ownership | Retained result or limit |
 | --- | --- | --- | --- |
-| Sort affordance, state, and direction | observed | observed | One active sortable header has a direction state; sort update is unresolved. |
-| Multi-selection | observed | observed | Leading checkbox selection permits more than one record; select-all and bulk action are unresolved. |
-| Selected and unselected row state | observed | observed | Both selected and unselected row presentations are visible; persistence is unresolved. |
+| Sort affordance, state, and direction | observed | observed | A header sort affordance is visible. Active field and direction are not observed; the static fixture exercises them only as an authored default. |
+| Multi-selection | observed | observed | A leading checkbox column and repeated row controls are visible; actual simultaneous selection, select-all behavior, and bulk actions remain unresolved. |
+| Selected and unselected row state | not observed | authored default | The bounded observation shows unselected rows only. The neutral fixture exercises paired states as an authored default, not as a source claim. |
 | Selection versus activation | unresolved | target-product input | No activation relationship is retained from selection. |
-| Horizontal alignment | observed | observed | Text roles, numeric roles, selection controls, and standalone icons use distinct alignment. |
+| Horizontal alignment | observed | observed | Text alignment and centered selection controls are visible. Numeric alignment is not observed and comes from the authored default. |
 | Vertical alignment | observed | observed | Single-line content is vertically centered. |
-| Text, numeric, and icon treatment | observed | observed | Text, numeric, and icon roles are distinct; meaning is unresolved. |
+| Text, numeric, and icon treatment | observed | observed | Text and sort/selection controls are distinct. Numeric treatment is not observed and is supplied only by the neutral fixture. |
 | Density and row rhythm | observed | observed | Compact, repeated rows share a consistent rhythm. |
 | Header and body typography | observed | observed | Header and body are distinct; exact weight relationship is unresolved. |
-| Grid/container width and remaining space | observed | context pattern | The table surface leaves remaining width without a semantic filler column. |
+| Grid/container width and remaining space | not observed | authored default | The bounded observation does not establish narrower-than-container behavior. The fixture exercises non-semantic trailing table-surface space as an authored default. |
 | Overflow | unresolved | target-product input | The bounded state does not establish clipping, wrapping, scrolling, or a rule. |
 | Empty and narrow states | not observed | target-product input | No empty or narrow state is retained. |
 | Accessibility | observed | observed | Selection and active sort state have visible semantic cues; focus, keyboard, and announcements are unresolved. |

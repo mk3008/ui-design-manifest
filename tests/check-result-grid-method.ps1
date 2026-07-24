@@ -5,6 +5,8 @@ $method = 'docs/poc/methods/result-grid'
 $bundle = 'docs/poc/experiments/007-search-components/result-grid/attempt-1'
 $methodFiles = @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')
 $bundleFiles = @('index.md','manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')
+$implementationFiles = @('implementation/initial.html','implementation/initial.css','implementation/wide.png','implementation/narrow.png','implementation/implementation-report.md')
+$bundleRoot = (Resolve-Path (Join-Path $root $bundle)).Path
 
 function Add-Failure([string]$message) { $failures.Add($message) }
 function Require-Text([string]$relativePath, [string]$pattern) {
@@ -19,6 +21,8 @@ function Forbid-Text([string]$relativePath, [string]$pattern) {
 
 foreach ($name in $methodFiles) { Require-Text "$method/$name" '^---$'; Require-Text "$method/$name" '^type:' }
 foreach ($name in $bundleFiles) { Require-Text "$bundle/$name" '^---$'; Require-Text "$bundle/$name" '^type:' }
+Require-Text "$bundle/implementation/implementation-report.md" '^---$'
+Require-Text "$bundle/implementation/implementation-report.md" '^type:'
 foreach ($axis in @('Sort affordance, state, and direction','Multi-selection','Selected and unselected row state','Selection versus activation','Horizontal alignment','Vertical alignment','Text, numeric, and icon treatment','Density and row rhythm','Header and body typography','Grid/container width and remaining space','Overflow','Empty and narrow states','Accessibility','Application Input Contract needs')) { Require-Text "$method/observation-schema.md" ([regex]::Escape($axis)) }
 Require-Text "$method/observation-schema.md" 'observed.*not observed.*unresolved.*not applicable'
 Require-Text "$method/observation-schema.md" 'observed.*inferred.*authored default.*context pattern.*target-product input'
@@ -32,7 +36,10 @@ Require-Text "$bundle/apply-instruction.md" 'placeholder-only labels'
 foreach ($axis in @('Sort affordance, state, and direction','Multi-selection','Selected and unselected row state','Selection versus activation','Horizontal alignment','Vertical alignment','Text, numeric, and icon treatment','Density and row rhythm','Header and body typography','Grid/container width and remaining space','Overflow','Empty and narrow states','Accessibility','Application Input Contract needs')) { Require-Text "$bundle/observation-record.md" ([regex]::Escape($axis)) }
 Require-Text "$bundle/observation-record.md" 'observed|not observed|unresolved|not applicable'
 foreach ($name in $bundleFiles) { Forbid-Text "$bundle/$name" 'https?://|patternfly|carbon|sap|gov\.uk|screenshot|capture|oracle|evidence register|source url' }
-foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) { if ($file.Name -notin $bundleFiles) { Add-Failure "invalid bundle path: $($file.FullName)" } }
+foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) {
+  $relative = $file.FullName.Substring($bundleRoot.Length).TrimStart('\','/').Replace('\','/')
+  if ($relative -notin ($bundleFiles + $implementationFiles)) { Add-Failure "invalid bundle path: $relative" }
+}
 foreach ($file in Get-ChildItem (Join-Path $root $method) -Recurse -File) { if ($file.Name -notin $methodFiles) { Add-Failure "invalid method path: $($file.FullName)" } }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -Filter *.md) { foreach ($match in [regex]::Matches((Get-Content -Raw $file.FullName), '\]\(([^)#]+\.md)(?:#[^)]+)?\)')) { if (-not (Test-Path (Join-Path $file.DirectoryName $match.Groups[1].Value))) { Add-Failure "broken local link: $($file.FullName) -> $($match.Groups[1].Value)" } } }
 if ($failures.Count -gt 0) { $failures | ForEach-Object { Write-Error $_ }; exit 1 }
