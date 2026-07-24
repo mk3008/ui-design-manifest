@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $failures = [System.Collections.Generic.List[string]]::new()
 $method = 'docs/poc/methods/result-grid'
-$bundle = 'docs/poc/experiments/007-search-components/result-grid/attempt-2'
+$bundle = 'docs/poc/experiments/007-search-components/result-grid/attempt-3'
 $methodFiles = @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')
 $bundleFiles = @('index.md','manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')
 $implementationFiles = @('implementation/initial.html','implementation/initial.css','implementation/wide.png','implementation/narrow.png','implementation/implementation-report.md')
@@ -33,10 +33,11 @@ Require-Text "$bundle/manifest.md" 'Do not make inactive sort icons persist'
 Require-Text "$bundle/application-input-contract.md" 'leading multi-select row checkboxes'
 Require-Text "$bundle/application-input-contract.md" 'selected and one unselected'
 Require-Text "$bundle/application-input-contract.md" 'text and numeric'
-Require-Text "$bundle/application-input-contract.md" 'semantic dummy data column'
+Require-Text "$bundle/application-input-contract.md" 'presentation-only filler'
 Require-Text "$bundle/application-input-contract.md" 'Header selection control'
 Require-Text "$bundle/application-input-contract.md" 'host-assigned width'
-Require-Text "$bundle/manifest.md" 'meaningful flexible text column'
+Require-Text "$bundle/manifest.md" 'role-appropriate widths'
+Require-Text "$bundle/manifest.md" 'trailing presentation-only filler'
 Require-Text "$bundle/manifest.md" 'header only when'
 Require-Text "$bundle/apply-instruction.md" 'placeholder-only labels'
 foreach ($axis in @('Sort affordance, state, and direction','Multi-selection','Header selection control','Selected and unselected row state','Selection versus activation','Horizontal alignment','Vertical alignment','Text, numeric, and icon treatment','Density and row rhythm','Header and body typography','Grid/container width and remaining space','Overflow','Empty and narrow states','Accessibility','Application Input Contract needs')) { Require-Text "$bundle/observation-record.md" ([regex]::Escape($axis)) }
