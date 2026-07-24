@@ -6,6 +6,8 @@ Use this method after a bounded extraction has produced a source-independent Man
 
 The method applies to a declared component scope only. It does not turn unknown source facts into requirements, and it does not authorize an implementer to add product meaning. Component-specific methods may add stricter requirements. In particular, the Drawer gate remains binding where it applies; this shared method does not relax it.
 
+This is communication dogfooding for the source-independent Markdown, not a route for reconstructing the source. A failure may identify an observation-method gap, an abstraction loss, an Application Input Contract gap, or an implementation interpretation error. A preserved round trip makes only the bounded communication claim; it does not promote a single-source Manifest to canonical knowledge.
+
 Keep original source material and source-aware notes outside the source-blind Manifest, Application Input Contract, implementer input, and re-extractor input. A human review packet may pair the generated static evidence with a bounded external oracle display, but that display remains outside the repository and those source-blind inputs.
 
 ## Claim matrix

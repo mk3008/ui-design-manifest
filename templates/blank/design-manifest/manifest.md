@@ -15,6 +15,8 @@ Describe the target product, intended user, bounded UI area, and exclusions with
 
 This bundle must stand alone for application. Do not include original UI names, URLs, screenshots, copied product vocabulary, capture paths, or extraction-evidence links. Record any information that cannot be abstracted as unresolved.
 
+If extraction informed this bundle, keep observed, inferred, authored default, and context-dependent statements distinct. Treat the result as a candidate for reuse, not canonical knowledge from one source. Shared promotion requires explicit scope, corroboration, independent review, and human judgment.
+
 # Precedence
 
 Use: target-product implementation and repository guidance; explicit product requirements; this local manifest; then explicit starter defaults. Do not include an original or reference UI.

@@ -12,6 +12,22 @@ A UI Design Manifest is an abstract intermediate representation of design intent
 
 An application user must not see or consult the original UI, its URL, screenshots, source-specific explanation, or extraction trace. If application requires original-UI information, the manifest was not abstracted sufficiently. Report the missing guidance; do not recover it by consulting the original.
 
+# Knowledge lifecycle
+
+A team may author a local Manifest directly. During repository calibration, a bounded source UI may instead act as a probe or test oracle: extraction tests whether the observation method asks the right questions, while source-blind reconstruction and semantic re-extraction test whether the resulting Markdown communicates the retained roles and relationships.
+
+An extracted Manifest is a distilled, source-independent artifact and a candidate for reuse. It is not canonical merely because it was extracted or accepted for one experiment. Promote knowledge only with an explicit scope and provenance after appropriate calibration, a different-source holdout where transfer is claimed, independent review, and human judgment.
+
+Keep these classes distinct:
+
+- **Observed**: visibly established within a bounded source state or viewport. It is evidence, not a universal rule.
+- **Inferred**: an interpretation supported by observations but still requiring confirmation.
+- **Authored default**: a deliberate fallback that was not observed. It must be named as a default, used only at the precedence level of its owning guidance, and never override target-product inputs.
+- **Context-dependent pattern**: reusable guidance whose applicability and counterconditions are stated; it is not a universal invariant.
+- **Target-product decision**: product meaning, data, state, destination, responsive behavior, or other owner-supplied input governed by requirements, current implementation, or the Application Input Contract.
+
+Cross-source convergence may justify a stable observation question or a bounded pattern. It does not erase differing contexts or turn source-specific presentation into a central principle. Historical calibration, holdout, review, and correction records remain test evidence rather than application inputs.
+
 # Responsibility boundary
 
 ## Extraction

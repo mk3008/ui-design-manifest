@@ -2,7 +2,7 @@
 
 > Experiments may use original UI evidence only as test oracles. Standard application receives a source-blind manifest packet and target-product inputs; accepted historical results require revalidation before they demonstrate this boundary.
 
-The ladder tests small, observable claims in order. Passing one gate permits the next experiment; it does not prove overall utility or fidelity. Keep raw artifacts so an independent evaluator can distinguish observation from interpretation.
+The ladder tests small, observable claims in order. It dogfoods two things: whether extraction methods expose useful business-application observation points, and whether source-independent Markdown communicates the retained roles and relationships through reconstruction and semantic re-extraction. Passing one gate permits the next experiment; it does not prove overall utility, fidelity, or canonical status. Keep raw artifacts so an independent evaluator can distinguish observation, inference, authored defaults, contextual patterns, and target-product decisions.
 
 ## Gate 1 — Structure discovery
 
@@ -16,17 +16,17 @@ The ladder tests small, observable claims in order. Passing one gate permits the
 
 ## Gate 2 — Bounded extraction
 
-**Question:** Can an extractor turn permitted source evidence into a small valid bundle while separating observation, inference, and gaps?
+**Question:** Can an extractor use permitted source evidence to exercise the observation method and produce a small valid bundle while separating observation, inference, authored defaults, contextual patterns, target-product decisions, and gaps?
 
 **Raw evidence:** scope declaration, viewport/state captures, extraction transcript, output tree, evidence and inference registers, unresolved list, and validation output.
 
-**Pass signal:** every claim is traceable or labeled, the bundle is navigable and structurally valid, and excluded source areas remain uninspected.
+**Pass signal:** every claim is traceable or labeled, the bundle is navigable and structurally valid, excluded source areas remain uninspected, and the output is treated as a candidate rather than automatic canonical knowledge.
 
 **Stop/rework:** copied implementation code, unlabeled inference, scope drift, missing critical evidence, or a catalog-sized output. Narrow scope or rewrite before reconstruction.
 
 ## Gate 3 — Manifest-only visual reconstruction
 
-**Question:** Can a fresh implementer reproduce a bounded static slice using current repository context plus only relevant manifest concepts, without seeing the source UI?
+**Question:** Can a fresh implementer reconstruct a bounded static slice using target-product inputs plus only relevant Manifest concepts, without seeing the source UI, so the Markdown's communication quality can be evaluated?
 
 **Raw evidence:** exact input packet, files opened, implementation diff, rendered captures at declared viewports, guidance trace, assumptions, and build/test output.
 
@@ -36,7 +36,7 @@ The ladder tests small, observable claims in order. Passing one gate permits the
 
 ## Gate 4 — Interaction reproduction
 
-**Question:** Does the reconstructed slice reproduce the nominated interaction and relevant states?
+**Question:** Can the reconstructed slice apply the nominated interaction responsibility and relevant states from the allowed inputs?
 
 **Raw evidence:** scripted or recorded interaction, before/after captures, focus and keyboard observations, state transitions, console output, and functional test results.
 
@@ -60,6 +60,6 @@ The ladder tests small, observable claims in order. Passing one gate permits the
 
 **Raw evidence:** source and reconstruction shown at declared viewports/states, prior evaluator findings, owner decision, requested changes, and rationale.
 
-**Pass signal:** the owner explicitly accepts the bounded result for the experiment and identifies the next useful scope.
+**Pass signal:** the owner explicitly accepts the bounded result for the experiment and identifies the next useful scope. Promotion to shared knowledge remains a separate, explicit decision.
 
 **Stop/rework:** rejection, unresolved requirement risk, or no explicit judgment. Record whether to revise extraction, profile guidance, implementation, or the experiment itself. Do not translate acceptance into a general fidelity guarantee.
