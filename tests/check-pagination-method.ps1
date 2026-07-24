@@ -5,6 +5,7 @@ $method = 'docs/poc/methods/pagination'
 $bundle = 'docs/poc/experiments/007-search-components/pagination/attempt-1'
 $methodFiles = @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')
 $bundleFiles = @('index.md','manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')
+$implementationFiles = @('implementation/initial.html','implementation/initial.css','implementation/wide.png','implementation/narrow.png','implementation/implementation-report.md')
 $bundleRoot = (Resolve-Path (Join-Path $root $bundle)).Path
 
 function Add-Failure([string]$message) { $failures.Add($message) }
@@ -35,7 +36,7 @@ Require-Text "$bundle/apply-instruction.md" 'boundary state'
 foreach ($name in $bundleFiles) { Forbid-Text "$bundle/$name" 'https?://|patternfly|screenshot|capture|oracle|evidence register|source url|\bSELECT\b|\bOFFSET\b|cursor key' }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) {
   $relative = $file.FullName.Substring($bundleRoot.Length).TrimStart([char]92,[char]47).Replace([char]92,[char]47)
-  if ($relative -notin $bundleFiles) { Add-Failure "invalid bundle path: $relative" }
+  if (($relative -notin $bundleFiles) -and ($relative -notin $implementationFiles)) { Add-Failure "invalid bundle path: $relative" }
 }
 foreach ($file in Get-ChildItem (Join-Path $root $method) -Recurse -File) { if ($file.Name -notin $methodFiles) { Add-Failure "invalid method path: $($file.FullName)" } }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -Filter *.md) { foreach ($match in [regex]::Matches((Get-Content -Raw $file.FullName), '\]\(([^)#]+\.md)(?:#[^)]+)?\)')) { if (-not (Test-Path (Join-Path $file.DirectoryName $match.Groups[1].Value))) { Add-Failure "broken local link: $($file.FullName) -> $($match.Groups[1].Value)" } } }
