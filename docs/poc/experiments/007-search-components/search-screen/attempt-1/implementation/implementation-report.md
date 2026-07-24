@@ -26,6 +26,8 @@ Created a source-blind static Search Screen composite that orders a dense condit
 
 Search, clear, selection, select-all, sorting, and pagination do not execute. The narrow image intentionally preserves the same dense workspace and shows controlled cropping rather than a new responsive transformation.
 
+The composite footer intentionally presents one normal Previous / Position / Next group. The separate disabled boundary fixture belongs to component-level evidence and is not duplicated here.
+
 ## Checks
 
 Chrome renders wide at 1440x900 and narrow at 390x844. Checks verify the required paths, local assets, nonblank images, screen relationships, source boundaries, local Markdown links, and diff whitespace.

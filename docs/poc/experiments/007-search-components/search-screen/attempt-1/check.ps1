@@ -23,6 +23,9 @@ $css = Get-Content -Raw (Join-Path $implementation 'initial.css')
 foreach ($requiredText in @('Search', 'Clear', 'Select all', 'Previous', 'Next', 'type="checkbox"', 'sort', 'grid-footer')) {
   if ($html -notmatch [regex]::Escape($requiredText)) { throw "Required screen relationship missing: $requiredText" }
 }
+if ([regex]::Matches($html, 'class="pagination"').Count -ne 1) { throw 'Expected exactly one pagination group.' }
+if ([regex]::Matches($html, '>Previous<').Count -ne 1 -or [regex]::Matches($html, '>Next<').Count -ne 1) { throw 'Expected exactly one Previous/Next pair.' }
+if ($html -match 'boundary|disabled') { throw 'Boundary-state fixture must not appear in the composite.' }
 if ($html -match '(?i)https?://|<script|@import' -or $css -match '(?i)https?://|@import') { throw 'External asset, script, or import found.' }
 foreach ($banned in @('Total', 'Page size', 'First', 'Last', 'jump', 'card')) {
   if ($html -match [regex]::Escape($banned)) { throw "Unsupported invention found: $banned" }
