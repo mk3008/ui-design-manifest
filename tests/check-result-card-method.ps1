@@ -5,6 +5,7 @@ $method = 'docs/poc/methods/result-card'
 $bundle = 'docs/poc/experiments/007-search-components/result-card/attempt-1'
 $methodFiles = @('README.md','observation-schema.md','extraction-template.md','extraction-prompt.md','first-pass-rubric.md')
 $bundleFiles = @('index.md','manifest.md','application-input-contract.md','apply-instruction.md','observation-record.md')
+$implementationFiles = @('initial.html','initial.css','wide.png','narrow.png','implementation-report.md')
 $bundleRoot = (Resolve-Path (Join-Path $root $bundle)).Path
 function Add-Failure([string]$message) { $failures.Add($message) }
 function Require-Text([string]$relativePath, [string]$pattern) { $path = Join-Path $root $relativePath; if (-not (Test-Path $path)) { Add-Failure "${relativePath}: missing file"; return }; if (-not (Select-String -Path $path -Pattern $pattern -Quiet)) { Add-Failure "${relativePath}: missing '$pattern'" } }
@@ -22,6 +23,7 @@ Require-Text "$bundle/application-input-contract.md" 'at least six cards'
 Require-Text "$bundle/application-input-contract.md" 'left-aligned incomplete final row'
 Require-Text "$bundle/application-input-contract.md" 'placeholder-only labels'
 foreach ($name in $bundleFiles) { Forbid-Text "$bundle/$name" 'https?://|patternfly|carbon|sap|gov\.uk|screenshot|capture|oracle|source url|card view' }
+$bundleFiles += $implementationFiles | ForEach-Object { "implementation/$_" }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -File) { $relative = $file.FullName.Substring($bundleRoot.Length).TrimStart('\','/').Replace('\','/'); if ($relative -notin $bundleFiles) { Add-Failure "invalid bundle path: $relative" } }
 foreach ($file in Get-ChildItem (Join-Path $root $method) -Recurse -File) { if ($file.Name -notin $methodFiles) { Add-Failure "invalid method path: $($file.FullName)" } }
 foreach ($file in Get-ChildItem (Join-Path $root $bundle) -Recurse -Filter *.md) { foreach ($match in [regex]::Matches((Get-Content -Raw $file.FullName), '\]\(([^)#]+\.md)(?:#[^)]+)?\)')) { if (-not (Test-Path (Join-Path $file.DirectoryName $match.Groups[1].Value))) { Add-Failure "broken local link: $($file.FullName) -> $($match.Groups[1].Value)" } } }
