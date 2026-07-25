@@ -25,3 +25,7 @@ The static medium-impact confirmation is shown open so the separate state is vis
 - `narrow.png`: requested 390×844 local-Chrome capture.
 
 Image dimensions and nonblank output are verified after capture. Static boundary checks, source-boundary checks, `git diff --check`, and the commit result are recorded in the durable YAML report.
+
+## Correction
+
+The wide confirmation is positioned at the page’s upper right so the deletion-unavailable reason and disabled example remain readable. The narrow page is capped at 360 CSS px and left-aligned; its confirmation is left-aligned and capped at 340 CSS px. This reserves a right-side safety margin for both action pairs in the 390×844 capture despite the local browser’s effective layout width.
