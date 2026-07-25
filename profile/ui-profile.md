@@ -89,6 +89,8 @@ A fixture cannot supply an identity, status, destination, aggregate, or other bu
 
 Never present inference as observation. For mixed concepts, label individual statements under `Evidence`, `Inferences`, and `Unresolved`. Record the viewport, state, role, data condition, or interaction that bounded an observation. If evidence does not support a decision, leave a gap rather than filling it with a starter default.
 
+Provenance and generalization status are separate. An **authored default** uses authored provenance and must be named as a fallback rather than observation. A **context-dependent pattern** states where a relationship is expected to apply and where it may differ; it is not a new provenance class or a universal rule. A **target-product decision** belongs to requirements, current implementation, or the Application Input Contract rather than being inferred from extraction. See the [knowledge lifecycle](manifest-authority.md#knowledge-lifecycle).
+
 ## Extraction source inputs and observation boundary
 
 Extraction accepts a URL, one image, an image set, a recording, or a local build as formal `source_ui` input forms. Images are first-class inputs, not a fallback: when supplied images establish the needed declared screens, viewports, and states, extraction does not access a URL. A recording or local build may be observed only for the declared visual scope. A URL is observed only when supplied visual inputs are insufficient, and then only to the minimum extent needed for that scope.

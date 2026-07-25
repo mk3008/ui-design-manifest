@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Result grid calibration</title>
+    <link rel="stylesheet" href="initial.css">
+  </head>
+  <body>
+    <main aria-label="Result grid calibration">
+      <table>
+        <colgroup>
+          <col class="selection-column">
+          <col class="text-column">
+          <col class="number-column">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col" class="selection-cell">
+              <input type="checkbox" aria-label="Select all placeholder records">
+            </th>
+            <th scope="col" aria-sort="ascending">
+              <span class="header-control">Placeholder text <span class="sort-icon" aria-hidden="true">▲</span></span>
+            </th>
+            <th scope="col" class="number-cell">Placeholder number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="selection-cell"><input type="checkbox" checked aria-label="Select placeholder record one"></td>
+            <td>Placeholder record one</td>
+            <td class="number-cell">100</td>
+          </tr>
+          <tr>
+            <td class="selection-cell"><input type="checkbox" aria-label="Select placeholder record two"></td>
+            <td>Placeholder record two</td>
+            <td class="number-cell">200</td>
+          </tr>
+          <tr>
+            <td class="selection-cell"><input type="checkbox" aria-label="Select placeholder record three"></td>
+            <td>Placeholder record three</td>
+            <td class="number-cell">300</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

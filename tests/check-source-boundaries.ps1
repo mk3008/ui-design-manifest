@@ -39,6 +39,13 @@ $sourceBlind = @(Get-ChildItem -Path (Join-Path $root 'docs/poc/experiments/001-
 $sourceBlind += 'docs/poc/experiments/002-drawer-distillation/apply-packet.md'
 $sourceBlind += 'docs/poc/experiments/003-header-distillation/apply-packet.md'
 $sourceBlind += 'docs/poc/experiments/004-result-table-distillation/apply-packet.md'
+$sourceBlind += @(
+  'docs/poc/experiments/006-header-drawer-composite/attempt-1/index.md',
+  'docs/poc/experiments/006-header-drawer-composite/attempt-1/manifest.md',
+  'docs/poc/experiments/006-header-drawer-composite/attempt-1/application-input-contract.md',
+  'docs/poc/experiments/006-header-drawer-composite/attempt-1/apply-instruction.md',
+  'docs/poc/experiments/006-header-drawer-composite/attempt-1/claim-matrix.md'
+)
 $forbidden = 'github|gitlab|grafana|https?://|source url|screenshot|evidence register|nominated reference|reference ui|^# Evidence$|E-00[12]|1280x720|UI Contract Editor|サイドバー|\bOverview\b|\bJP\b'
 foreach ($relativePath in $sourceBlind) { Forbid-Text $relativePath $forbidden }
 

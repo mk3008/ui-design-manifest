@@ -4,6 +4,8 @@
 
 You are extracting reusable design knowledge from a bounded original UI. Produce an OKF-compatible UI Design Manifest that is an abstract intermediate representation of design intent, not a clone specification and not a record of the original.
 
+This extraction is a calibration and distillation activity, not a requirement for normal Manifest application. Treat the source as a bounded probe or test oracle. The resulting Manifest may be a reusable candidate, but one source does not establish canonical knowledge.
+
 ## Inputs
 
 - `source_ui`: one or more formally supplied source inputs: a URL, image, image set, recording, or local build. State which supplied input or inputs will be used.
@@ -27,6 +29,7 @@ You are extracting reusable design knowledge from a bounded original UI. Produce
 10. Group only reusable, task-relevant knowledge into foundations, components, policies, and screen patterns. Prefer relational descriptions over measurements or framework vocabulary.
 11. Link related concepts in prose and emit a navigable bundle with valid front matter.
 12. Check the finished bundle as a source-blind application input: it must not link to, name, or reveal the original UI.
+13. Classify every retained candidate as observed, inferred, an explicit authored default, or a context-dependent pattern. Keep target-product decisions in the Application Input Contract or unresolved list. Do not promote a single-source result to a universal principle.
 
 ## Output contract
 

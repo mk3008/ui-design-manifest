@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Record A — detail</title>
+    <link rel="stylesheet" href="initial.css">
+  </head>
+  <body>
+    <main class="page" aria-labelledby="record-title">
+      <a class="back" href="#results">← Back to results</a>
+
+      <section class="record" aria-label="Record detail">
+        <header class="record-header">
+          <div>
+            <p class="eyebrow">Record detail</p>
+            <div class="title-line">
+              <h1 id="record-title">Record A</h1>
+              <span class="status">Active</span>
+            </div>
+            <p class="summary">Example record</p>
+          </div>
+          <div class="actions" aria-label="Record actions">
+            <button class="secondary" type="button">Edit</button>
+            <button class="danger" type="button">Delete</button>
+          </div>
+        </header>
+
+        <div class="attribute-groups">
+          <section class="attribute-group" aria-labelledby="group-one">
+            <h2 id="group-one">Attribute group 1</h2>
+            <dl>
+              <div><dt>Label 1</dt><dd>Value 1</dd></div>
+              <div><dt>Label 2</dt><dd>Value 2</dd></div>
+            </dl>
+          </section>
+          <section class="attribute-group" aria-labelledby="group-two">
+            <h2 id="group-two">Attribute group 2</h2>
+            <dl>
+              <div><dt>Label 3</dt><dd>Value 3</dd></div>
+              <div><dt>Label 4</dt><dd>Value 4</dd></div>
+            </dl>
+          </section>
+        </div>
+
+        <aside class="unavailable" aria-label="Deletion unavailable example">
+          <div>
+            <p class="eyebrow">Deletion unavailable</p>
+            <p>A temporary prerequisite is required before deletion is available.</p>
+          </div>
+          <button class="disabled-danger" type="button" disabled>Delete</button>
+        </aside>
+      </section>
+    </main>
+
+    <section class="scrim" aria-label="Delete confirmation">
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+        <p class="eyebrow">Confirm deletion</p>
+        <h2 id="confirm-title">Delete Record A?</h2>
+        <p id="confirm-description">This action removes the record.</p>
+        <div class="dialog-actions">
+          <button class="secondary" type="button">Cancel</button>
+          <button class="danger" type="button">Delete</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
