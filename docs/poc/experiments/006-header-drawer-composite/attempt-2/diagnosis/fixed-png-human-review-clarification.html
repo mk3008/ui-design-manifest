@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern A fixed-PNG human review clarification</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, "Segoe UI", sans-serif; color: #172033; background: #f5f7fb; }
+    body { margin: 0; line-height: 1.5; }
+    main { max-width: 1280px; margin: 0 auto; padding: 32px; }
+    header, section { background: #fff; border: 1px solid #d9e0ec; border-radius: 12px; padding: 24px; margin: 16px 0; }
+    h1, h2, h3 { line-height: 1.2; }
+    .notice { border-left: 4px solid #a35d00; background: #fff7e8; padding: 16px; }
+    .identity { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    figure { margin: 0; border: 1px solid #d9e0ec; border-radius: 8px; overflow: hidden; background: #fff; }
+    figcaption { padding: 14px 16px; background: #f5f7fb; font-size: 0.9rem; overflow-wrap: anywhere; }
+    img { display: block; width: 100%; height: auto; background: #fff; }
+    .claim { border-top: 1px solid #d9e0ec; padding-top: 20px; margin-top: 20px; }
+    .criteria { background: #f5f7fb; padding: 14px 18px; border-radius: 8px; }
+    fieldset { border: 1px solid #c8d2e1; border-radius: 8px; margin: 14px 0 0; padding: 14px; }
+    label { display: block; margin: 8px 0; }
+    textarea { display: block; box-sizing: border-box; width: 100%; min-height: 4em; margin-top: 6px; font: inherit; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p><strong>Review ID:</strong> <code>HDA2-FIXED-PNG-HUMAN-CLARIFICATION-20260726</code></p>
+      <h1>Pattern A fixed-PNG human review clarification</h1>
+      <p><strong>Experiment:</strong> <code>header-drawer-pattern-a-reconnection-attempt-2</code><br>
+        <strong>Phase 3B baseline:</strong> <code>33a16e2bfbd2f1f60cfabb78cc26b6b4d02e4ea6</code><br>
+        <strong>Phase 3C diagnosis:</strong> <code>857abc0a9015603af46581c5cb0df841d07d0567</code><br>
+        <strong>Viewport:</strong> <code>1280x720</code></p>
+      <div class="notice">
+        <strong>Review evidence:</strong> only the two PNGs displayed below. Do not assess this packet’s HTML, any implementation HTML, DOM, CSS, interaction, or prior knowledge. This packet contains no implementation-HTML link or operating instruction.
+      </div>
+    </header>
+
+    <section>
+      <h2>Fixed artifacts</h2>
+      <div class="identity">
+        <figure>
+          <figcaption><strong>Artifact ID:</strong> <code>HDA2-A-OPEN-1280X720</code><br><strong>State:</strong> <code>A-open</code><br><strong>SHA-256 raw-byte:</strong> <code>FDA2661FAF07A0CD3F71177E6BE32F7036ADC45354C7136C74B776DC0FF96A7C</code></figcaption>
+          <img src="../implementation/A-open.png" width="1280" height="720" alt="A-open fixed PNG, shown at the recorded 1280 by 720 viewport">
+        </figure>
+        <figure>
+          <figcaption><strong>Artifact ID:</strong> <code>HDA2-A-HIDDEN-1280X720</code><br><strong>State:</strong> <code>A-hidden</code><br><strong>SHA-256 raw-byte:</strong> <code>EBB960807FD73EEEEA6C953772A3306172B62075B6709BCBF13A5E0470C23161</code></figcaption>
+          <img src="../implementation/A-hidden.png" width="1280" height="720" alt="A-hidden fixed PNG, shown at the recorded 1280 by 720 viewport">
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Historical-record constraint</h2>
+      <p>The prior human record remains unchanged. It names <code>human-review.html</code> as its review surface, while also listing the two artifact identities. The repository record does not prove that the earlier decision was made from these fixed PNGs alone. Treat it as <strong>historical human decision — not comparable to the fixed-PNG evaluator result</strong>. Do not copy its decisions into this review.</p>
+      <p>No conclusion is authorized until an actual response to this packet is recorded.</p>
+    </section>
+
+    <section>
+      <h2>Questions and response fields</h2>
+      <p>For every claim, select exactly one decision and enter one short, non-empty visible basis. The reviewed artifact IDs are fixed by the claim and shown below.</p>
+
+      <article class="claim">
+        <h3><code>PA-CTRL</code></h3>
+        <p>When comparing the fixed <code>A-open</code> and <code>A-hidden</code> PNGs, can you visually confirm that the element controlling the Drawer belongs to the Header region?</p>
+        <div class="criteria"><strong>accept:</strong> both images show the element and its visual Header affiliation. <strong>reject:</strong> either image does not. <strong>uncertain:</strong> the controller candidate or its Header affiliation cannot be identified uniquely.</div>
+        <fieldset>
+          <legend>Response — reviewed artifacts: <code>HDA2-A-OPEN-1280X720</code>, <code>HDA2-A-HIDDEN-1280X720</code></legend>
+          <label><input required type="radio" name="pa-ctrl" value="accept"> accept</label>
+          <label><input type="radio" name="pa-ctrl" value="reject"> reject</label>
+          <label><input type="radio" name="pa-ctrl" value="uncertain"> uncertain</label>
+          <label>Visible basis (required)<textarea required name="pa-ctrl-basis" aria-label="PA-CTRL visible basis"></textarea></label>
+        </fieldset>
+      </article>
+
+      <article class="claim">
+        <h3><code>PA-TITLE</code></h3>
+        <p>When comparing the fixed <code>A-open</code> and <code>A-hidden</code> PNGs, can you visually confirm that the primary title anchor remains inside the Header region?</p>
+        <div class="criteria"><strong>accept:</strong> both images show the same-role title anchor in Header. <strong>reject:</strong> either image does not. <strong>uncertain:</strong> the title candidate or its Header affiliation cannot be identified uniquely.</div>
+        <fieldset>
+          <legend>Response — reviewed artifacts: <code>HDA2-A-OPEN-1280X720</code>, <code>HDA2-A-HIDDEN-1280X720</code></legend>
+          <label><input required type="radio" name="pa-title" value="accept"> accept</label>
+          <label><input type="radio" name="pa-title" value="reject"> reject</label>
+          <label><input type="radio" name="pa-title" value="uncertain"> uncertain</label>
+          <label>Visible basis (required)<textarea required name="pa-title-basis" aria-label="PA-TITLE visible basis"></textarea></label>
+        </fieldset>
+      </article>
+
+      <article class="claim">
+        <h3><code>PA-HIDDEN</code></h3>
+        <p>In the fixed <code>A-hidden</code> PNG, can you confirm that the Drawer is visually hidden without an empty Drawer boundary or retained Drawer space?</p>
+        <div class="criteria"><strong>accept:</strong> no Drawer region or empty Drawer boundary is visible. <strong>reject:</strong> a Drawer region, empty boundary, or retained Drawer space is visible. <strong>uncertain:</strong> the former Drawer region cannot be determined from the static image.</div>
+        <fieldset>
+          <legend>Response — reviewed artifact: <code>HDA2-A-HIDDEN-1280X720</code></legend>
+          <label><input required type="radio" name="pa-hidden" value="accept"> accept</label>
+          <label><input type="radio" name="pa-hidden" value="reject"> reject</label>
+          <label><input type="radio" name="pa-hidden" value="uncertain"> uncertain</label>
+          <label>Visible basis (required)<textarea required name="pa-hidden-basis" aria-label="PA-HIDDEN visible basis"></textarea></label>
+        </fieldset>
+      </article>
+    </section>
+
+    <section>
+      <h2>Out of scope and preservation</h2>
+      <p>Keyboard, focus, Escape, ARIA, assistive technology, persistence, responsive behavior, animation, DOM/CSS mechanics, destinations, and all runtime behavior are out of scope. This review does not overwrite the existing human review record and does not change Phase 3B’s <code>rejected</code> result or Phase 3C’s diagnosis.</p>
+    </section>
+  </main>
+</body>
+</html>
