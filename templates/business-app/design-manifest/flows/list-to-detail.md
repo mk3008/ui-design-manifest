@@ -1,18 +1,23 @@
 ---
 type: UI Flow
-title: List to detail
-description: Cross-screen guidance for an available record-opening relationship.
+title: List/Card to detail
+description: Cross-screen guidance for an available record-opening relationship from a grid or card collection.
 status: draft
 source: authored
-scope: Searchable record list and record detail patterns.
+scope: Search-with-grid, search-with-cards, and record-detail patterns.
 requires:
   - screen-patterns/record-list
+  - screen-patterns/search-with-cards
   - screen-patterns/record-detail
 ---
 
 # Guidance
 
-Use this flow when a product binding declares that a record can be opened from a list. Preserve the user's list context when a binding supplies query, page, and scroll restoration behavior; otherwise do not claim restoration. The list pattern provides `open_record`; the detail pattern receives it and provides `return_to_list`.
+Use this flow when a product binding declares that a record can be opened from a
+grid or card collection. Preserve the user's collection context when a binding
+supplies query, page, and scroll restoration behavior; otherwise do not claim
+restoration. The selected screen pattern provides `open_record`; the detail
+pattern receives it and provides `return_to_list`.
 
 # Selection conditions
 

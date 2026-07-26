@@ -1,7 +1,7 @@
 ---
 type: UI Screen Pattern
-title: Searchable record list
-description: A bounded list pattern for finding, scanning, and opening a record.
+title: Search with grid
+description: A bounded grid pattern for finding, scanning, and opening a record.
 status: draft
 source: authored
 scope: Desktop search/list view in the example operations workspace.
@@ -17,7 +17,9 @@ requires:
 
 # User task
 
-Help an operations user locate a record, understand its current state, and open an available record without losing list context.
+Help an operations user locate a record, compare dense repeated attributes,
+understand its current state, and open an available record without losing list
+context.
 
 # Guidance
 
@@ -30,6 +32,14 @@ This pattern provides the `open_record` role and requires the [list-to-detail fl
 # Unresolved
 
 Feature availability, query semantics, result data, count meaning, page state, routes, permissions, bulk selection, responsive transformation, and all non-default states require product binding or requirements before implementation. Creation and editing are optional transition roles, not configuration values; use them only when the binding declares them.
+
+# Pattern selection
+
+Use this pattern when dense comparison of common attributes, sorting, or rapid
+repeated scanning is the task. Use [search with cards](search-with-cards.md)
+when individual identity, varied summaries, or record-unit browsing is more
+important. A product requirement or application task chooses the pattern; this
+pack does not provide a `grid | card` configuration switch.
 
 # Relationships
 
