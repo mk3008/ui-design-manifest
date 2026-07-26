@@ -18,6 +18,8 @@ A team may author a local Manifest directly. During repository calibration, a bo
 
 An extracted Manifest is a distilled, source-independent artifact and a candidate for reuse. It is not canonical merely because it was extracted or accepted for one experiment. Promote knowledge only with an explicit scope and provenance after appropriate calibration, a different-source holdout where transfer is claimed, independent review, and human judgment.
 
+Before promotion, classify extracted material as original-specific, product-specific, generalizable candidate, or unresolved. Keep the classification and promotion reason in extraction/evaluation material. A single-source result must never write itself into a standard pack. When more than one approach is legitimate, retain a stable Markdown decision rule and evaluate the alternatives as a finite configuration choice rather than declaring one universal answer. Product-specific routes, permissions, copy, data, and state never become standard configuration.
+
 Keep these classes distinct:
 
 - **Observed**: visibly established within a bounded source state or viewport. It is evidence, not a universal rule.
@@ -37,6 +39,8 @@ Extraction may inspect the original UI within a declared scope. It turns reusabl
 ## Application
 
 Application receives only the local manifest, target-product implementation and repository guidance, the implementation task, applicable product requirements, and verification conditions. It must not access original sites, captures, extraction traces, source-aware PoC material, or remembered original vocabulary. Missing information is a reported gap.
+
+For a standard pack, application also receives a local configuration override and a product binding. The pack supplies defaults and fixed guidance; the local override may choose only defined values; the product binding supplies application-owned facts. Neither configuration nor guidance may create a missing feature, route, permission, state, data value, aggregate meaning, or displayed business language.
 
 ## Evaluation and PoC
 

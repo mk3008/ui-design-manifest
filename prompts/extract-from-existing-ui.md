@@ -29,7 +29,8 @@ This extraction is a calibration and distillation activity, not a requirement fo
 10. Group only reusable, task-relevant knowledge into foundations, components, policies, and screen patterns. Prefer relational descriptions over measurements or framework vocabulary.
 11. Link related concepts in prose and emit a navigable bundle with valid front matter.
 12. Check the finished bundle as a source-blind application input: it must not link to, name, or reveal the original UI.
-13. Classify every retained candidate as observed, inferred, an explicit authored default, or a context-dependent pattern. Keep target-product decisions in the Application Input Contract or unresolved list. Do not promote a single-source result to a universal principle.
+13. Classify every retained candidate as `original_specific`, `product_specific`, `generalizable_candidate`, or `unresolved`, in addition to any observed, inferred, authored-default, or context-dependent label. Keep target-product decisions in the Application Input Contract or unresolved list.
+14. Do not write extraction output directly into a standard knowledge pack. Record a proposed promotion reason for each `generalizable_candidate`; promotion needs human review and is a separate authored decision. When multiple approaches are credible, propose a finite configuration candidate with stable semantic values rather than declaring one universal rule. Never promote routes, permissions, product copy, data, or state as standard configuration.
 
 ## Output contract
 

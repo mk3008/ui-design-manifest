@@ -5,5 +5,7 @@
 - [Components](components/index.md) - Reusable interface units and their states.
 - [Policies](policies/index.md) - Cross-cutting behavioral or decision rules.
 - [Screen patterns](screen-patterns/index.md) - Bounded arrangements that support a user task.
+- [Configuration](configuration/index.md) - Finite product-variable presentation choices, when a real recurring choice exists.
+- [Flows](flows/index.md) - Cross-screen decision criteria and transition relationships.
 
 Replace guidance placeholders with product-owned evidence. Add only concepts needed by a real task.

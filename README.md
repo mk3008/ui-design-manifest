@@ -1,22 +1,35 @@
 # UI Design Manifest
 
-UI Design Manifest is a docs-first starter for product teams that want reusable design knowledge to survive beyond screenshots, source code, and individual memory. It records design intent, relationships, and decisions as source-independent Markdown that a fresh implementer can apply without consulting an original UI.
+UI Design Manifest is a docs-first starter for product teams that want reusable design knowledge to survive beyond screenshots, source code, and individual memory. Its intended deliverable is an authored, distributable standard knowledge pack for business applications: source-independent Markdown concepts and small YAML configuration definitions that a fresh implementer can apply without consulting an original UI.
 
 ## Problem and value
 
 Visual and interaction decisions are often scattered across running code, tickets, and tacit team knowledge. This project explores whether a small, linked Markdown bundle can make the relevant decisions easier to discover, inspect, refine, and apply.
 
-The repository provides an OKF-compatible UI profile, two small starter bundles, reusable prompts, and an experiment ladder. These are a useful starting point, not evidence that a manifest improves fidelity. Product teams own the content and should revise it against observed implementation and human judgment.
+The repository provides an OKF-compatible UI profile, two small starter bundles, reusable prompts, and an experiment ladder. The business-app bundle is a Phase 1 vertical slice of a standard pack, not a complete design system. Product teams own the content and should revise it against observed implementation and human judgment.
 
 A manifest records durable direction, not executable truth. It is an abstract intermediate representation of design intent, independent from the original UI. An application must not receive or consult the original UI, its URL, screenshots, source-specific explanation, or extraction trace. If an implementer needs any of those to apply a concept, that concept has not been abstracted sufficiently; record the gap instead. Concrete implementation values in the target product—such as CSS, component code, and runtime behavior—remain operational truth. A deliberate local deviation from manifest guidance is allowed and is not, by itself, a defect.
 
 ## Operating model
 
-Normal product use begins with a local Manifest, target-product requirements, and an Application Input Contract. It does not require a source UI. Teams may author that Manifest directly or refine it from prior source-independent knowledge.
+Normal product use begins with a standard knowledge pack, target-product requirements, a local configuration override, and a product binding that evolves the Application Input Contract. It does not require a source UI. Teams may author a pack directly or refine it from prior source-independent knowledge.
+
+The standard pack is authored guidance for recurring business-application work; it is authoritative within that pack but is not presented as a universal truth for every product or culture. It may contain components such as Header, Drawer, Search Conditions, Result Grid, and Pagination, as well as screen patterns and cross-screen flows. Phase 1 establishes the responsibility model and one search/list-to-detail slice, not the full catalog.
 
 Repository calibration uses bounded, good-quality source UIs as probes and test oracles. Extraction dogfoods the observation method: failures reveal missing or misleading questions about roles, ownership, hierarchy, grouping, reading order, repetition, density, state, action priority, and region boundaries. Source-blind reconstruction and semantic re-extraction dogfood whether the Markdown preserves those relationships well enough to communicate them. Neither activity is a cloning or fidelity target.
 
 An extracted Manifest is a useful distilled artifact and may become a candidate for shared knowledge. One source does not make a rule canonical. Promotion to a reusable observation question, authored principle, or context-dependent pattern requires its provenance and scope to remain explicit and needs corroboration through calibration, holdout evidence, independent review, and human judgment. See [Manifest authority and source independence](profile/manifest-authority.md#knowledge-lifecycle).
+
+## Pack, configuration, and product responsibility
+
+Keep these inputs separate:
+
+- **Standard knowledge pack** — authored principles, components, screen patterns, flows, and finite configuration definitions. Its Markdown explains stable intent, hierarchy, responsibility, selection criteria, avoidances, and related concepts.
+- **Configuration selection** — a small, named set of product-variable presentation choices, such as logical action-region placement, action order, pagination placement, count presentation, and row-action presentation. A local override is the recommended way to change these values without modifying the pack.
+- **Product binding** — the product-owned evolution of the Application Input Contract: feature availability, routes, permissions, state, data sources, aggregate semantics, post-save or cancel destination, and displayed business language. A configuration value must never invent these facts.
+- **Extraction and evaluation material** — sources, screenshots, observations, comparisons, and promotion rationale. These remain calibration/test assets and are not part of the distributable pack or application input.
+
+Teams may fork and edit the pack directly, but then own that fork. For ordinary product variation, keep a separate local override alongside a separate product binding so either can survive a later pack update.
 
 ## Precedence
 
@@ -40,14 +53,14 @@ This precedence avoids dual ownership. The project does not require code and man
 1. Read the [UI profile](profile/index.md).
 2. Start with the [blank bundle](templates/blank/design-manifest/index.md) or inspect the restrained [business-app example](templates/business-app/design-manifest/index.md).
 3. When calibrating from a bounded source UI, use the [extraction prompt](prompts/extract-from-existing-ui.md) and keep capture or evaluation evidence outside the Manifest.
-4. Give only the relevant Manifest files, target-product inputs, and the [application prompt](prompts/apply-manifest.md) to a fresh implementer.
+4. Give the relevant standard-pack concepts, local overrides, product binding, target-product inputs, and the [application prompt](prompts/apply-manifest.md) to a fresh implementer.
 5. Use the [experiment ladder](docs/poc/experiment-ladder.md) to evaluate the observation method, source-independent handoff, and human usefulness before promoting any shared knowledge.
 
 ## Explicit non-goals
 
 - A web editor, CLI, validator, schema registry, or runtime.
 - A static conformance checker, drift detector, contradiction checker, or code-to-manifest synchronization system.
-- A comprehensive design-system or option catalog.
+- An unbounded option catalog, UI-contract DSL, or implementation-configuration language.
 - A replacement for code, accessibility rules, security controls, or business requirements.
 - Guaranteed or numerically certified reproduction fidelity.
 - Framework-specific implementation instructions.

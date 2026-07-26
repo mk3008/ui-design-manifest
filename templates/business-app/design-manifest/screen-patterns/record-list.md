@@ -1,24 +1,37 @@
 ---
 type: UI Screen Pattern
-title: Record list
-description: A bounded list pattern for scanning records and acting on one item.
+title: Searchable record list
+description: A bounded list pattern for finding, scanning, and opening a record.
 status: draft
 source: authored
-scope: Desktop list view in the example operations workspace.
+scope: Desktop search/list view in the example operations workspace.
 requires:
   - foundations/compact-work-surface
+  - components/search-conditions
+  - components/result-grid
+  - components/pagination
   - components/status-badge
-  - policies/confirm-destructive-action
+  - configuration/record-list-options
+  - flows/list-to-detail
 ---
 
 # User task
 
-Help an operations user locate a record, understand its current state, and choose an available action without losing list context.
+Help an operations user locate a record, understand its current state, and open an available record without losing list context.
 
 # Guidance
 
-Keep the list identity and primary scanning cues stable. Associate row-level actions with their record, expose action names, and preserve context after a non-navigation action. Apply the [compact work surface](../foundations/compact-work-surface.md), show state through the [status badge](../components/status-badge.md), and use the [destructive-action policy](../policies/confirm-destructive-action.md) when applicable.
+Keep the search task separate from the result set and preserve stable scanning cues after a query is applied. The Search action is primary; Clear is subordinate and only clears a product-declared query state. Associate a row operation with its record and expose a frequent, singular operation rather than hiding it in an overflow menu. Apply the [compact work surface](../foundations/compact-work-surface.md), [search conditions](../components/search-conditions.md), [result grid](../components/result-grid.md), [pagination](../components/pagination.md), and [status badge](../components/status-badge.md). Resolve only the finite placement and presentation choices in [record-list options](../configuration/record-list-options.md).
+
+# Transition roles
+
+This pattern provides the `open_record` role and requires the [list-to-detail flow](../flows/list-to-detail.md) when the product binding declares that opening a record is available. It does not own the destination, permission, record identity, query persistence, page position, or scroll restoration.
 
 # Unresolved
 
-Filtering, pagination, bulk selection, responsive transformation, and all non-default states require product evidence before implementation.
+Feature availability, query semantics, result data, count meaning, page state, routes, permissions, bulk selection, responsive transformation, and all non-default states require product binding or requirements before implementation. Creation and editing are optional transition roles, not configuration values; use them only when the binding declares them.
+
+# Relationships
+
+- [List-to-detail flow](../flows/list-to-detail.md) - Owns the cross-screen decision criteria and context-restoration principle.
+- [Record detail](record-detail.md) - Provides the corresponding destination role when the product binding supplies it.

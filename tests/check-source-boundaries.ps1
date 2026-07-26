@@ -49,6 +49,11 @@ $sourceBlind += @(
 $forbidden = 'github|gitlab|grafana|https?://|source url|screenshot|evidence register|nominated reference|reference ui|^# Evidence$|E-00[12]|1280x720|UI Contract Editor|サイドバー|\bOverview\b|\bJP\b'
 foreach ($relativePath in $sourceBlind) { Forbid-Text $relativePath $forbidden }
 
+# The authored standard pack may state its source-independence boundary, but must not identify or link to a source.
+$standardPack = @(Get-ChildItem -Path (Join-Path $root 'templates/business-app/design-manifest') -Recurse -Filter *.md | ForEach-Object { $_.FullName.Substring($root.Length + 1) })
+$packForbidden = 'github|gitlab|grafana|https?://|UI Contract Editor|サイドバー|\bOverview\b|\bJP\b'
+foreach ($relativePath in $standardPack) { Forbid-Text $relativePath $packForbidden }
+
 # The source-blind workspace manifest must not provide a path to extraction evidence.
 Forbid-Text 'docs/poc/experiments/001-workspace-shell/extracted/design-manifest/manifest.md' '\.\./\.\./evidence-register\.md'
 

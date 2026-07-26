@@ -4,14 +4,16 @@ title: Example operations workspace
 description: A restrained example for a list-based business workflow.
 status: experimental
 source: authored
-scope: Illustrative desktop record-list view and its local actions.
+pack_version: 0.1.0
+pack_id: example-business-app-standard-pack
+scope: Illustrative desktop search/list view, record detail, and their transition roles.
 requires:
   - policies/confirm-destructive-action
 ---
 
 # Product and scope
 
-This fictional workspace helps an operations user scan records, identify status, and act on one record. The bundle covers one desktop list pattern and does not define navigation, authentication, mobile behavior, or a full component library.
+This fictional workspace helps an operations user locate records, scan a result set, identify status, and open one record. The pack covers one desktop search/list-to-detail slice and does not define authentication, mobile behavior, data access, or a full component library.
 
 # Source-independence boundary
 
@@ -21,14 +23,18 @@ All content is authored to demonstrate structure. It contains no original-UI evi
 
 Target-product implementation and repository guidance come first; explicit accessibility, security, and business requirements follow; this local manifest is next; explicit starter guidance is last. Original or reference UI is not an application authority.
 
+# Configuration and product binding
+
+The pack supplies stable Markdown guidance and the finite definitions in [record-list options](configuration/record-list-options.md). Resolve defaults with a separate local override; direct edits to this directory are a pack fork. The separate product binding supplies feature availability, routes, permissions, state, data sources, aggregate meaning, post-save/cancel behavior, and business language. It evolves, but does not replace, the Application Input Contract.
+
 # Application input contract
 
 The application owner must provide the task-level state model, primary-record value, identity context, aggregate information, optional destinations, and behavior for unresolved fields. This illustrative manifest does not authorize an implementer to invent them. If a neutral, source-blind fixture is allowed, it may fill only an already instructed semantic slot with recorded provenance; it must not create product meaning, source-specific copy, or a new hierarchy slot.
 
 # Relationships
 
-Use the [compact work surface](foundations/compact-work-surface.md), [status badge](components/status-badge.md), [destructive-action policy](policies/confirm-destructive-action.md), and [record list](screen-patterns/record-list.md) together only when the task needs them.
+Use the [compact work surface](foundations/compact-work-surface.md), [search conditions](components/search-conditions.md), [result grid](components/result-grid.md), [pagination](components/pagination.md), [status badge](components/status-badge.md), [record list](screen-patterns/record-list.md), [record detail](screen-patterns/record-detail.md), and [list-to-detail flow](flows/list-to-detail.md) together only when the task needs them.
 
 # Unresolved
 
-Keyboard behavior, narrow viewports, loading, empty, error, and permission-limited states are intentionally unspecified.
+Keyboard behavior, narrow viewports, loading, empty, error, permission-limited states, creation, editing, saving, cancellation, and deletion are intentionally unspecified until product binding and requirements supply them.

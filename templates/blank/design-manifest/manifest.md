@@ -25,6 +25,10 @@ Use: target-product implementation and repository guidance; explicit product req
 
 The application owner supplies the task-level state model, primary-record value, identity context, aggregate information, optional destinations, and behavior for unresolved fields. This manifest does not invent those inputs. A neutral, source-blind fixture may fill only an already instructed semantic slot with recorded allowed provenance; it cannot add product meaning, source-specific copy, or a new hierarchy slot.
 
+# Configuration and flows
+
+Put fixed intent, hierarchy, responsibility, and selection criteria in Markdown concepts. Put only finite presentation choices in a configuration concept, with stable IDs, types, defaults, allowed values, meanings, scope, and owner. Keep local overrides separate from the pack; direct pack edits are a fork. Use a flow concept for cross-screen decision criteria, while a product binding owns feature existence, routes, permissions, state, data, aggregates, and display language.
+
 # Unresolved
 
 List gaps and conflicts that an implementer must not guess away.

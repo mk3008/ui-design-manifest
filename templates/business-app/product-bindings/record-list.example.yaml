@@ -1,0 +1,32 @@
+binding_version: 1
+pack_id: example-business-app-standard-pack
+pack_version: 0.1.0
+features:
+  search:
+    available: true
+  clear:
+    available: true
+  open_record:
+    available: true
+    destination_reference: product_owned_record_detail
+    destination_available: true
+    permission_reference: product_owned_open_record_permission
+    frequency: frequent
+  create_record:
+    available: false
+  edit_record:
+    available: false
+query:
+  available: true
+  state_reference: product_owned_query_state
+pagination:
+  available: true
+  state_reference: product_owned_page_state
+aggregate:
+  available: true
+  meaning_reference: product_owned_result_aggregate
+return_context:
+  query: preserve_when_product_supplied
+  page: preserve_when_product_supplied
+  scroll: preserve_when_product_supplied
+display_language: product_owned

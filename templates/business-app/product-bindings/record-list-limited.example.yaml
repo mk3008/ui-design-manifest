@@ -1,0 +1,26 @@
+binding_version: 1
+pack_id: example-business-app-standard-pack
+pack_version: 0.1.0
+features:
+  search:
+    available: true
+  clear:
+    available: false
+  open_record:
+    available: false
+  create_record:
+    available: false
+  edit_record:
+    available: false
+query:
+  available: true
+  state_reference: product_owned_query_state
+pagination:
+  available: false
+aggregate:
+  available: false
+return_context:
+  query: unavailable
+  page: unavailable
+  scroll: unavailable
+display_language: product_owned

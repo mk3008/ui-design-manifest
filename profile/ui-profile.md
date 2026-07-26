@@ -26,7 +26,7 @@ The starter bundles do not use `log.md`. If a team adds it, it remains an OKF re
 
 # Discovery and layout
 
-The bundle root is `design-manifest/` and contains `index.md`, a central `manifest.md` concept, and four optional category directories:
+The bundle root is `design-manifest/` and contains `index.md`, a central `manifest.md` concept, and optional category directories. A standard pack may also use `configuration/` for finite configuration definitions and `flows/` for cross-screen guidance:
 
 ```text
 design-manifest/
@@ -39,6 +39,10 @@ design-manifest/
 ├── policies/
 │   └── index.md
 └── screen-patterns/
+    └── index.md
+├── configuration/
+│   └── index.md
+└── flows/
     └── index.md
 ```
 
@@ -58,8 +62,25 @@ Directory names are routing conventions, not closed taxonomy. Start at the root 
 - `source`: provenance class, preferably `observed`, `inferred`, `authored`, or `mixed`.
 - `requires`: a YAML list of concept IDs or requirement references that must be considered with this concept.
 - `scope`: a short statement of the screens, states, or interactions to which the guidance applies.
+- `pack_version`: a pack-owned semantic version when the concept is the pack's root manifest.
 
 These are profile recommendations, not additional OKF conformance requirements. Do not repeat a per-file priority: precedence is bundle-level policy. Do not add numerical confidence scores.
+
+# Standard-pack configuration contract
+
+Markdown concepts hold stable knowledge: intent, information hierarchy, responsibility boundaries, action priority, selection conditions, avoidances, state and flow principles, and relationships. Do not move these statements into YAML merely because a product may disagree.
+
+YAML configuration definitions or configuration concepts hold only finite, machine-identifiable presentation choices. Each definition must state an `id`, `type`, `default`, allowed values or constraints, the meaning of each value, `scope`, and `owner`. State `relationships` only for a real dependency or conflict. The profile does not prescribe a runtime schema or a DSL.
+
+Configuration IDs are profile-level vocabulary. Do not redefine the same ID with a different type, meaning, allowed values, or default in another concept. Prefer logical directions such as `start` and `end`, never physical `left` and `right`. Represent action ordering as an array of stable semantic IDs, not display strings. Do not expose CSS values, DOM shape, framework properties, routes, permissions, product copy, product data, or state models as configuration.
+
+Adopt a configuration only when it describes a recurring, bounded product choice with more than one legitimate presentation and a clear owner. A one-off local difference should remain in a local override or product decision. Do not introduce compound conditional expressions or a new DSL to make options appear universal.
+
+Local overrides are the recommended extension mechanism. They reference known IDs and use allowed values while remaining outside the pack; a direct pack edit is a fork. Resolve pack defaults, then the local override, then use only explicitly supplied fallback behavior. Product binding is separate and owns feature existence, destinations, permissions, state, data, aggregate meaning, and display language.
+
+# Flows
+
+Use `flows/` for cross-screen guidance. A screen pattern records only the transition roles it provides or requires, such as opening a record, beginning creation, beginning editing, returning to a list, or restoring list context. A flow concept owns the decision criteria and relationship across those roles. Product bindings, not a flow, decide whether a feature exists, where it navigates, and who may use it.
 
 # Markdown body guidance
 

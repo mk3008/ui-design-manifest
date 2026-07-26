@@ -1,0 +1,8 @@
+pack_version: 0.1.0
+pack_id: example-business-app-standard-pack
+overrides:
+  search_actions_region: end
+  search_action_order: [search, clear]
+  pagination_region: end
+  result_count_presentation: summary
+  row_action_presentation: link
