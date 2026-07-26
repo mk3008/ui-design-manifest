@@ -1,0 +1,46 @@
+experiment_id: header-drawer-pattern-a-reconnection-attempt-2
+baseline_commit: de00ec0f10c506e2aa74deae3c09b5d4c736406b
+created_at: '2026-07-26T17:30:13+09:00'
+pattern_scope: Pattern A only
+source_blind_implementation_input: source-blind-implementation-input.md
+implementation:
+  path: implementation
+  digest_algorithm: SHA-256 raw-byte
+  bundle_digest: 7753811FF23C21BD22A47E9814662690106E6840C7BA604959EA8D22CC30FB3E
+  members:
+    - path: implementation/index.html
+      digest: BFAA97955A50E9F5FC4AB836E189C8209462125273C72868C57A5A9CED9EBAEC
+    - path: implementation/styles.css
+      digest: C7740809F09C9531398A9D3C4B9540DDE62899938F40B0968C69A397D615DE6D
+    - path: implementation/capture.ps1
+      digest: E5E5880896C7828EAE228DE0D82B690C0D9873A7D3C3AD835FD641A58D2834D5
+capture:
+  browser: Google Chrome 150.0.7871.184
+  method: direct local file URI, headless screenshot
+  command: >-
+    C:\Program Files\Google\Chrome\Application\chrome.exe --headless=new
+    --disable-gpu --hide-scrollbars --force-device-scale-factor=1
+    --window-size=1280,720 --no-first-run --no-default-browser-check
+    --user-data-dir=%TEMP%\ui-design-manifest-pattern-a-reconnection-attempt-2-%STATE%
+    --screenshot=%TARGET% file:///%IMPLEMENTATION%/index.html?state=%STATE%
+  viewport:
+    width: 1280
+    height: 720
+  original_ui_used_as_implementation_input: false
+artifacts:
+  - artifact_id: HDA2-A-OPEN-1280X720
+    state_id: A-open
+    path: implementation/A-open.png
+    digest_algorithm: SHA-256 raw-byte
+    sha256: FDA2661FAF07A0CD3F71177E6BE32F7036ADC45354C7136C74B776DC0FF96A7C
+    viewport: 1280x720
+    evaluator_input: true
+    human_reviewer_input: true
+  - artifact_id: HDA2-A-HIDDEN-1280X720
+    state_id: A-hidden
+    path: implementation/A-hidden.png
+    digest_algorithm: SHA-256 raw-byte
+    sha256: EBB960807FD73EEEEA6C953772A3306172B62075B6709BCBF13A5E0470C23161
+    viewport: 1280x720
+    evaluator_input: true
+    human_reviewer_input: true

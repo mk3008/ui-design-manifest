@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern A evidence reconnection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="canvas" aria-label="Static Pattern A evidence fixture">
+    <header class="global-header">
+      <button class="header-controller" type="button" aria-label="Navigation controller">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <h1>Workspace</h1>
+    </header>
+    <aside class="drawer" aria-label="Primary navigation">
+      <nav>
+        <span class="nav-row current">Parent A <span aria-hidden="true">⌄</span></span>
+        <span class="nav-row child">Child A</span>
+        <span class="nav-row">Leaf A</span>
+        <span class="nav-row">Direct A</span>
+      </nav>
+    </aside>
+    <section class="workspace" aria-label="Workspace content"><i></i><i></i><i></i></section>
+  </main>
+  <script>
+    const state = new URLSearchParams(location.search).get('state');
+    if (state !== 'A-open' && state !== 'A-hidden') throw new Error('Unsupported static state');
+    document.body.dataset.state = state;
+  </script>
+</body>
+</html>
