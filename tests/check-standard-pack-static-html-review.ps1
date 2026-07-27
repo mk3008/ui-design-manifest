@@ -3,31 +3,35 @@ $root = Split-Path -Parent $PSScriptRoot
 $review = Join-Path $root 'docs/poc/experiments/009-standard-pack-static-html-review/attempt-1'
 $manifest = Join-Path $review 'artifact-manifest.yaml'
 $record = Join-Path $review 'implementation-record.md'
-foreach ($path in @($manifest, $record, (Join-Path $review 'styles.css'), (Join-Path $review 'capture.ps1'))) { if (-not (Test-Path -LiteralPath $path)) { throw "Missing static review input: $path" } }
+$screenReview = Join-Path $review 'screen-review.md'
+foreach ($path in @($manifest, $record, $screenReview, (Join-Path $review 'styles.css'))) { if (-not (Test-Path -LiteralPath $path)) { throw "Missing static review input: $path" } }
+foreach ($obsolete in @('capture.ps1', 'review.png', 'drawer.png', 'search-grid.png', 'search-card.png')) { if (Test-Path -LiteralPath (Join-Path $review $obsolete)) { throw "HTML-only review must not retain obsolete capture artifact: $obsolete" } }
 
 $manifestText = Get-Content -Raw $manifest
 foreach ($id in @('review-index', 'drawer-comparison', 'search-grid', 'search-card')) { if ($manifestText -notmatch "(?m)^  - id: $id\r?$") { throw "Missing artifact ID: $id" } }
+if ($manifestText -notmatch '(?m)^review_mode: html-only\r?$') { throw 'Static review manifest must declare HTML-only review mode.' }
+if ($manifestText -notmatch '(?m)^capture_status: omitted\r?$') { throw 'Static review manifest must declare omitted fixed capture.' }
+if ($manifestText -notmatch '(?m)^digest_algorithm: SHA-256 canonical UTF-8 text with LF line endings\r?$') { throw 'Static review manifest must declare canonical text digests.' }
+if ($manifestText -match '(?m)^\s+png(?:_sha256)?:') { throw 'HTML-only manifest must not retain PNG entries.' }
 $expected = @{
   'review.html' = '5008C676F0798C805D2527521BF72A6C1DCBB69E4B6B48E93C07876D61115AB2'
-  'drawer.html' = 'B758457E9BA513892AB08EC0D25B89D929BBED247CD96BE71D76CCE90FFF86A9'
-  'search-grid.html' = '5417D2F12E71ECDFC5C7DA04AADB44C404626A2C600C18CAC9EA512C7DCE7B18'
-  'search-card.html' = '28558E2826817BBF0A0361CE8E4383604AF2E11F55C834D3A5BA06491D70E3E0'
-  'styles.css' = '44746FB04344E25335F048657D30A5C08D077A613E905B9A64A6AA163D917A31'
-  'review.png' = '89FC29C1D223BE19B19D7A23332CFE5BA2FD2924A65DB3070E1BC497494E9F84'
-  'drawer.png' = '206CE61007E4FED6D2FA7B6953969B1FD7DFF715C01E4D1D3460351F2F535FAA'
-  'search-grid.png' = '290E1E7D91FEC246BE31147B7F2DB23FA399B18B8E9891708D4C312919F8772A'
-  'search-card.png' = '02C487B37E22B80CED95F176899B3A6B41789AC833989D482EF8F6FBF241313E'
+  'drawer.html' = '0524BC10606FBBEB1D1DFBFA566FF1EDB54F444134FB33B9532893857D33468B'
+  'search-grid.html' = 'CB1770EECB953C9BD2761E18AA485582647A7F9031A114E3C25134E4602FDEC4'
+  'search-card.html' = 'C4F586A311BB559EE6C350F8C61CEE47A782910F9C13FA742E16319CCBCF289B'
+  'styles.css' = '0D612F9B06FD3AC431D947117FB0730F8A95E38BA2DC0A637D2B056ED87FE405'
+}
+
+function Get-CanonicalTextSha256([string]$path) {
+  $text = [System.IO.File]::ReadAllText($path, [System.Text.UTF8Encoding]::new($false))
+  $canonical = ($text -replace "`r`n", "`n") -replace "`r", "`n"
+  $bytes = [System.Text.UTF8Encoding]::new($false).GetBytes($canonical)
+  $sha256 = [System.Security.Cryptography.SHA256]::Create()
+  try { return ([System.BitConverter]::ToString($sha256.ComputeHash($bytes))).Replace('-', '') } finally { $sha256.Dispose() }
 }
 foreach ($name in $expected.Keys) {
   $path = Join-Path $review $name
   if (-not (Test-Path -LiteralPath $path)) { throw "Missing artifact file: $name" }
-  if ((Get-FileHash -Algorithm SHA256 $path).Hash -ne $expected[$name]) { throw "Digest mismatch: $name" }
-}
-
-Add-Type -AssemblyName System.Drawing
-foreach ($name in @('review.png', 'drawer.png', 'search-grid.png', 'search-card.png')) {
-  $image = [System.Drawing.Image]::FromFile((Join-Path $review $name))
-  try { if ($image.Width -ne 1440 -or $image.Height -ne 1000) { throw "Unexpected PNG dimensions: $name" } } finally { $image.Dispose() }
+  if ((Get-CanonicalTextSha256 $path) -ne $expected[$name]) { throw "Canonical text digest mismatch: $name" }
 }
 
 $htmlNames = @('review.html', 'drawer.html', 'search-grid.html', 'search-card.html')
@@ -63,5 +67,10 @@ $recordText = Get-Content -Raw $record
 if ($recordText -notmatch '(?s)^---\s*\r?\n.*?\r?\n---\s*\r?\n') { throw 'Implementation record front matter is invalid.' }
 foreach ($path in @('templates/business-app/design-manifest/components/drawer.md', 'templates/business-app/design-manifest/components/result-grid.md', 'templates/business-app/design-manifest/components/result-card.md', 'templates/business-app/design-manifest/screen-patterns/record-list.md', 'templates/business-app/design-manifest/screen-patterns/search-with-cards.md')) { if (-not $recordText.Contains($path)) { throw "Missing standard-pack source reference: $path" } }
 foreach ($needle in @('trailing expanded-disclosure icon', 'leading accent', 'square row shape', 'not configuration')) { if (-not $recordText.Contains($needle)) { throw "Missing bounded Drawer fixture declaration: $needle" } }
+if ($recordText -notmatch 'Fixed PNG capture is\s+omitted') { throw 'Implementation record must state the omitted fixed capture.' }
+$screenReviewText = Get-Content -Raw $screenReview
+if ($screenReviewText -notmatch '(?s)^---\s*\r?\n.*?\r?\n---\s*\r?\n') { throw 'Screen review front matter is invalid.' }
+if ($screenReviewText -match '(?i)fixed local captures|four `1440x1000` captures|fixed capture \|') { throw 'Screen review retains a stale fixed-capture claim.' }
+if ($screenReviewText -notmatch 'capture is\s+omitted') { throw 'Screen review must state the omitted fixed capture.' }
 
-Write-Output 'Standard-pack static HTML review checks passed. HTML: 4. PNG: 4. Fixed digests: 9.'
+Write-Output 'Standard-pack static HTML review checks passed. HTML: 4. Canonical text digests: 5. PNG capture: omitted.'

@@ -42,6 +42,7 @@ implementation choices, not configuration or product facts.
 
 # Review boundary
 
-The HTML and fixed PNGs support visual review only. Keyboard, focus, Escape,
-ARIA, assistive technology, responsive behavior, animation, DOM/CSS mechanics,
-and runtime behavior are not exercised.
+The local HTML files support visual review directly. Fixed PNG capture is
+omitted because local capture is unavailable in this environment. Keyboard,
+focus, Escape, ARIA, assistive technology, responsive behavior, animation,
+DOM/CSS mechanics, and runtime behavior are not exercised.
