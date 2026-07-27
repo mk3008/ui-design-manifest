@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>検索Card確認</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="search-page">
+    <header class="review-page-header"><a href="review.html">← 確認一覧</a><div><p class="eyebrow">Search with cards</p><h1>検索結果</h1></div><p>サンプル表示</p></header>
+    <section class="search-conditions" aria-label="検索条件"><label>検索条件<input type="text" value="Fixture query" aria-label="検索条件"></label><div class="search-actions"><button type="button" class="primary">Search</button><button type="button">Clear</button></div></section>
+    <section class="result-region" aria-label="検索結果Card"><header class="result-heading"><div><h2>結果Card</h2><p>サンプルデータ</p></div></header>
+      <div class="card-gallery">
+        <article class="result-card is-selected"><label class="card-check"><input type="checkbox" checked aria-label="Fixture 01を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 01</a></h2><p class="card-summary">Fixture summary A.</p><dl><div><dt>Fixture label A</dt><dd>Alpha</dd></div><div><dt>Fixture label B</dt><dd>Group one</dd></div></dl></div></article>
+        <article class="result-card"><label class="card-check"><input type="checkbox" aria-label="Fixture 02を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 02</a></h2><p class="card-summary">Fixture summary B.</p><dl><div><dt>Fixture label A</dt><dd>Beta</dd></div><div><dt>Fixture label B</dt><dd>Group one</dd></div></dl></div></article>
+        <article class="result-card"><label class="card-check"><input type="checkbox" aria-label="Fixture 03を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 03</a></h2><p class="card-summary">Fixture summary C.</p><dl><div><dt>Fixture label A</dt><dd>Delta</dd></div><div><dt>Fixture label B</dt><dd>Group two</dd></div></dl></div></article>
+        <article class="result-card"><label class="card-check"><input type="checkbox" aria-label="Fixture 04を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 04</a></h2><p class="card-summary">Fixture summary D.</p><dl><div><dt>Fixture label A</dt><dd>Gamma</dd></div><div><dt>Fixture label B</dt><dd>Group two</dd></div></dl></div></article>
+        <article class="result-card"><label class="card-check"><input type="checkbox" aria-label="Fixture 05を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 05</a></h2><p class="card-summary">Fixture summary E.</p><dl><div><dt>Fixture label A</dt><dd>Kappa</dd></div><div><dt>Fixture label B</dt><dd>Group three</dd></div></dl></div></article>
+        <article class="result-card"><label class="card-check"><input type="checkbox" aria-label="Fixture 06を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 06</a></h2><p class="card-summary">Fixture summary F.</p><dl><div><dt>Fixture label A</dt><dd>Omega</dd></div><div><dt>Fixture label B</dt><dd>Group three</dd></div></dl></div></article>
+        <article class="result-card"><label class="card-check"><input type="checkbox" aria-label="Fixture 07を選択"><span></span></label><div><h2><a class="detail-link" href="#detail-fixture">Fixture 07</a></h2><p class="card-summary">Fixture summary G.</p><dl><div><dt>Fixture label A</dt><dd>Sigma</dd></div><div><dt>Fixture label B</dt><dd>Group four</dd></div></dl></div></article>
+      </div>
+      <nav class="pagination" aria-label="Pagination"><button type="button">Previous</button><strong>Fixture page</strong><button type="button">Next</button></nav>
+    </section>
+    <span id="detail-fixture" class="sr-only">詳細遷移のサンプル</span>
+  </main>
+</body>
+</html>

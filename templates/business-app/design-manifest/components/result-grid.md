@@ -11,11 +11,30 @@ requires:
 
 # Guidance
 
-Keep each row's scanning cues and available operation associated with the same record. Reserve the strongest row-level treatment for one frequent operation; use an overflow presentation only when the product has multiple low-frequency operations. Do not decide which columns, records, values, statuses, row count, loading state, or permission state exist: those belong to product binding.
+Keep each row's scanning cues and available operation associated with the same record. Reserve the strongest row-level treatment for one frequent operation; use an overflow presentation only when the product has multiple low-frequency operations. Do not decide which columns, records, values, statuses, row count, loading state, permission state, selection model, or sort model exist: those belong to product binding.
+
+When the binding supplies multi-selection, use a leading checkbox column and make
+selected and unselected rows distinguishable without relying on color alone. Do
+not add visible `Select` or `Selected` text next to every checkbox merely to
+demonstrate its state; the control's accessible name remains binding-owned. A
+header checkbox is permitted only when the binding also supplies select-all
+availability. When selection is absent, omit the selection column and selected
+row treatment entirely.
+
+When the binding supplies a sort model, show its active direction in the
+corresponding column header. Do not put an active sort choice in detached page
+chrome, and do not persist sort indicators for inactive columns. When sorting
+is absent, do not infer a sortable header or direction state.
+
+Let the host assign the grid width and outer spacing. Keep meaningful columns
+at widths appropriate to their role rather than stretching them merely to fill
+the grid. If the assigned width has residual space, use one trailing,
+presentation-only empty column; it has no label, value, operation, sort state,
+selection meaning, or responsive behavior.
 
 # Avoid
 
-Do not use a presentation setting to turn an absent action into an available one, or to hide the only frequent action behind an overflow menu.
+Do not use a presentation setting to turn an absent action into an available one, or to hide the only frequent action behind an overflow menu. Do not invent selection, select-all, sorting, or column semantics from a static fixture.
 
 # Relationships
 

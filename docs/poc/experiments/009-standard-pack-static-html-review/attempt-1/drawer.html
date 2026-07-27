@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drawer確認</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="comparison-page">
+    <header class="review-page-header"><a href="review.html">← 確認一覧</a><div><p class="eyebrow">Drawer</p><h1>表示・非表示の確認</h1></div><p>サンプル表示</p></header>
+    <section class="drawer-comparison" aria-label="Drawer状態比較">
+      <article class="drawer-state">
+        <header class="state-label"><strong>Drawer表示</strong></header>
+        <div class="fixture-window drawer-open-window">
+          <header class="app-header"><button class="menu-icon" type="button" aria-label="Drawer"><i></i><i></i><i></i></button><strong>Workspace</strong></header>
+          <div class="app-body">
+            <nav class="fixture-drawer" aria-label="Fixture navigation"><p>Navigation</p><a class="nav-row" href="#fixture-a">Fixture section A</a><div class="nav-group"><div class="nav-parent"><a class="nav-row" href="#fixture-b">Fixture section B</a><button class="nav-disclosure" type="button" aria-label="Fixture section Bを閉じる" aria-expanded="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><a class="nav-row nav-child current" href="#fixture-b-child" aria-current="page">Fixture section B-1</a></div><a class="nav-row" href="#fixture-c">Fixture section C</a></nav>
+            <section class="fixture-workspace"><p class="workspace-kicker">Workspace</p><h2>Fixture workspace</h2><div class="fixture-block"></div><div class="fixture-block short"></div></section>
+          </div>
+        </div>
+      </article>
+      <article class="drawer-state">
+        <header class="state-label"><strong>Drawer非表示</strong></header>
+        <div class="fixture-window drawer-hidden-window">
+          <header class="app-header"><button class="menu-icon" type="button" aria-label="Drawer"><i></i><i></i><i></i></button><strong>Workspace</strong></header>
+          <section class="fixture-workspace"><p class="workspace-kicker">Workspace</p><h2>Fixture workspace</h2><div class="fixture-block"></div><div class="fixture-block short"></div></section>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

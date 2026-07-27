@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>検索Grid確認</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="search-page">
+    <header class="review-page-header"><a href="review.html">← 確認一覧</a><div><p class="eyebrow">Search with grid</p><h1>検索結果</h1></div><p>サンプル表示</p></header>
+    <section class="search-conditions" aria-label="検索条件"><label>検索条件<input type="text" value="Fixture query" aria-label="検索条件"></label><div class="search-actions"><button type="button" class="primary">Search</button><button type="button">Clear</button></div></section>
+    <section class="result-region" aria-label="検索結果Grid">
+      <header class="result-heading"><div><h2>結果Grid</h2><p>6 fixture results</p></div></header>
+      <table class="result-grid">
+        <colgroup><col class="selection-column"><col class="record-column"><col class="attribute-a-column"><col class="attribute-b-column"><col class="open-column"><col class="filler-column"></colgroup>
+        <thead><tr><th scope="col" class="selection-column"><label class="check-label check-only"><input type="checkbox" aria-label="すべてのサンプル行を選択"><span></span></label></th><th scope="col">Record</th><th scope="col" class="sortable"><button type="button" class="grid-sort">Fixture attribute A <span aria-hidden="true">↑</span></button></th><th scope="col">Fixture attribute B</th><th scope="col">Open</th><th scope="col" class="filler-column"><span class="sr-only">余白</span></th></tr></thead>
+        <tbody>
+          <tr class="is-selected"><td class="selection-column"><label class="check-label check-only"><input type="checkbox" checked aria-label="Fixture 01を選択"><span></span></label></td><td>Fixture 01</td><td>Alpha</td><td>Group one</td><td><a href="#detail-fixture">Open</a></td><td class="filler-column"></td></tr>
+          <tr><td class="selection-column"><label class="check-label check-only"><input type="checkbox" aria-label="Fixture 02を選択"><span></span></label></td><td>Fixture 02</td><td>Beta</td><td>Group one</td><td><a href="#detail-fixture">Open</a></td><td class="filler-column"></td></tr>
+          <tr><td class="selection-column"><label class="check-label check-only"><input type="checkbox" aria-label="Fixture 03を選択"><span></span></label></td><td>Fixture 03</td><td>Delta</td><td>Group two</td><td><a href="#detail-fixture">Open</a></td><td class="filler-column"></td></tr>
+          <tr><td class="selection-column"><label class="check-label check-only"><input type="checkbox" aria-label="Fixture 04を選択"><span></span></label></td><td>Fixture 04</td><td>Gamma</td><td>Group two</td><td><a href="#detail-fixture">Open</a></td><td class="filler-column"></td></tr>
+          <tr><td class="selection-column"><label class="check-label check-only"><input type="checkbox" aria-label="Fixture 05を選択"><span></span></label></td><td>Fixture 05</td><td>Kappa</td><td>Group three</td><td><a href="#detail-fixture">Open</a></td><td class="filler-column"></td></tr>
+          <tr><td class="selection-column"><label class="check-label check-only"><input type="checkbox" aria-label="Fixture 06を選択"><span></span></label></td><td>Fixture 06</td><td>Omega</td><td>Group three</td><td><a href="#detail-fixture">Open</a></td><td class="filler-column"></td></tr>
+        </tbody>
+      </table>
+      <nav class="pagination" aria-label="Pagination"><button type="button">Previous</button><strong>Fixture page</strong><button type="button">Next</button></nav>
+    </section>
+    <span id="detail-fixture" class="sr-only">詳細遷移のサンプル</span>
+  </main>
+</body>
+</html>

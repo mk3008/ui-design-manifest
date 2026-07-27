@@ -22,7 +22,14 @@ distinguish selected and unselected states with more than color alone.
 
 Keep an incomplete final row natural rather than stretching its cards to fill
 the remaining width. Omit images, status, count, action, or destination slots
-that the product does not supply.
+that the product does not supply. When a binding supplies multi-selection, an
+upper-right checkbox is sufficient to show the choice and its checked state;
+do not add synthetic visible `Select` or `Selected` copy merely to demonstrate
+it. The control's accessible name remains binding-owned. When the binding also
+supplies a detail destination, keep its supplied title link distinct from that
+checkbox; do not make the whole card body perform both selection and navigation.
+If either capability is absent, omit its dependent control rather than
+inventing a fallback.
 
 # Product boundary
 

@@ -1,0 +1,47 @@
+---
+type: Static HTML review implementation
+title: Standard-pack migrated pattern review
+description: Local-only static fixtures for human review of Drawer, Search with Grid, and Search with Cards.
+status: draft
+source: authored
+---
+
+# Boundary
+
+This PoC applies the business-app standard pack to three static review surfaces.
+Its labels, values, collection members, and declared availability are neutral
+fixtures only. It does not define a route, product data model, product status,
+permission, or runtime behavior.
+
+The Grid applies only declared fixture capabilities: a leading checkbox column,
+one checked row, a header select-all affordance, and one active sort direction
+inside its column header. It does not add visible `Select` or `Selected` copy,
+or a detached sort control. Its meaningful columns retain compact role-based
+widths; the single trailing empty column consumes residual host width without
+adding product meaning.
+
+The Card fixture applies its declared selection slot with an upper-right
+checkbox only. A supplied title link, not the whole card, represents the
+separate detail transition. It contains seven neutral cards so that the final
+row remains naturally incomplete without stretching.
+
+The Drawer fixture declares one expanded parent/child relationship solely for
+this neutral review. Its parent has a trailing expanded-disclosure icon; its
+current child uses a leading accent and type-weight difference, not visible
+state copy. Its selected-row accent token and square row shape are sample
+implementation choices, not configuration or product facts.
+
+# Inputs
+
+- `templates/business-app/design-manifest/components/drawer.md`
+- `templates/business-app/design-manifest/components/result-grid.md`
+- `templates/business-app/design-manifest/components/result-card.md`
+- `templates/business-app/design-manifest/screen-patterns/record-list.md`
+- `templates/business-app/design-manifest/screen-patterns/search-with-cards.md`
+- `templates/business-app/design-manifest/flows/list-to-detail.md`
+
+# Review boundary
+
+The HTML and fixed PNGs support visual review only. Keyboard, focus, Escape,
+ARIA, assistive technology, responsive behavior, animation, DOM/CSS mechanics,
+and runtime behavior are not exercised.
