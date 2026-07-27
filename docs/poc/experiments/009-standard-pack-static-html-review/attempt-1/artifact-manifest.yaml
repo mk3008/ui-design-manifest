@@ -1,22 +1,47 @@
 experiment_id: standard-pack-static-html-review-attempt-1
 baseline_commit: 1267dbb26d6e0e8ba4380ec90d2f5cb90c81338a
-review_mode: html-only
-capture_status: omitted
-capture_reason: Local fixed-image capture is unavailable in this environment; human review uses the local HTML files directly.
-digest_algorithm: SHA-256 canonical UTF-8 text with LF line endings
+review_mode: html-and-png
+capture_status: fixed
+digest_algorithm_html_css: SHA-256 canonical UTF-8 text with LF line endings
+digest_algorithm_png: SHA-256 raw-byte
+capture:
+  browser_executable: C:\Program Files\Google\Chrome\Application\chrome.exe
+  browser_version: 150.0.7871.187
+  viewport: 1440x1000
+  normal_mode: --headless=new --disable-gpu
+  fallback_mode: --use-gl=angle --use-angle=swiftshader
+  fallback_policy: Retry once only after normal capture failure.
+  record: capture-record.json
+  historical_correction: A previous GPU-failure explanation had no retained command output or browser log and was not substantiated. Current Chrome capture succeeds.
 artifacts:
   - id: review-index
     html: review.html
     html_sha256: 5008C676F0798C805D2527521BF72A6C1DCBB69E4B6B48E93C07876D61115AB2
+    png: review.png
+    png_sha256_raw_byte: 89FC29C1D223BE19B19D7A23332CFE5BA2FD2924A65DB3070E1BC497494E9F84
+    png_size_bytes: 68799
+    png_dimensions: 1440x1000
   - id: drawer-comparison
     html: drawer.html
     html_sha256: 0524BC10606FBBEB1D1DFBFA566FF1EDB54F444134FB33B9532893857D33468B
+    png: drawer.png
+    png_sha256_raw_byte: 75A4CA1805618CF4A3FD51692FB47A005FE3E18D8291FF757FAE6A2CF2E05DCE
+    png_size_bytes: 32420
+    png_dimensions: 1440x1000
   - id: search-grid
     html: search-grid.html
     html_sha256: CB1770EECB953C9BD2761E18AA485582647A7F9031A114E3C25134E4602FDEC4
+    png: search-grid.png
+    png_sha256_raw_byte: B93499946BD9A637E565422504F7002200B96AF5227D53F061F8DF024663CD0F
+    png_size_bytes: 38998
+    png_dimensions: 1440x1000
   - id: search-card
     html: search-card.html
     html_sha256: C4F586A311BB559EE6C350F8C61CEE47A782910F9C13FA742E16319CCBCF289B
+    png: search-card.png
+    png_sha256_raw_byte: 8AD7861D6150B5AE8341EB2504699B13FA4C94DCDF6591BEE633502E789C72A8
+    png_size_bytes: 42570
+    png_dimensions: 1440x1000
 shared_css:
   path: styles.css
   sha256: 0D612F9B06FD3AC431D947117FB0730F8A95E38BA2DC0A637D2B056ED87FE405

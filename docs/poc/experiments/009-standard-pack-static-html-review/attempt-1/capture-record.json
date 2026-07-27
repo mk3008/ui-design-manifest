@@ -1,0 +1,127 @@
+{
+  "experiment_id": "standard-pack-static-html-review-attempt-1",
+  "browser": {
+    "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "version": "150.0.7871.187"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "normal_mode": "--headless=new --disable-gpu",
+  "fallback_mode": "--use-gl=angle --use-angle=swiftshader (one retry only after normal failure)",
+  "captures": [
+    {
+      "page": "review",
+      "html": "review.html",
+      "png": "review.png",
+      "normal_command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--disable-gpu",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--window-size=1440,1000",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--user-data-dir=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-review-c8fa8054f7c540298005c2af447be193\\profile",
+        "--screenshot=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-review-c8fa8054f7c540298005c2af447be193\\review.png",
+        "file:///C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/009-standard-pack-static-html-review/attempt-1/review.html"
+      ],
+      "normal_exit_code": 0,
+      "normal_stdout_stderr": "68799 bytes written to file C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-review-c8fa8054f7c540298005c2af447be193\\review.png",
+      "fallback_used": false,
+      "fallback_command": null,
+      "fallback_exit_code": null,
+      "fallback_stdout_stderr": [],
+      "png_sha256_raw_byte": "89FC29C1D223BE19B19D7A23332CFE5BA2FD2924A65DB3070E1BC497494E9F84",
+      "png_size_bytes": 68799,
+      "png_width": 1440,
+      "png_height": 1000
+    },
+    {
+      "page": "drawer",
+      "html": "drawer.html",
+      "png": "drawer.png",
+      "normal_command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--disable-gpu",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--window-size=1440,1000",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--user-data-dir=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-drawer-dc92d87c861e47d88f2d38fe939c1b1d\\profile",
+        "--screenshot=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-drawer-dc92d87c861e47d88f2d38fe939c1b1d\\drawer.png",
+        "file:///C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/009-standard-pack-static-html-review/attempt-1/drawer.html"
+      ],
+      "normal_exit_code": 0,
+      "normal_stdout_stderr": "32420 bytes written to file C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-drawer-dc92d87c861e47d88f2d38fe939c1b1d\\drawer.png",
+      "fallback_used": false,
+      "fallback_command": null,
+      "fallback_exit_code": null,
+      "fallback_stdout_stderr": [],
+      "png_sha256_raw_byte": "75A4CA1805618CF4A3FD51692FB47A005FE3E18D8291FF757FAE6A2CF2E05DCE",
+      "png_size_bytes": 32420,
+      "png_width": 1440,
+      "png_height": 1000
+    },
+    {
+      "page": "search-grid",
+      "html": "search-grid.html",
+      "png": "search-grid.png",
+      "normal_command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--disable-gpu",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--window-size=1440,1000",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--user-data-dir=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-search-grid-0e544db765c1446b9a711543db5450f3\\profile",
+        "--screenshot=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-search-grid-0e544db765c1446b9a711543db5450f3\\search-grid.png",
+        "file:///C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/009-standard-pack-static-html-review/attempt-1/search-grid.html"
+      ],
+      "normal_exit_code": 0,
+      "normal_stdout_stderr": "38998 bytes written to file C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-search-grid-0e544db765c1446b9a711543db5450f3\\search-grid.png",
+      "fallback_used": false,
+      "fallback_command": null,
+      "fallback_exit_code": null,
+      "fallback_stdout_stderr": [],
+      "png_sha256_raw_byte": "B93499946BD9A637E565422504F7002200B96AF5227D53F061F8DF024663CD0F",
+      "png_size_bytes": 38998,
+      "png_width": 1440,
+      "png_height": 1000
+    },
+    {
+      "page": "search-card",
+      "html": "search-card.html",
+      "png": "search-card.png",
+      "normal_command": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--disable-gpu",
+        "--headless=new",
+        "--hide-scrollbars",
+        "--force-device-scale-factor=1",
+        "--window-size=1440,1000",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--user-data-dir=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-search-card-f5415ce807ff4a76afebb1975a0bd624\\profile",
+        "--screenshot=C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-search-card-f5415ce807ff4a76afebb1975a0bd624\\search-card.png",
+        "file:///C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/009-standard-pack-static-html-review/attempt-1/search-card.html"
+      ],
+      "normal_exit_code": 0,
+      "normal_stdout_stderr": "42570 bytes written to file C:\\Users\\mssgm\\AppData\\Local\\Temp\\ui-design-manifest-capture-search-card-f5415ce807ff4a76afebb1975a0bd624\\search-card.png",
+      "fallback_used": false,
+      "fallback_command": null,
+      "fallback_exit_code": null,
+      "fallback_stdout_stderr": [],
+      "png_sha256_raw_byte": "8AD7861D6150B5AE8341EB2504699B13FA4C94DCDF6591BEE633502E789C72A8",
+      "png_size_bytes": 42570,
+      "png_width": 1440,
+      "png_height": 1000
+    }
+  ]
+}

@@ -4,15 +4,18 @@ $review = Join-Path $root 'docs/poc/experiments/009-standard-pack-static-html-re
 $manifest = Join-Path $review 'artifact-manifest.yaml'
 $record = Join-Path $review 'implementation-record.md'
 $screenReview = Join-Path $review 'screen-review.md'
-foreach ($path in @($manifest, $record, $screenReview, (Join-Path $review 'styles.css'))) { if (-not (Test-Path -LiteralPath $path)) { throw "Missing static review input: $path" } }
-foreach ($obsolete in @('capture.ps1', 'review.png', 'drawer.png', 'search-grid.png', 'search-card.png')) { if (Test-Path -LiteralPath (Join-Path $review $obsolete)) { throw "HTML-only review must not retain obsolete capture artifact: $obsolete" } }
+$captureScript = Join-Path $review 'capture.ps1'
+$captureRecordPath = Join-Path $review 'capture-record.json'
+foreach ($path in @($manifest, $record, $screenReview, $captureScript, $captureRecordPath, (Join-Path $review 'styles.css'))) { if (-not (Test-Path -LiteralPath $path)) { throw "Missing static review input: $path" } }
 
 $manifestText = Get-Content -Raw $manifest
 foreach ($id in @('review-index', 'drawer-comparison', 'search-grid', 'search-card')) { if ($manifestText -notmatch "(?m)^  - id: $id\r?$") { throw "Missing artifact ID: $id" } }
-if ($manifestText -notmatch '(?m)^review_mode: html-only\r?$') { throw 'Static review manifest must declare HTML-only review mode.' }
-if ($manifestText -notmatch '(?m)^capture_status: omitted\r?$') { throw 'Static review manifest must declare omitted fixed capture.' }
-if ($manifestText -notmatch '(?m)^digest_algorithm: SHA-256 canonical UTF-8 text with LF line endings\r?$') { throw 'Static review manifest must declare canonical text digests.' }
-if ($manifestText -match '(?m)^\s+png(?:_sha256)?:') { throw 'HTML-only manifest must not retain PNG entries.' }
+if ($manifestText -notmatch '(?m)^review_mode: html-and-png\r?$') { throw 'Static review manifest must declare HTML-and-PNG review mode.' }
+if ($manifestText -notmatch '(?m)^capture_status: fixed\r?$') { throw 'Static review manifest must declare fixed capture.' }
+if ($manifestText -notmatch '(?m)^digest_algorithm_html_css: SHA-256 canonical UTF-8 text with LF line endings\r?$') { throw 'Static review manifest must declare canonical HTML and CSS digests.' }
+if ($manifestText -notmatch '(?m)^digest_algorithm_png: SHA-256 raw-byte\r?$') { throw 'Static review manifest must declare raw-byte PNG digests.' }
+if ($manifestText -notmatch '(?m)^  browser_executable: C:\\Program Files\\Google\\Chrome\\Application\\chrome\.exe\r?$') { throw 'Static review manifest must declare the explicit Chrome executable.' }
+if ($manifestText -match '(?i)msedge|edge\.exe') { throw 'Static review manifest must not declare an Edge fallback.' }
 $expected = @{
   'review.html' = '5008C676F0798C805D2527521BF72A6C1DCBB69E4B6B48E93C07876D61115AB2'
   'drawer.html' = '0524BC10606FBBEB1D1DFBFA566FF1EDB54F444134FB33B9532893857D33468B'
@@ -32,6 +35,22 @@ foreach ($name in $expected.Keys) {
   $path = Join-Path $review $name
   if (-not (Test-Path -LiteralPath $path)) { throw "Missing artifact file: $name" }
   if ((Get-CanonicalTextSha256 $path) -ne $expected[$name]) { throw "Canonical text digest mismatch: $name" }
+}
+
+$expectedPng = @{
+  'review.png' = @{ hash = '89FC29C1D223BE19B19D7A23332CFE5BA2FD2924A65DB3070E1BC497494E9F84'; bytes = 68799 }
+  'drawer.png' = @{ hash = '75A4CA1805618CF4A3FD51692FB47A005FE3E18D8291FF757FAE6A2CF2E05DCE'; bytes = 32420 }
+  'search-grid.png' = @{ hash = 'B93499946BD9A637E565422504F7002200B96AF5227D53F061F8DF024663CD0F'; bytes = 38998 }
+  'search-card.png' = @{ hash = '8AD7861D6150B5AE8341EB2504699B13FA4C94DCDF6591BEE633502E789C72A8'; bytes = 42570 }
+}
+Add-Type -AssemblyName System.Drawing
+foreach ($name in $expectedPng.Keys) {
+  $path = Join-Path $review $name
+  if (-not (Test-Path -LiteralPath $path)) { throw "Missing fixed PNG: $name" }
+  if ((Get-FileHash -Algorithm SHA256 -LiteralPath $path).Hash -ne $expectedPng[$name].hash) { throw "Raw-byte PNG digest mismatch: $name" }
+  if ((Get-Item -LiteralPath $path).Length -ne $expectedPng[$name].bytes) { throw "PNG size mismatch: $name" }
+  $image = [System.Drawing.Image]::FromFile($path)
+  try { if ($image.Width -ne 1440 -or $image.Height -ne 1000) { throw "PNG dimensions mismatch: $name" } } finally { $image.Dispose() }
 }
 
 $htmlNames = @('review.html', 'drawer.html', 'search-grid.html', 'search-card.html')
@@ -67,10 +86,29 @@ $recordText = Get-Content -Raw $record
 if ($recordText -notmatch '(?s)^---\s*\r?\n.*?\r?\n---\s*\r?\n') { throw 'Implementation record front matter is invalid.' }
 foreach ($path in @('templates/business-app/design-manifest/components/drawer.md', 'templates/business-app/design-manifest/components/result-grid.md', 'templates/business-app/design-manifest/components/result-card.md', 'templates/business-app/design-manifest/screen-patterns/record-list.md', 'templates/business-app/design-manifest/screen-patterns/search-with-cards.md')) { if (-not $recordText.Contains($path)) { throw "Missing standard-pack source reference: $path" } }
 foreach ($needle in @('trailing expanded-disclosure icon', 'leading accent', 'square row shape', 'not configuration')) { if (-not $recordText.Contains($needle)) { throw "Missing bounded Drawer fixture declaration: $needle" } }
-if ($recordText -notmatch 'Fixed PNG capture is\s+omitted') { throw 'Implementation record must state the omitted fixed capture.' }
+foreach ($needle in @('four fixed', 'There is no Edge fallback')) { if (-not $recordText.Contains($needle)) { throw "Implementation record must state the fixed capture boundary: $needle" } }
+if ($recordText -notmatch 'not\s+substantiated') { throw 'Implementation record must state the historical evidence limit.' }
 $screenReviewText = Get-Content -Raw $screenReview
 if ($screenReviewText -notmatch '(?s)^---\s*\r?\n.*?\r?\n---\s*\r?\n') { throw 'Screen review front matter is invalid.' }
-if ($screenReviewText -match '(?i)fixed local captures|four `1440x1000` captures|fixed capture \|') { throw 'Screen review retains a stale fixed-capture claim.' }
-if ($screenReviewText -notmatch 'capture is\s+omitted') { throw 'Screen review must state the omitted fixed capture.' }
+foreach ($needle in @('Chrome `150.0.7871.187`', '`1440x1000`', 'previous GPU-failure explanation')) { if (-not $screenReviewText.Contains($needle)) { throw "Screen review must state the fixed capture evidence: $needle" } }
 
-Write-Output 'Standard-pack static HTML review checks passed. HTML: 4. Canonical text digests: 5. PNG capture: omitted.'
+$captureScriptText = Get-Content -Raw $captureScript
+foreach ($needle in @("C:\Program Files\Google\Chrome\Application\chrome.exe", "'--disable-gpu'", "'--use-angle=swiftshader'")) { if (-not $captureScriptText.Contains($needle)) { throw "Capture script is missing required Chrome capture option: $needle" } }
+if ($captureScriptText -match '(?i)msedge|edge\.exe') { throw 'Capture script must not use Edge.' }
+if ($captureScriptText -match '(?m)^\s*\[string\]\$ChromePath') { throw 'Capture script must not permit a browser executable override.' }
+$captureRecord = Get-Content -Raw $captureRecordPath | ConvertFrom-Json
+if ($captureRecord.browser.executable -ne 'C:\Program Files\Google\Chrome\Application\chrome.exe') { throw 'Capture record Chrome executable mismatch.' }
+if ($captureRecord.browser.version -ne '150.0.7871.187') { throw 'Capture record Chrome version mismatch.' }
+if ($captureRecord.viewport.width -ne 1440 -or $captureRecord.viewport.height -ne 1000) { throw 'Capture record viewport mismatch.' }
+if ($captureRecord.captures.Count -ne 4) { throw 'Capture record must have four surfaces.' }
+foreach ($page in @('review', 'drawer', 'search-grid', 'search-card')) {
+  $capture = @($captureRecord.captures | Where-Object { $_.page -eq $page })
+  if ($capture.Count -ne 1) { throw "Capture record missing surface: $page" }
+  $capture = $capture[0]
+  if ($capture.normal_exit_code -ne 0 -or $capture.fallback_used -ne $false) { throw "Capture result is not a successful normal-only capture: $page" }
+  if ($capture.normal_command -notcontains '--disable-gpu' -or $capture.normal_command -match '(?i)msedge|edge\.exe') { throw "Capture command is not Chrome normal mode: $page" }
+  if ($capture.normal_stdout_stderr -notmatch 'bytes written to file') { throw "Capture command did not record browser output: $page" }
+  if ($capture.png_width -ne 1440 -or $capture.png_height -ne 1000) { throw "Capture record dimensions mismatch: $page" }
+}
+
+Write-Output 'Standard-pack static HTML review checks passed. HTML: 4. PNG: 4. Canonical text digests: 5. Raw-byte PNG digests: 4.'
