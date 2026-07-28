@@ -1,0 +1,96 @@
+experiment_id: business-workflow-static-html-review-attempt-1
+baseline_commit: 3965737a2458e586507db92e31bb77eb0d2dd47c
+pack_id: example-business-app-standard-pack
+pack_version: 0.2.0
+review_mode: html-and-png
+capture_status: fixed
+viewport:
+  width: 1440
+  height: 1200
+browser:
+  executable: C:\Program Files\Google\Chrome\Application\chrome.exe
+  version: 150.0.7871.187
+normal_capture_mode: --headless=new --disable-gpu
+fallback_capture_mode: --use-gl=angle --use-angle=swiftshader
+fallback_used: false
+digest_algorithm_html_css: SHA-256 canonical UTF-8 text with LF line endings
+digest_algorithm_png: SHA-256 raw-byte
+shared_styles:
+  path: styles.css
+  sha256_canonical_text: 66A1E0E451364E67B1BCCBF7B38364D2A88254BD3CF83E73DBCF7CA85EC06339
+artifacts:
+  - id: review-index
+    html: review.html
+    html_sha256_canonical_text: 3DDC2722B46C1C1AC076A1DD557F1EB2A99EDE200E58AD52D4A6CE170BEEA28A
+    png: review.png
+    png_sha256_raw_byte: 72FA217F4137928AE01DEF6A45B3FA94E2000CA436418765EA7A68BDC49B4A44
+    png_size_bytes: 64176
+  - id: record-read
+    html: record-read.html
+    html_sha256_canonical_text: 5EE8F750BF4B60BB8FD9F398A51B09565605311AA86E967A7EAFCCCE0FB6721E
+    png: record-read.png
+    png_sha256_raw_byte: 38DB06DBC82E50A175541F02C984881E8C0E49144BB27507F0BAECEDD46EAE11
+    png_size_bytes: 71188
+  - id: record-create
+    html: record-create.html
+    html_sha256_canonical_text: 67B005C6308343B9A055DB8FF66E1F61E2AE8108B4ABC018BB319F003A881550
+    png: record-create.png
+    png_sha256_raw_byte: F38BFD1D3CC01AE0DD70703E9F710F1B18B3733793DE3237BED70EF3EB1209AF
+    png_size_bytes: 49872
+  - id: record-edit
+    html: record-edit.html
+    html_sha256_canonical_text: 61D36C0C3A45194916FD95F245542524645AB539FDAC53BE742A5E9E2F385030
+    png: record-edit.png
+    png_sha256_raw_byte: CCBB083A3DDB4C96E835BDCFF9E44EAEC31449C455E5364601E349EC26C36C8A
+    png_size_bytes: 54054
+  - id: record-delete
+    html: record-delete.html
+    html_sha256_canonical_text: 3B6B042996807A4806273DB27A52ADECAF31365D120C519840F6BBAF646D5B3A
+    png: record-delete.png
+    png_sha256_raw_byte: 279E283E16E909BF4BE810682AA49EB936B0DF1E4CAF8004076AF581FBD31C27
+    png_size_bytes: 52687
+  - id: screen-transition
+    html: screen-transition.html
+    html_sha256_canonical_text: 8A2911416C73E45AEF0C3537A3F3DF4C0F33ED6FAB7F5785FDF054A230F7ACF5
+    png: screen-transition.png
+    png_sha256_raw_byte: 5BD0D2CF99F330B720E3859BE291787F9BD2B2EE152E85440743FF14F7C2D08D
+    png_size_bytes: 45864
+  - id: accessibility
+    html: accessibility.html
+    html_sha256_canonical_text: 0F2490D56FDE39E593E99F3AE3E3F8A5CF78FC14C574638E6F303C25906C7341
+    png: accessibility.png
+    png_sha256_raw_byte: BED10C7877C15A1686B356CA57DE233431E8A030DB6A4048BBFA8C95AFD45850
+    png_size_bytes: 55242
+  - id: confirmation
+    html: confirmation.html
+    html_sha256_canonical_text: 309374BEE519483DCF250902A7BC6A00452C68468954D5BCCB69AB9B79F3F01C
+    png: confirmation.png
+    png_sha256_raw_byte: 3214C0D03E6358F744DA3FEAEFB58275918606C9DD16B6674786DBFEFC38BD3E
+    png_size_bytes: 52517
+  - id: dialog
+    html: dialog.html
+    html_sha256_canonical_text: 15CD4BB1141B957BCC5C6415614DECC6B0912EB40C577C01054250CB3C1B2136
+    png: dialog.png
+    png_sha256_raw_byte: E7B832E54A4DC3F971B06A8DD197FBF8FEC8FB0BA19F31BBC8D740AE7A463FD8
+    png_size_bytes: 51944
+  - id: wizard
+    html: wizard.html
+    html_sha256_canonical_text: 6592B9C227C11095602C4DED2A4607DAB9A645CEA6BBDD3ED03AB3E5E80D0FD4
+    png: wizard.png
+    png_sha256_raw_byte: 00DF2974584D425416D510E9029E70804E27B920A20E14C977F5224B9893AC2B
+    png_size_bytes: 51784
+  - id: dashboard
+    html: dashboard.html
+    html_sha256_canonical_text: 1A846CD50EE6553253407CFA82E43CF794561B2E98230178096648E7F31B52CD
+    png: dashboard.png
+    png_sha256_raw_byte: DAF0C6519C9008533895EB68C949131E44786C2DE77BD664B55B4CA6A801E80F
+    png_size_bytes: 59868
+  - id: color-theme
+    html: color-theme.html
+    html_sha256_canonical_text: 4F56910721443F11CB6D72D87A18AD2BB99427EBA79FCC0E53BDCEA02F2805A7
+    png: color-theme.png
+    png_sha256_raw_byte: D54B8883177D5A018F4A0D16F923FE4BC3EBF18A6474A5283E94A434FE820556
+    png_size_bytes: 111288
+png_dimensions:
+  width: 1440
+  height: 1200

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applied choices layout comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eef2f7; color: #172033; font-family: "Segoe UI", Arial, sans-serif; }
+    main { width: 1880px; margin: 0 auto; padding: 30px 32px 36px; }
+    h1 { margin: 0; font-size: 30px; }
+    .lead { margin: 8px 0 20px; color: #5f7084; font-size: 15px; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    figure { margin: 0; overflow: hidden; border: 1px solid #c7d2df; border-radius: 8px; background: #fff; }
+    figcaption { display: grid; gap: 3px; min-height: 74px; padding: 12px 16px; border-bottom: 1px solid #c7d2df; }
+    figcaption strong { font-size: 17px; }
+    figcaption span { color: #5f7084; font-size: 13px; line-height: 1.4; }
+    img { display: block; width: 100%; height: 820px; object-fit: contain; object-position: center top; background: #eef2f7; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Applied choices layout comparison</h1>
+    <p class="lead">Both captures use the same Record read HTML surface and the fixed 1440 × 1200 viewport.</p>
+    <div class="comparison">
+      <figure>
+        <figcaption>
+          <strong>Before · five horizontal text columns</strong>
+          <span>Responsibility categories and selected fixture values competed in one dense row.</span>
+        </figcaption>
+        <img src="audit-applied-choices-horizontal-full-before.png" alt="Applied choices shown as five horizontal text columns above the Record read screen">
+      </figure>
+      <figure>
+        <figcaption>
+          <strong>After · vertical read-only selection summary</strong>
+          <span>The product screen leads. Applied guidance, supplied values, bounded options, selected values, and limits follow in stacked sections.</span>
+        </figcaption>
+        <img src="audit-applied-choices-vertical-full-after.png" alt="Record read screen followed by vertically stacked applied choices">
+      </figure>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record create review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Record create</h1>
+      <p>Neutral fixture · product-supplied schema</p>
+    </header>
+    <section class="canvas" aria-label="Record create fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Create record</span></header>
+      <form class="form-screen" aria-labelledby="create-fields-heading">
+        <div class="form-scroll">
+          <div class="content form-content">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="#">Records</a></li>
+                <li aria-current="page">Create record</li>
+              </ol>
+            </nav>
+            <div class="title-row compact-title">
+              <div>
+                <h2>Create record</h2>
+              </div>
+            </div>
+            <section class="record-form">
+              <h3 id="create-fields-heading">Record information</h3>
+              <div class="single-column-form">
+                <div class="field">
+                  <label for="create-a">Attribute A <span class="required">(required)</span></label>
+                  <input id="create-a" type="text" value="">
+                  <span class="help">Example format: ABC-123.</span>
+                </div>
+                <div class="field">
+                  <label for="create-b">Attribute B</label>
+                  <select id="create-b"><option>Select a supplied value</option></select>
+                </div>
+                <div class="field">
+                  <label for="create-date">Effective date</label>
+                  <input id="create-date" type="text" value="20XX-01-15">
+                </div>
+                <div class="field">
+                  <label for="create-category">Category</label>
+                  <select id="create-category"><option>Fixture category</option></select>
+                </div>
+                <div class="field">
+                  <label for="create-description">Description (optional)</label>
+                  <textarea id="create-description"></textarea>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <footer class="page-footer-actions">
+          <button type="submit" class="button primary">Create</button>
+          <button type="button" class="button">Cancel</button>
+        </footer>
+      </form>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="record-create-choices-title">
+      <div class="review-choices-heading"><strong id="record-create-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this screen pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Single-column I-flow</li>
+            <li>Labels above controls</li>
+            <li>Create appears before Cancel in source and Tab order</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Fields</dt><dd>Attribute A; Attribute B; Effective date; Category; Description</dd></div>
+            <div><dt>Required field</dt><dd>Attribute A</dd></div>
+            <div><dt>Helper text</dt><dd>Format guidance for Attribute A</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <fieldset class="review-choice-group" disabled>
+            <legend>Field flow</legend>
+            <div class="review-choice-options">
+              <label class="review-option is-selected"><input type="radio" name="record-create-flow" checked><span>Single column</span><strong class="review-selected-label">Selected</strong></label>
+              <label class="review-option"><input type="radio" name="record-create-flow"><span>Shared row for explicitly related fields</span><small>No field relationship is supplied in this fixture</small></label>
+            </div>
+          </fieldset>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Persistent footer actions</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>One shared height for single-line controls</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Validation</li>
+            <li>Save outcome</li>
+            <li>Post-create destination</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

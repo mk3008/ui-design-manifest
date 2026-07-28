@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record delete review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Record delete</h1>
+      <p>Neutral fixture · destructive confirmation</p>
+    </header>
+    <section class="canvas backdrop-demo" aria-label="Record delete confirmation fixture">
+      <div class="underlay">
+        <div class="title-row"><div><h2>Fixture record 01</h2></div></div>
+        <div class="underlay-card"></div>
+      </div>
+      <div class="overlay">
+        <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+          <header class="dialog-header">
+            <h2 id="delete-title">Delete Fixture record 01?</h2>
+            <p>Record ID: FIX-0001</p>
+          </header>
+          <div class="dialog-body">
+            <p class="danger-summary"><strong>This action cannot be undone.</strong><br>Deleting this record permanently removes it from the available record set.</p>
+          </div>
+          <footer class="dialog-actions">
+            <button type="button" class="button">Cancel</button>
+            <button type="button" class="button danger">Delete record</button>
+          </footer>
+        </section>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="record-delete-choices-title">
+      <div class="review-choices-heading"><strong id="record-delete-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this screen pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>The destructive action names its target</li>
+            <li>A safe cancellation remains available</li>
+            <li>Pre-action confirmation remains separate from the later outcome</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Affected object</dt><dd>Fixture record 01</dd></div>
+            <div><dt>Consequence</dt><dd>Permanent removal from the neutral fixture list</dd></div>
+            <div><dt>Available actions</dt><dd>Delete record; Cancel</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Modal confirmation presentation</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Object identity repeated in the dialog body</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Focus handling and Escape</li>
+            <li>Pending state</li>
+            <li>Delete outcome</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color and theme token review</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="color-theme-token-review.css">
+</head>
+<body>
+  <main class="page color-token-review-page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Color and theme values</h1>
+      <p>Supplement · editable manifest palette</p>
+    </header>
+
+    <section class="color-token-review" aria-labelledby="color-token-review-title">
+      <header class="color-token-intro">
+        <p class="color-token-kicker">Canonical defaults</p>
+        <h2 id="color-token-review-title">Fixed roles, editable concrete values</h2>
+        <p>
+          The manifest fixes each role’s meaning and supplies one concrete
+          value for Light and Dark. A consuming team may replace the values
+          through one reviewed local override without adding roles or changing
+          their meaning.
+        </p>
+        <p>
+          <a href="../../../../../templates/business-app/design-manifest/configuration/theme-colors.default.yaml">Open the canonical palette</a>
+          ·
+          <a href="../../../../../templates/business-app/local-overrides/theme-colors.example.yaml">Open the local override example</a>
+        </p>
+      </header>
+
+      <section class="token-inventory" aria-labelledby="token-inventory-title">
+        <div class="token-section-heading">
+          <div>
+            <p class="color-token-kicker">21 semantic roles</p>
+            <h2 id="token-inventory-title">Light and Dark values</h2>
+          </div>
+          <p>Opaque <code>#RRGGBB</code> values are the only accepted notation in this contract.</p>
+        </div>
+        <div class="token-table-wrap">
+          <table class="token-table">
+            <thead>
+              <tr>
+                <th scope="col">Semantic role</th>
+                <th scope="col">Light</th>
+                <th scope="col">Dark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><code>page_background</code><small>Base work surface</small></th><td><span class="token-value"><span class="token-swatch light-page-background" aria-hidden="true"></span><code>#F4F7FA</code></span></td><td><span class="token-value"><span class="token-swatch dark-page-background" aria-hidden="true"></span><code>#101820</code></span></td></tr>
+              <tr><th scope="row"><code>surface_background</code><small>Raised or grouped surface</small></th><td><span class="token-value"><span class="token-swatch light-surface-background" aria-hidden="true"></span><code>#FFFFFF</code></span></td><td><span class="token-value"><span class="token-swatch dark-surface-background" aria-hidden="true"></span><code>#1B2632</code></span></td></tr>
+              <tr><th scope="row"><code>text_primary</code><small>Primary readable content</small></th><td><span class="token-value"><span class="token-swatch light-text-primary" aria-hidden="true"></span><code>#172033</code></span></td><td><span class="token-value"><span class="token-swatch dark-text-primary" aria-hidden="true"></span><code>#F4F7FA</code></span></td></tr>
+              <tr><th scope="row"><code>text_muted</code><small>Supporting readable content</small></th><td><span class="token-value"><span class="token-swatch light-text-muted" aria-hidden="true"></span><code>#52657A</code></span></td><td><span class="token-value"><span class="token-swatch dark-text-muted" aria-hidden="true"></span><code>#BAC6D2</code></span></td></tr>
+              <tr><th scope="row"><code>border_subtle</code><small>Decorative separation</small></th><td><span class="token-value"><span class="token-swatch light-border-subtle" aria-hidden="true"></span><code>#C7D2DF</code></span></td><td><span class="token-value"><span class="token-swatch dark-border-subtle" aria-hidden="true"></span><code>#516273</code></span></td></tr>
+              <tr><th scope="row"><code>border_interactive</code><small>Required control boundary</small></th><td><span class="token-value"><span class="token-swatch light-border-interactive" aria-hidden="true"></span><code>#75889C</code></span></td><td><span class="token-value"><span class="token-swatch dark-border-interactive" aria-hidden="true"></span><code>#91A3B5</code></span></td></tr>
+              <tr><th scope="row"><code>action_background</code><small>Primary action surface</small></th><td><span class="token-value"><span class="token-swatch light-action-background" aria-hidden="true"></span><code>#0B5CAD</code></span></td><td><span class="token-value"><span class="token-swatch dark-action-background" aria-hidden="true"></span><code>#74B7F5</code></span></td></tr>
+              <tr><th scope="row"><code>action_foreground</code><small>Primary action content</small></th><td><span class="token-value"><span class="token-swatch light-action-foreground" aria-hidden="true"></span><code>#FFFFFF</code></span></td><td><span class="token-value"><span class="token-swatch dark-action-foreground" aria-hidden="true"></span><code>#07131E</code></span></td></tr>
+              <tr><th scope="row"><code>link</code><small>Link and navigation content</small></th><td><span class="token-value"><span class="token-swatch light-link" aria-hidden="true"></span><code>#0B5CAD</code></span></td><td><span class="token-value"><span class="token-swatch dark-link" aria-hidden="true"></span><code>#8BC4FF</code></span></td></tr>
+              <tr><th scope="row"><code>selection_background</code><small>Selected-item surface</small></th><td><span class="token-value"><span class="token-swatch light-selection-background" aria-hidden="true"></span><code>#E7F1FC</code></span></td><td><span class="token-value"><span class="token-swatch dark-selection-background" aria-hidden="true"></span><code>#203E5A</code></span></td></tr>
+              <tr><th scope="row"><code>selection_foreground</code><small>Selected-item content</small></th><td><span class="token-value"><span class="token-swatch light-selection-foreground" aria-hidden="true"></span><code>#172033</code></span></td><td><span class="token-value"><span class="token-swatch dark-selection-foreground" aria-hidden="true"></span><code>#F4F7FA</code></span></td></tr>
+              <tr><th scope="row"><code>selection_indicator</code><small>Selected-item accent</small></th><td><span class="token-value"><span class="token-swatch light-selection-indicator" aria-hidden="true"></span><code>#0B5CAD</code></span></td><td><span class="token-value"><span class="token-swatch dark-selection-indicator" aria-hidden="true"></span><code>#74B7F5</code></span></td></tr>
+              <tr><th scope="row"><code>focus_ring</code><small>Visible keyboard focus</small></th><td><span class="token-value"><span class="token-swatch light-focus-ring" aria-hidden="true"></span><code>#3B82F6</code></span></td><td><span class="token-value"><span class="token-swatch dark-focus-ring" aria-hidden="true"></span><code>#FFD54A</code></span></td></tr>
+              <tr><th scope="row"><code>success_foreground</code><small>Success content</small></th><td><span class="token-value"><span class="token-swatch light-success-foreground" aria-hidden="true"></span><code>#176B45</code></span></td><td><span class="token-value"><span class="token-swatch dark-success-foreground" aria-hidden="true"></span><code>#79D69A</code></span></td></tr>
+              <tr><th scope="row"><code>success_background</code><small>Success surface</small></th><td><span class="token-value"><span class="token-swatch light-success-background" aria-hidden="true"></span><code>#EAF7F0</code></span></td><td><span class="token-value"><span class="token-swatch dark-success-background" aria-hidden="true"></span><code>#173527</code></span></td></tr>
+              <tr><th scope="row"><code>information_foreground</code><small>Informational content</small></th><td><span class="token-value"><span class="token-swatch light-information-foreground" aria-hidden="true"></span><code>#155A9D</code></span></td><td><span class="token-value"><span class="token-swatch dark-information-foreground" aria-hidden="true"></span><code>#8BC4FF</code></span></td></tr>
+              <tr><th scope="row"><code>information_background</code><small>Informational surface</small></th><td><span class="token-value"><span class="token-swatch light-information-background" aria-hidden="true"></span><code>#EAF3FD</code></span></td><td><span class="token-value"><span class="token-swatch dark-information-background" aria-hidden="true"></span><code>#1D3E5B</code></span></td></tr>
+              <tr><th scope="row"><code>warning_foreground</code><small>Warning content</small></th><td><span class="token-value"><span class="token-swatch light-warning-foreground" aria-hidden="true"></span><code>#7A3E00</code></span></td><td><span class="token-value"><span class="token-swatch dark-warning-foreground" aria-hidden="true"></span><code>#FFC56B</code></span></td></tr>
+              <tr><th scope="row"><code>warning_background</code><small>Warning surface</small></th><td><span class="token-value"><span class="token-swatch light-warning-background" aria-hidden="true"></span><code>#FFF3D6</code></span></td><td><span class="token-value"><span class="token-swatch dark-warning-background" aria-hidden="true"></span><code>#4A3218</code></span></td></tr>
+              <tr><th scope="row"><code>error_foreground</code><small>Error content</small></th><td><span class="token-value"><span class="token-swatch light-error-foreground" aria-hidden="true"></span><code>#B42318</code></span></td><td><span class="token-value"><span class="token-swatch dark-error-foreground" aria-hidden="true"></span><code>#FFB4AE</code></span></td></tr>
+              <tr><th scope="row"><code>error_background</code><small>Error surface</small></th><td><span class="token-value"><span class="token-swatch light-error-background" aria-hidden="true"></span><code>#FFF1F0</code></span></td><td><span class="token-value"><span class="token-swatch dark-error-background" aria-hidden="true"></span><code>#4A201D</code></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="theme-specimen-comparison" aria-labelledby="theme-specimen-comparison-title">
+        <div class="token-section-heading">
+          <div>
+            <p class="color-token-kicker">Applied result</p>
+            <h2 id="theme-specimen-comparison-title">The same roles in both modes</h2>
+          </div>
+          <p>These are fixed comparisons, not theme-selection controls.</p>
+        </div>
+
+        <div class="theme-token-specimens">
+          <article class="token-theme light-token-theme" aria-labelledby="light-token-theme-title">
+            <header class="token-theme-caption">
+              <div>
+                <p>Light palette</p>
+                <h3 id="light-token-theme-title">Workspace specimen</h3>
+              </div>
+              <code>theme_colors.light</code>
+            </header>
+            <div class="token-theme-canvas">
+              <header class="token-product-header">
+                <strong>Workspace</strong>
+                <span>Fixture context</span>
+              </header>
+              <div class="token-surface">
+                <p class="token-eyebrow">Fixture record</p>
+                <h4>Fixture record 01</h4>
+                <p class="token-muted-copy">Current period · Fixture category A</p>
+                <label class="token-selected-item">
+                  <input type="checkbox" checked>
+                  <span>Fixture item A</span>
+                </label>
+                <label class="token-field">
+                  <span>Reference</span>
+                  <input type="text" value="FIX-0001">
+                </label>
+                <div class="token-actions">
+                  <button type="button" class="token-primary-action">Save</button>
+                  <button type="button" class="token-secondary-action token-focus-sample">Cancel</button>
+                  <a href="#">View details</a>
+                </div>
+                <div class="token-status-grid">
+                  <p class="token-status success"><strong>Success</strong><span>Completed</span></p>
+                  <p class="token-status information"><strong>Information</strong><span>New note</span></p>
+                  <p class="token-status warning"><strong>Warning</strong><span>Review soon</span></p>
+                  <p class="token-status error"><strong>Error</strong><span>Fix now</span></p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="token-theme dark-token-theme" aria-labelledby="dark-token-theme-title">
+            <header class="token-theme-caption">
+              <div>
+                <p>Dark palette</p>
+                <h3 id="dark-token-theme-title">Workspace specimen</h3>
+              </div>
+              <code>theme_colors.dark</code>
+            </header>
+            <div class="token-theme-canvas">
+              <header class="token-product-header">
+                <strong>Workspace</strong>
+                <span>Fixture context</span>
+              </header>
+              <div class="token-surface">
+                <p class="token-eyebrow">Fixture record</p>
+                <h4>Fixture record 01</h4>
+                <p class="token-muted-copy">Current period · Fixture category A</p>
+                <label class="token-selected-item">
+                  <input type="checkbox" checked>
+                  <span>Fixture item A</span>
+                </label>
+                <label class="token-field">
+                  <span>Reference</span>
+                  <input type="text" value="FIX-0001">
+                </label>
+                <div class="token-actions">
+                  <button type="button" class="token-primary-action">Save</button>
+                  <button type="button" class="token-secondary-action token-focus-sample">Cancel</button>
+                  <a href="#">View details</a>
+                </div>
+                <div class="token-status-grid">
+                  <p class="token-status success"><strong>Success</strong><span>Completed</span></p>
+                  <p class="token-status information"><strong>Information</strong><span>New note</span></p>
+                  <p class="token-status warning"><strong>Warning</strong><span>Review soon</span></p>
+                  <p class="token-status error"><strong>Error</strong><span>Fix now</span></p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <aside id="applied-choices" class="review-choices" aria-labelledby="color-token-choices-title">
+      <div class="review-choices-heading">
+        <strong id="color-token-choices-title">Applied choices</strong>
+        <span>Read-only review note outside the product UI</span>
+      </div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <fieldset class="review-choice-group" disabled>
+            <legend>Palette source</legend>
+            <div class="review-choice-options">
+              <label class="review-option">
+                <input type="radio" name="palette-source" checked>
+                <span>Canonical pack defaults</span>
+                <strong class="review-selected-label">Selected</strong>
+              </label>
+              <label class="review-option">
+                <input type="radio" name="palette-source">
+                <span>One local theme-color override</span>
+              </label>
+            </div>
+          </fieldset>
+          <p class="review-choice-note">The screen above shows the canonical values before any local override.</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>21 fixed semantic roles in both Light and Dark</li>
+            <li>Opaque six-digit hexadecimal values</li>
+            <li>Stable meaning across modes</li>
+            <li>Non-color cues remain required</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>User selection</dt><dd>Whether a mode preference is available</dd></div>
+            <div><dt>Preferences</dt><dd>System, Light, and Dark when supplied</dd></div>
+            <div><dt>Initial value</dt><dd>Product-owned preference source</dd></div>
+            <div><dt>Persistence</dt><dd>Product-owned storage scope</dd></div>
+            <div><dt>Brand policy</dt><dd>Product-owned constraints</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Canonical values as swatches, hex codes, and two fixed specimens</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Subtle and interactive borders as separate roles</span></li>
+            <li><span class="review-treatment-label">Omitted</span><span>Runtime mode-selection control</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Header or host-shell placement, caption, icon, and interaction model</li>
+            <li>Mode switching, system-preference resolution, and persistence</li>
+            <li>Arbitrary in-application color editing</li>
+            <li>Runtime keyboard, focus, contrast, and assistive-technology verification</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

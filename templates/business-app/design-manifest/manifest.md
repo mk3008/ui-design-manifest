@@ -1,23 +1,26 @@
 ---
 type: UI Design Manifest
 title: Example operations workspace
-description: A restrained example for navigation and search-result business workflows.
+description: A restrained example for navigation, record lifecycle, search-result, guided-task, and monitoring workflows.
 status: experimental
 source: authored
-pack_version: 0.1.0
+pack_version: 0.2.0
 pack_id: example-business-app-standard-pack
-scope: Illustrative desktop Drawer, search-with-grid, search-with-cards, record detail, and transition roles.
+scope: Illustrative desktop Drawer, search, record lifecycle, Dialog, Wizard, Dashboard, accessibility, and transition roles.
 requires:
+  - foundations/accessible-work-surface
+  - foundations/color-and-theme
+  - policies/confirm-consequential-action
   - policies/confirm-destructive-action
 ---
 
 # Product and scope
 
 This fictional workspace helps an operations user locate records, scan a result
-set, browse individual records, identify status, and open one record. The pack
-covers a bounded desktop navigation and search-to-detail slice; it does not
-define authentication, mobile behavior, data access, or a full component
-library.
+set, read and maintain one record, complete a bounded guided task, and monitor
+current work. The pack covers a bounded desktop business-workflow slice; it
+does not define authentication, mobile behavior, data access, or a full
+component library.
 
 # Source-independence boundary
 
@@ -29,13 +32,18 @@ Target-product implementation and repository guidance come first; explicit acces
 
 # Configuration and product binding
 
-The pack supplies stable Markdown guidance and the finite definitions in
-[record-list options](configuration/record-list-options.md). Resolve defaults
-with a separate local override; direct edits to this directory are a pack fork.
-Drawer and result-card guidance add no configuration. The separate product
-binding supplies feature availability, routes, permissions, state, data
-sources, aggregate meaning, post-save/cancel behavior, and business language.
-It evolves, but does not replace the Application Input Contract.
+The pack supplies stable Markdown guidance, the five finite definitions in
+[record-list options](configuration/record-list-options.md), and the editable
+Light and Dark semantic values in
+[theme colors](configuration/theme-colors.md). Resolve each definition with at
+most one separate local override; direct edits to this directory are a pack
+fork. Drawer, result-card, record-lifecycle, Dialog, Wizard, Dashboard, and
+accessibility guidance add no configuration. The separate product binding
+supplies feature availability, destinations, permissions, state, field
+semantics, data sources, aggregate meaning, consequences, step models,
+post-action behavior, business language, and theme-selection capability. It
+does not override resolved theme values or replace the Application Input
+Contract.
 
 # Application input contract
 
@@ -43,8 +51,16 @@ The application owner must provide the task-level state model, primary-record va
 
 # Relationships
 
-Use the [Drawer](components/drawer.md), [compact work surface](foundations/compact-work-surface.md), [search conditions](components/search-conditions.md), [result grid](components/result-grid.md), [result card](components/result-card.md), [pagination](components/pagination.md), [status badge](components/status-badge.md), [search with grid](screen-patterns/record-list.md), [search with cards](screen-patterns/search-with-cards.md), [record detail](screen-patterns/record-detail.md), and [list/card to detail flow](flows/list-to-detail.md) together only when the task needs them.
+Discover the available guidance through [Foundations](foundations/index.md),
+[Components](components/index.md), [Policies](policies/index.md),
+[Screen patterns](screen-patterns/index.md), [Flows](flows/index.md), and the
+[fixed and variable responsibility map](variability.md).
+Combine only the concepts required by the product-owned task and capability
+binding.
 
 # Unresolved
 
-Keyboard behavior, narrow viewports, loading, empty, error, permission-limited states, creation, editing, saving, cancellation, and deletion are intentionally unspecified until product binding and requirements supply them.
+Concrete keyboard mappings, narrow-viewport composition, real field schemas,
+loading, empty, failure, permission-limited states, destinations, persistence,
+and business consequences remain unspecified until product binding,
+implementation, and applicable requirements supply them.

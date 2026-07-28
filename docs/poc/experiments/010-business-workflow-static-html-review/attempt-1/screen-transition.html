@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Screen transition review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Screen transition</h1>
+      <p>Neutral fixture · navigation and mutation remain distinct</p>
+    </header>
+    <section class="canvas" aria-label="Screen transition fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Fixture area</span></header>
+      <div class="transition-page">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="#">Workspace</a></li>
+            <li><a href="#">Fixture area</a></li>
+            <li><a href="#">Fixture collection</a></li>
+            <li aria-current="page">Fixture item</li>
+          </ol>
+        </nav>
+        <header class="transition-page-header">
+          <p class="eyebrow">Current destination</p>
+          <h2>Fixture item</h2>
+        </header>
+        <div class="transition-content">
+          <section class="transition-primary" aria-labelledby="transition-summary-heading">
+            <h3 id="transition-summary-heading">Item summary</h3>
+            <dl class="description-list transition-values">
+              <div><dt>Identity</dt><dd>FIX-0001</dd></div>
+              <div><dt>Attribute A</dt><dd>Fixture value A</dd></div>
+              <div><dt>Attribute B</dt><dd>Fixture value B</dd></div>
+            </dl>
+          </section>
+          <aside class="transition-aside" aria-labelledby="related-heading">
+            <h3 id="related-heading">Related destinations</h3>
+            <nav aria-label="Related destinations">
+              <a href="#">Fixture sibling A</a>
+              <a href="#">Fixture sibling B</a>
+            </nav>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="screen-transition-choices-title">
+      <div class="review-choices-heading"><strong id="screen-transition-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this flow</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Breadcrumb hierarchy appears below the Header and above the page title</li>
+            <li>Hierarchy remains separate from return and browser history</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Breadcrumb</dt><dd>Workspace › Fixture area › Fixture collection › Fixture item</dd></div>
+            <div><dt>Related destinations</dt><dd>Fixture sibling A; Fixture sibling B</dd></div>
+            <div><dt>Separate return context</dt><dd>Not supplied</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Current page included as non-link breadcrumb text</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Related destinations grouped beside the current-page summary</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Browser history</li>
+            <li>Scroll restoration</li>
+            <li>Unsaved-change interruption</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

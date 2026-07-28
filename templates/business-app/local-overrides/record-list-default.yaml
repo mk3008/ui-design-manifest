@@ -1,4 +1,4 @@
-pack_version: 0.1.0
+pack_version: 0.2.0
 pack_id: example-business-app-standard-pack
 overrides:
   search_actions_region: end

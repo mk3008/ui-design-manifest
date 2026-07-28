@@ -13,6 +13,10 @@ foreach ($name in $bundleFiles) { Require-Text "$bundle/$name" '^---$'; Require-
 foreach ($axis in @('Record identity, title, and status','Summary versus full attributes; label/value captions','Hierarchy, weighting, section grouping, density, and host-width use','Wide multi-column versus narrow I-flow','Long, empty, and multi-value handling; copyable values','Read-only semantics versus disabled form controls','Action ownership and return/close affordance','Trigger placement, initial emphasis, and impact classification','Digest versus full-record confirmation; identity and consequences','Reversibility, undo/recovery, confirmation strength, and typed confirmation','Pending, double-submit prevention, failure, success, and post-delete destination','Audit, retention, permission, lock, dependency, and irreversible constraints','Unavailable-action explanation and omission policy','Full page, modal, and side/drawer presentation','Result-to-detail, creation, edit, and delete paths','Required values, state sources, display conditions, and update triggers')) { Require-Text "$method/observation-schema.md" ([regex]::Escape($axis)); Require-Text "$bundle/observation-record.md" ([regex]::Escape($axis)) }
 Require-Text "$method/observation-schema.md" 'observed.*not observed.*unresolved.*not applicable'
 Require-Text "$method/observation-schema.md" 'observed.*inferred.*authored default.*context pattern.*target-product input'
+Require-Text "$method/first-pass-rubric.md" 'weighted section headings'
+Require-Text "$method/first-pass-rubric.md" 'without boxing every field'
+Require-Text "$method/first-pass-rubric.md" 'Wide grouped columns'
+Require-Text "$method/first-pass-rubric.md" 'vertical I-flow'
 Require-Text "$bundle/manifest.md" 'purpose-built readable label/value information view'
 Require-Text "$bundle/manifest.md" 'medium impact'
 Require-Text "$bundle/manifest.md" 'typed confirmation'

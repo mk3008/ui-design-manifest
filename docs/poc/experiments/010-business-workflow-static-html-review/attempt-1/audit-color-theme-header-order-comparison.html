@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color and theme Header responsibility comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eef2f7; color: #172033; font-family: "Segoe UI", Arial, sans-serif; }
+    main { width: 1880px; margin: 0 auto; padding: 34px 32px 40px; }
+    h1 { margin: 0; font-size: 30px; }
+    .lead { margin: 8px 0 22px; color: #5f7084; font-size: 15px; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    figure { margin: 0; overflow: hidden; border: 1px solid #c7d2df; border-radius: 8px; background: #fff; }
+    figcaption { display: grid; gap: 3px; min-height: 78px; padding: 13px 16px; border-bottom: 1px solid #c7d2df; }
+    figcaption strong { font-size: 17px; }
+    figcaption span { color: #5f7084; font-size: 13px; }
+    img { display: block; width: 100%; height: 320px; object-fit: cover; background: #fff; }
+    .before { object-fit: contain; object-position: center; }
+    .after { object-position: center 39%; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Color and theme Header responsibility comparison</h1>
+    <p class="lead">The product identity stays in the leading Header region; theme state moves to the trailing utility region.</p>
+    <div class="comparison">
+      <figure>
+        <figcaption>
+          <strong>Before · responsibilities reversed</strong>
+          <span>The theme name occupied the title position while Workspace appeared at the trailing edge.</span>
+        </figcaption>
+        <img class="before" src="audit-color-theme-header-order-before.png" alt="Theme name on the left and Workspace on the right">
+      </figure>
+      <figure>
+        <figcaption>
+          <strong>After · identity leading, theme trailing</strong>
+          <span>Workspace occupies the stable identity position; the current theme is shown in the utility position.</span>
+        </figcaption>
+        <img class="after" src="color-theme.png" alt="Workspace on the left and current theme on the right">
+      </figure>
+    </div>
+  </main>
+</body>
+</html>

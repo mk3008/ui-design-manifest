@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record edit review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Record edit</h1>
+      <p>Neutral fixture · current values preserved</p>
+    </header>
+    <section class="canvas" aria-label="Record edit fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Edit record</span></header>
+      <form class="form-screen" aria-labelledby="edit-fields-heading">
+        <div class="form-scroll">
+          <div class="content form-content">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="#">Records</a></li>
+                <li><a href="#">Fixture record 01</a></li>
+                <li aria-current="page">Edit record</li>
+              </ol>
+            </nav>
+            <div class="title-row compact-title">
+              <div>
+                <h2>Edit Fixture record 01</h2>
+                <p class="record-reference">Record ID: FIX-0001</p>
+              </div>
+            </div>
+            <section class="record-form">
+              <h3 id="edit-fields-heading">Editable information</h3>
+              <div class="single-column-form">
+                <div class="field">
+                  <label for="edit-a">Attribute A <span class="required">(required)</span></label>
+                  <input id="edit-a" type="text" value="Fixture value A">
+                </div>
+                <div class="field">
+                  <label for="edit-b">Attribute B</label>
+                  <select id="edit-b"><option>Fixture value B</option></select>
+                </div>
+                <div class="field">
+                  <label for="edit-date">Effective date</label>
+                  <input id="edit-date" type="text" value="20XX-01-15">
+                </div>
+                <div class="field">
+                  <label for="edit-category">Category</label>
+                  <select id="edit-category"><option>Fixture category</option></select>
+                </div>
+                <div class="field">
+                  <label for="edit-description">Description</label>
+                  <textarea id="edit-description">A neutral current value supplied by the fixture.</textarea>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <footer class="page-footer-actions">
+          <button type="submit" class="button primary">Save</button>
+          <button type="button" class="button">Cancel</button>
+        </footer>
+      </form>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="record-edit-choices-title">
+      <div class="review-choices-heading"><strong id="record-edit-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this screen pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Single-column I-flow</li>
+            <li>Page identity appears without an additional banner</li>
+            <li>Save appears before Cancel in source and Tab order</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Record identity</dt><dd>Fixture record 01 / FIX-0001</dd></div>
+            <div><dt>Editable fields</dt><dd>Attribute A; Attribute B; Effective date; Category; Description</dd></div>
+            <div><dt>Available actions</dt><dd>Save; Cancel</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <fieldset class="review-choice-group" disabled>
+            <legend>Field flow</legend>
+            <div class="review-choice-options">
+              <label class="review-option is-selected"><input type="radio" name="record-edit-flow" checked><span>Single column</span><strong class="review-selected-label">Selected</strong></label>
+              <label class="review-option"><input type="radio" name="record-edit-flow"><span>Shared row for explicitly related fields</span><small>No field relationship is supplied in this fixture</small></label>
+            </div>
+          </fieldset>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Persistent footer actions</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Top-aligned labels</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Current identity in the page heading</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Conflict recovery</li>
+            <li>Save outcome</li>
+            <li>Exit destination</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color and theme review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Color and theme</h1>
+      <p>Neutral fixture · semantic roles</p>
+    </header>
+    <section class="canvas" aria-label="Color and theme fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Theme specimen</span></header>
+      <div class="theme-layout">
+        <div class="theme-intro">
+          <h2>Light and dark application modes</h2>
+          <p>The same semantic roles, surface layers, and visible states stay readable in both required modes.</p>
+        </div>
+        <div class="theme-compare">
+          <section class="theme-specimen light-mode" aria-labelledby="light-heading">
+            <header>
+              <strong id="light-heading" class="theme-specimen-title">Workspace</strong>
+              <div class="theme-mode-picker" aria-label="Theme mode sample">
+                <span class="theme-mode-label">Theme</span>
+                <div class="theme-mode-options" role="group" aria-label="Theme selection sample">
+                  <span class="theme-mode-option is-active" aria-current="true">Light</span>
+                  <span class="theme-mode-option">Dark</span>
+                </div>
+              </div>
+            </header>
+            <div class="theme-specimen-body">
+              <p class="theme-kicker">Fixture record</p>
+              <h3>Semantic roles in context</h3>
+              <div class="theme-hero">
+                <div class="theme-summary">
+                  <div class="theme-selected-row">
+                    <input id="light-selected" type="checkbox" checked>
+                    <label for="light-selected">Fixture item A</label>
+                  </div>
+                  <dl class="theme-values">
+                    <div><dt>Primary text</dt><dd>Readable content</dd></div>
+                    <div><dt>Muted text</dt><dd>Supporting content</dd></div>
+                  </dl>
+                  <p class="theme-error"><strong>Validation error</strong><span>A supplied error message appears with its field.</span></p>
+                  <div class="theme-actions">
+                    <button type="button" class="theme-primary">Primary action</button>
+                    <button type="button" class="theme-secondary demonstrated-focus">Focus sample</button>
+                    <button type="button" class="theme-secondary">Secondary</button>
+                    <a class="theme-text-link" href="#light-semantic-colors">Text link</a>
+                  </div>
+                </div>
+                <aside id="light-semantic-colors" class="theme-palette" aria-label="Light semantic colors">
+                  <div class="theme-swatch success"><span>Success</span><strong>Completed</strong></div>
+                  <div class="theme-swatch info"><span>Information</span><strong>New note</strong></div>
+                  <div class="theme-swatch warning"><span>Warning</span><strong>Review soon</strong></div>
+                  <div class="theme-swatch error"><span>Error</span><strong>Fix now</strong></div>
+                  <div class="theme-swatch background"><span>Background</span><strong>Page layer</strong></div>
+                  <div class="theme-swatch surface"><span>Raised surface</span><strong>Card layer</strong></div>
+                  <div class="theme-swatch accent"><span>Accent</span><strong>Primary action</strong></div>
+                  <div class="theme-swatch focus"><span>Focus</span><strong>Keyboard target</strong></div>
+                </aside>
+              </div>
+            </div>
+          </section>
+          <section class="theme-specimen dark-mode" aria-labelledby="dark-heading">
+            <header>
+              <strong id="dark-heading" class="theme-specimen-title">Workspace</strong>
+              <div class="theme-mode-picker" aria-label="Theme mode sample">
+                <span class="theme-mode-label">Theme</span>
+                <div class="theme-mode-options" role="group" aria-label="Theme selection sample">
+                  <span class="theme-mode-option">Light</span>
+                  <span class="theme-mode-option is-active" aria-current="true">Dark</span>
+                </div>
+              </div>
+            </header>
+            <div class="theme-specimen-body">
+              <p class="theme-kicker">Fixture record</p>
+              <h3>Semantic roles in context</h3>
+              <div class="theme-hero">
+                <div class="theme-summary">
+                  <div class="theme-selected-row">
+                    <input id="dark-selected" type="checkbox" checked>
+                    <label for="dark-selected">Fixture item A</label>
+                  </div>
+                  <dl class="theme-values">
+                    <div><dt>Primary text</dt><dd>Readable content</dd></div>
+                    <div><dt>Muted text</dt><dd>Supporting content</dd></div>
+                  </dl>
+                  <p class="theme-error"><strong>Validation error</strong><span>A supplied error message appears with its field.</span></p>
+                  <div class="theme-actions">
+                    <button type="button" class="theme-primary">Primary action</button>
+                    <button type="button" class="theme-secondary demonstrated-focus">Focus sample</button>
+                    <button type="button" class="theme-secondary">Secondary</button>
+                    <a class="theme-text-link" href="#dark-semantic-colors">Text link</a>
+                  </div>
+                </div>
+                <aside id="dark-semantic-colors" class="theme-palette" aria-label="Dark semantic colors">
+                  <div class="theme-swatch success"><span>Success</span><strong>Completed</strong></div>
+                  <div class="theme-swatch info"><span>Information</span><strong>New note</strong></div>
+                  <div class="theme-swatch warning"><span>Warning</span><strong>Review soon</strong></div>
+                  <div class="theme-swatch error"><span>Error</span><strong>Fix now</strong></div>
+                  <div class="theme-swatch background"><span>Background</span><strong>Page layer</strong></div>
+                  <div class="theme-swatch surface"><span>Raised surface</span><strong>Card layer</strong></div>
+                  <div class="theme-swatch accent"><span>Accent</span><strong>Primary action</strong></div>
+                  <div class="theme-swatch focus"><span>Focus</span><strong>Keyboard target</strong></div>
+                </aside>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="color-theme-choices-title">
+      <div class="review-choices-heading"><strong id="color-theme-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this foundation page</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Both Light and Dark modes are required</li>
+            <li>Success, information, warning, error, background, accent, focus, selection, and text roles remain visible</li>
+            <li>Color is never the only state cue</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Theme identity</dt><dd>Product owned</dd></div>
+            <div><dt>User-selection capability</dt><dd>Product owned</dd></div>
+            <div><dt>Role values</dt><dd>Supplied separately for each mode</dd></div>
+            <div><dt>Initial mode and persistence</dt><dd>Not inferred by this fixture</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <fieldset class="review-choice-group" disabled>
+            <legend>Appearance-control location</legend>
+            <div class="review-choice-options">
+              <label class="review-option is-selected"><input type="radio" name="theme-control-location" checked><span>Header utility area</span><strong class="review-selected-label">Selected</strong></label>
+              <label class="review-option"><input type="radio" name="theme-control-location"><span>User settings entry</span><small>Documented host-shell alternative</small></label>
+            </div>
+          </fieldset>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>The same semantic content side by side in Light and Dark</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Product title at left and selector sample at right</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>State samples plus readable text</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Mode switching and persistence</li>
+            <li>System preference integration</li>
+            <li>Runtime contrast checks</li>
+            <li>Tenant-specific brand mapping</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

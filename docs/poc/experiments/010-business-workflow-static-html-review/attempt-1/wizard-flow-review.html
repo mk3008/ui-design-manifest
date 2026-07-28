@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wizard state review</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="wizard-flow-review.css">
+</head>
+<body>
+  <main class="page wizard-review-page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Wizard state review</h1>
+      <p>Neutral fixture · input, review, and result</p>
+    </header>
+
+    <section class="wizard-flow-review" aria-labelledby="wizard-flow-title">
+      <header class="wizard-flow-intro">
+        <p class="wizard-flow-kicker">Three fixed states</p>
+        <h2 id="wizard-flow-title">Input, review and submit, then result</h2>
+        <p>
+          Progress covers work performed before submission. The submitted
+          result is a separate state rather than a pending “Complete” step.
+        </p>
+      </header>
+
+      <article class="state-specimen" aria-labelledby="input-state-title">
+        <header class="state-specimen-header">
+          <div>
+            <p class="state-sequence">State 1 · Before submission</p>
+            <h2 id="input-state-title">Input step</h2>
+          </div>
+          <p>Back and ordinary advance remain available.</p>
+        </header>
+        <div class="state-canvas">
+          <header class="state-app-header">
+            <span class="state-brand">Workspace</span>
+            <span>Guided task</span>
+          </header>
+          <div class="state-content">
+            <nav class="breadcrumb-nav" aria-label="Input-state breadcrumb">
+              <ol>
+                <li><a href="#">Guided tasks</a></li>
+                <li><span aria-current="page">Fixture setup</span></li>
+              </ol>
+            </nav>
+            <div class="state-title-row">
+              <div>
+                <p class="state-position">Step 2 of 3</p>
+                <h3>Enter details</h3>
+              </div>
+            </div>
+            <ol class="wizard-review-steps" aria-label="Input-state progress">
+              <li class="is-complete">
+                <span class="wizard-step-number">1</span>
+                <span class="wizard-step-copy">
+                  <strong>Basic information</strong>
+                  <small>Completed</small>
+                </span>
+              </li>
+              <li class="is-current" aria-current="step">
+                <span class="wizard-step-number">2</span>
+                <span class="wizard-step-copy">
+                  <strong>Details</strong>
+                  <small>Current step</small>
+                </span>
+              </li>
+              <li>
+                <span class="wizard-step-number">3</span>
+                <span class="wizard-step-copy">
+                  <strong>Review and submit</strong>
+                  <small>Pending</small>
+                </span>
+              </li>
+            </ol>
+            <form class="wizard-review-form">
+              <div class="field">
+                <label for="flow-review-a">Attribute A <span class="required">(required)</span></label>
+                <input id="flow-review-a" type="text" value="Fixture value">
+              </div>
+              <div class="field">
+                <label for="flow-review-b">Attribute B</label>
+                <select id="flow-review-b">
+                  <option>Fixture option</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="flow-review-note">Description</label>
+                <textarea id="flow-review-note">Fixture description A.</textarea>
+              </div>
+              <div class="wizard-state-actions">
+                <button type="button" class="button">Back</button>
+                <button type="button" class="button primary">Continue</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <article class="state-specimen" aria-labelledby="review-state-title">
+        <header class="state-specimen-header">
+          <div>
+            <p class="state-sequence">State 2 · Before submission</p>
+            <h2 id="review-state-title">Review and submit</h2>
+          </div>
+          <p>Supplied answers can be checked and changed before the final action.</p>
+        </header>
+        <div class="state-canvas">
+          <header class="state-app-header">
+            <span class="state-brand">Workspace</span>
+            <span>Guided task</span>
+          </header>
+          <div class="state-content">
+            <nav class="breadcrumb-nav" aria-label="Review-state breadcrumb">
+              <ol>
+                <li><a href="#">Guided tasks</a></li>
+                <li><span aria-current="page">Fixture setup</span></li>
+              </ol>
+            </nav>
+            <div class="state-title-row">
+              <div>
+                <p class="state-position">Step 3 of 3</p>
+                <h3>Review and submit</h3>
+              </div>
+            </div>
+            <ol class="wizard-review-steps" aria-label="Review-state progress">
+              <li class="is-complete">
+                <span class="wizard-step-number">1</span>
+                <span class="wizard-step-copy">
+                  <strong>Basic information</strong>
+                  <small>Completed</small>
+                </span>
+              </li>
+              <li class="is-complete">
+                <span class="wizard-step-number">2</span>
+                <span class="wizard-step-copy">
+                  <strong>Details</strong>
+                  <small>Completed</small>
+                </span>
+              </li>
+              <li class="is-current" aria-current="step">
+                <span class="wizard-step-number">3</span>
+                <span class="wizard-step-copy">
+                  <strong>Review and submit</strong>
+                  <small>Current step</small>
+                </span>
+              </li>
+            </ol>
+            <div class="review-summary">
+              <section aria-labelledby="basic-summary-title">
+                <div class="review-summary-heading">
+                  <h4 id="basic-summary-title">Basic information</h4>
+                  <a href="#" aria-label="Change basic information">Change</a>
+                </div>
+                <dl>
+                  <div><dt>Fixture name</dt><dd>Fixture setup</dd></div>
+                  <div><dt>Fixture category</dt><dd>Fixture category A</dd></div>
+                </dl>
+              </section>
+              <section aria-labelledby="detail-summary-title">
+                <div class="review-summary-heading">
+                  <h4 id="detail-summary-title">Details</h4>
+                  <a href="#" aria-label="Change details">Change</a>
+                </div>
+                <dl>
+                  <div><dt>Attribute A</dt><dd>Fixture value</dd></div>
+                  <div><dt>Attribute B</dt><dd>Fixture option</dd></div>
+                  <div><dt>Description</dt><dd>Fixture description A.</dd></div>
+                </dl>
+              </section>
+            </div>
+            <div class="wizard-state-actions">
+              <button type="button" class="button">Back</button>
+              <button type="button" class="button primary">Submit setup</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="state-specimen" aria-labelledby="result-state-title">
+        <header class="state-specimen-header">
+          <div>
+            <p class="state-sequence">State 3 · After submission</p>
+            <h2 id="result-state-title">Result</h2>
+          </div>
+          <p>The pre-submit progress and navigation controls are no longer shown.</p>
+        </header>
+        <div class="state-canvas">
+          <header class="state-app-header">
+            <span class="state-brand">Workspace</span>
+            <span>Guided task</span>
+          </header>
+          <div class="state-content result-content">
+            <nav class="breadcrumb-nav" aria-label="Result-state breadcrumb">
+              <ol>
+                <li><a href="#">Guided tasks</a></li>
+                <li><span aria-current="page">Submission result</span></li>
+              </ol>
+            </nav>
+            <div class="result-summary">
+              <p class="result-kicker">Submitted</p>
+              <h3>Fixture setup submitted</h3>
+              <p>Your setup has been submitted.</p>
+              <dl>
+                <div><dt>Reference</dt><dd>FIX-WZ-0001</dd></div>
+              </dl>
+            </div>
+            <section class="result-next-step" aria-labelledby="result-next-title">
+              <h4 id="result-next-title">What happens next</h4>
+              <p>Continue to guided tasks when you are ready.</p>
+              <a href="#" class="button primary">Return to guided tasks</a>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <aside id="applied-choices" class="review-choices" aria-labelledby="wizard-flow-choices-title">
+      <div class="review-choices-heading">
+        <strong id="wizard-flow-choices-title">Applied choices</strong>
+        <span>Read-only review note outside the product UI</span>
+      </div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this screen pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Progress for a stable three-step task</li>
+            <li>Separate Back and ordinary advance actions</li>
+            <li>Review and submit as the final numbered step</li>
+            <li>Submission result outside the pre-submit step indicator</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Steps</dt><dd>Basic information; Details; Review and submit</dd></div>
+            <div><dt>Final action</dt><dd>Submit setup</dd></div>
+            <div><dt>Result</dt><dd>Fixture setup submitted</dd></div>
+            <div><dt>Reference</dt><dd>FIX-WZ-0001</dd></div>
+            <div><dt>Next destination</dt><dd>Return to guided tasks</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Input, review, and result as three fixed comparison states</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Review summaries with supplied Change destinations</span></li>
+            <li><span class="review-treatment-label">Omitted</span><span>Preview because no rendered or generated output is supplied</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Runtime validation, persistence, branching, and answer invalidation</li>
+            <li>Submitting, duplicate prevention, pending, partial, and failure states</li>
+            <li>Keyboard, focus, announcements, assistive technology, and real destinations</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

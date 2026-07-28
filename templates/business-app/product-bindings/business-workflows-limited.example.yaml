@@ -1,0 +1,41 @@
+binding_version: 1
+pack_id: example-business-app-standard-pack
+pack_version: 0.2.0
+navigation:
+  hierarchy_reference: product_owned_navigation_hierarchy
+  return_context_reference: product_owned_return_context
+  history_policy_reference: product_owned_history_behavior
+record:
+  read:
+    available: true
+    destination_reference: product_owned_record_detail
+    identity_reference: product_owned_record_identity
+    field_group_reference: product_owned_read_field_groups
+    field_priority_reference: product_owned_read_field_priority
+  create:
+    available: false
+  edit:
+    available: false
+  delete:
+    available: false
+dialog:
+  available: false
+wizard:
+  available: false
+dashboard:
+  available: false
+accessibility:
+  requirements_reference: product_owned_accessibility_requirements
+  testing_reference: product_owned_accessibility_test_plan
+theme:
+  identity_reference: product_owned_theme_identity
+  available_modes:
+    - light
+    - dark
+  user_selection_available: false
+  initial_preference_reference: product_owned_initial_theme_preference
+  preference_source_reference: product_owned_theme_preference_source
+  persistence_reference: product_owned_theme_persistence
+  brand_constraint_reference: product_owned_brand_constraints
+  contrast_requirement_reference: product_owned_contrast_requirements
+display_language: product_owned

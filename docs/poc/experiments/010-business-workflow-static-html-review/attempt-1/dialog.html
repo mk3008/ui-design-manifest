@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dialog review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Dialog</h1>
+      <p>Neutral fixture · one bounded modal task</p>
+    </header>
+    <section class="canvas backdrop-demo" aria-label="Dialog fixture">
+      <div class="underlay">
+        <div class="title-row"><div><h2>Fixture records</h2></div></div>
+        <div class="underlay-card"></div>
+      </div>
+      <div class="overlay">
+        <section class="dialog wide" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+          <header class="dialog-header">
+            <h2 id="dialog-title">Choose a fixture value</h2>
+          </header>
+          <div class="dialog-body">
+            <div class="form-grid">
+              <div class="field full">
+                <label for="dialog-choice">Available value <span class="required">(required)</span></label>
+                <select id="dialog-choice">
+                  <option>Fixture option A</option>
+                  <option>Fixture option B</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="dialog-note">Optional note</label>
+                <textarea id="dialog-note">Neutral fixture note</textarea>
+              </div>
+            </div>
+          </div>
+          <footer class="dialog-actions">
+            <button type="button" class="button">Cancel</button>
+            <button type="button" class="button primary">Apply value</button>
+          </footer>
+        </section>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="dialog-choices-title">
+      <div class="review-choices-heading"><strong id="dialog-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this component pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>One bounded blocking task</li>
+            <li>Explicit confirm and cancel actions</li>
+            <li>Dialog content remains distinct from the underlying screen</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Dialog title</dt><dd>Assign fixture owner</dd></div>
+            <div><dt>Option set</dt><dd>Supplied values in one select</dd></div>
+            <div><dt>Affected object</dt><dd>Fixture record 01</dd></div>
+            <div><dt>Available actions</dt><dd>Assign; Cancel</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>One select plus an optional note</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Centered modal presentation</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Focus containment</li>
+            <li>Escape dismissal</li>
+            <li>Return focus</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

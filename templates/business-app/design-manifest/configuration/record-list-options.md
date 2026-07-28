@@ -69,7 +69,15 @@ These definitions are the only configuration vocabulary for this Phase 1 slice. 
 
 # Resolution
 
-This file is the sole definition authority. Start with its defaults, then apply zero or one selected local override. An omitted override key retains the default; an override replaces a whole scalar or array value, never appends to an array. `null` and an empty array are not permitted values unless this definition explicitly allows them. Do not layer overrides: a consumer that needs a second local policy must create one reviewed, resolved override file with provenance outside this pack.
+This file is the sole definition authority for record-list options. Start with
+its defaults, then apply zero or one selected record-list override. An omitted
+override key retains the default; an override replaces a whole scalar or array
+value, never appends to an array. `null` and an empty array are not permitted
+values unless this definition explicitly allows them. Do not layer overrides
+for this definition: a consumer that needs a second local policy must create
+one reviewed, resolved record-list override file with provenance outside this
+pack. A separately selected theme-color override may coexist because it
+resolves against a different definition.
 
 Reject an undefined ID, a value outside its allowed set, a duplicate ID in one override, or a conflict from multiple override files before application. A deprecated or renamed ID is a breaking pack change until a documented migration maps it to a supported ID.
 

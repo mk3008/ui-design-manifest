@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Dashboard</h1>
+      <p>Neutral fixture · monitoring and triage</p>
+    </header>
+    <section class="canvas" aria-label="Dashboard fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Dashboard</span></header>
+      <div class="dashboard-content">
+        <div class="dashboard-title">
+          <div><h2>Operational dashboard</h2><p class="subtitle">Current fixture period · monitoring and next-task selection</p></div>
+          <span class="freshness">Updated: fixture timestamp</span>
+        </div>
+        <section class="metric-grid" aria-label="Summary metrics">
+          <article class="metric"><h3>Items requiring attention</h3><strong>12</strong><small>Items in current period</small></article>
+          <article class="metric"><h3>Items in progress</h3><strong>28</strong><small>Items in current period</small></article>
+          <article class="metric"><h3>Completed in period</h3><strong>64</strong><small>Items in current period</small></article>
+        </section>
+        <div class="dashboard-lower">
+          <section class="panel" aria-labelledby="queue-heading">
+            <h3 id="queue-heading">Attention queue</h3>
+            <p class="panel-note">Highest-priority items</p>
+            <div class="queue-row"><a href="#">Fixture record 01</a><span>Category A</span><span>Due first</span></div>
+            <div class="queue-row"><a href="#">Fixture record 02</a><span>Category B</span><span>Due next</span></div>
+            <div class="queue-row"><a href="#">Fixture record 03</a><span>Category A</span><span>Due later</span></div>
+            <div class="queue-row"><a href="#">Fixture record 04</a><span>Category C</span><span>Due later</span></div>
+          </section>
+          <section class="panel" aria-labelledby="trend-heading">
+            <h3 id="trend-heading">Completed trend</h3>
+            <p class="panel-note">Items completed per period</p>
+            <div class="bar-chart" aria-label="Fixture trend values">
+              <div class="bar" style="height:42%"></div><div class="bar" style="height:55%"></div><div class="bar" style="height:49%"></div><div class="bar" style="height:71%"></div><div class="bar" style="height:67%"></div><div class="bar" style="height:84%"></div>
+            </div>
+            <div class="chart-labels"><span>P1</span><span>P2</span><span>P3</span><span>P4</span><span>P5</span><span>P6</span></div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="dashboard-choices-title">
+      <div class="review-choices-heading"><strong id="dashboard-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this screen pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Metrics, queue, and trend remain separate panel roles</li>
+            <li>Operational exceptions appear before supporting summaries</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Top metrics</dt><dd>3 summary values</dd></div>
+            <div><dt>Lower panels</dt><dd>One queue; one trend</dd></div>
+            <div><dt>Destinations</dt><dd>Product-owned drill-ins for each panel</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Summary row above the supporting panels</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Three evenly sized summary tiles</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Live refresh</li>
+            <li>Error states</li>
+            <li>Cross-filter navigation</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

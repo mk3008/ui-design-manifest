@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Accessibility</h1>
+      <p>Static visual evidence only</p>
+    </header>
+    <section class="canvas" aria-label="Static accessibility cues fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Accessible work surface</span></header>
+      <div class="content">
+        <div class="title-row"><div><h2>Accessibility states</h2></div></div>
+        <div class="a11y-grid">
+          <section class="a11y-card">
+            <h3>Visible label and required state</h3>
+            <div class="field">
+              <label for="a11y-name">Attribute A <span class="required">(required)</span></label>
+              <input id="a11y-name" type="text" value="Fixture value">
+            </div>
+          </section>
+          <section class="a11y-card">
+            <h3>Selection beyond color</h3>
+            <div class="selected-row"><span><strong>☑ Fixture record 01</strong></span><button type="button" class="button">Open</button></div>
+          </section>
+          <section class="a11y-card">
+            <h3>Error summary and field message</h3>
+            <div class="error-summary"><strong>There is one error</strong><a href="#a11y-code">Enter Attribute B.</a></div>
+            <div class="field error-field">
+              <label for="a11y-code">Attribute B</label>
+              <input id="a11y-code" type="text" value="">
+              <span class="error-message">Enter Attribute B.</span>
+            </div>
+          </section>
+          <section class="a11y-card">
+            <h3>Visible focus and stable action position</h3>
+            <div class="actions" style="margin-top:28px;">
+              <button type="button" class="button primary demonstrated-focus">Save</button>
+              <button type="button" class="button">Cancel</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="accessibility-choices-title">
+      <div class="review-choices-heading"><strong id="accessibility-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this guidance page</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Error summary plus field-level message</li>
+            <li>Save before Cancel in source and Tab order</li>
+            <li>Selection does not rely on color alone</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Required field</dt><dd>Attribute A</dd></div>
+            <div><dt>Validation copy</dt><dd>“Enter Attribute B.”</dd></div>
+            <div><dt>Selectable row</dt><dd>Fixture record 01</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Checked control plus accent treatment for selection</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Visible outline on Save for the focus example</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Keyboard traversal</li>
+            <li>Zoom and reflow</li>
+            <li>Assistive-technology output</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

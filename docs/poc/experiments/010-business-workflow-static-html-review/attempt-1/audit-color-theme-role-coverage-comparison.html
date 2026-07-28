@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color and theme role-coverage comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eef2f7; color: #172033; font-family: "Segoe UI", Arial, sans-serif; }
+    main { width: 1880px; margin: 0 auto; padding: 34px 32px 40px; }
+    h1 { margin: 0; font-size: 30px; }
+    .lead { margin: 8px 0 22px; color: #5f7084; font-size: 15px; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    figure { margin: 0; overflow: hidden; border: 1px solid #c7d2df; border-radius: 8px; background: #fff; }
+    figcaption { display: grid; gap: 3px; min-height: 72px; padding: 13px 16px; border-bottom: 1px solid #c7d2df; }
+    figcaption strong { font-size: 17px; }
+    figcaption span { color: #5f7084; font-size: 13px; }
+    img { display: block; width: 100%; height: 720px; object-fit: contain; object-position: top center; background: #eef2f7; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Color and theme role-coverage comparison</h1>
+    <p class="lead">The Light/Dark comparison remains; the corrected specimen restores the complete semantic role inventory and returns theme selection to the header utility side.</p>
+    <div class="comparison">
+      <figure>
+        <figcaption>
+          <strong>Before · reduced evidence</strong>
+          <span>Light/Dark were present, but success, information, warning, surface, accent, and visible-focus examples were missing.</span>
+        </figcaption>
+        <img src="audit-color-theme-reduced-before.png" alt="Reduced Light and Dark theme specimen">
+      </figure>
+      <figure>
+        <figcaption>
+          <strong>After · restored role coverage</strong>
+          <span>The same Light/Dark structure now exposes surfaces, text, selection, focus, actions, four semantic states, and a header pattern with title left and theme selection at right.</span>
+        </figcaption>
+        <img src="color-theme.png" alt="Restored Light and Dark theme specimen at the fixed acceptance viewport">
+      </figure>
+    </div>
+  </main>
+</body>
+</html>

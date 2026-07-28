@@ -12,6 +12,8 @@ scope: Reusable method.
 | Question | Pass condition |
 | --- | --- |
 | Is inspection independent from editing? | Read-only values remain legible without pretending to be disabled controls. |
+| Is the detail hierarchy compact and scannable? | Identity, weighted section headings, and predictable key/value alignment establish hierarchy without boxing every field or relying on decorative separators. |
+| Does the layout preserve one reading order? | Wide grouped columns are used only when the content benefits; narrow presentation returns to a vertical I-flow without changing semantic order. |
 | Is deletion separately owned? | Trigger, confirmation, execution, and outcome states are distinct from detail content. |
 | Is confirmation proportional? | Medium impact uses a concise digest; typed confirmation is conditional. |
 | Are unavailable actions honest? | Temporary prerequisites explain how to resolve; permanent restriction follows product policy. |

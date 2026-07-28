@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record read review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="review-header">
+      <a href="review.html">← Review index</a>
+      <h1>Record read</h1>
+      <p>Neutral fixture · read-only semantics</p>
+    </header>
+    <section class="canvas record-read-canvas" aria-label="Read-only record fixture">
+      <header class="app-header"><span class="brand">Workspace</span><span class="header-context">Records</span></header>
+      <div class="screen-scroll">
+        <header class="object-title-bar">
+          <div class="object-title-content">
+            <div>
+              <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <ol>
+                  <li><a href="#">Records</a></li>
+                  <li aria-current="page">Fixture record 01</li>
+                </ol>
+              </nav>
+              <h2>Fixture record 01</h2>
+              <p class="object-reference"><span>Record ID</span><strong>FIX-0001</strong></p>
+            </div>
+            <div class="header-actions" aria-label="Record actions">
+              <a class="button" href="#">Edit</a>
+              <a class="button text-danger" href="#">Delete</a>
+            </div>
+          </div>
+        </header>
+        <div class="record-detail-layout" aria-label="Record details">
+          <section class="detail-section detail-main" aria-labelledby="summary-heading">
+            <h3 id="summary-heading">Summary</h3>
+            <dl class="read-description-list">
+              <div><dt>Attribute A</dt><dd>Fixture value A</dd></div>
+              <div><dt>Attribute B</dt><dd>Fixture value B</dd></div>
+              <div><dt>Effective date</dt><dd>20XX-01-15</dd></div>
+              <div><dt>Category</dt><dd>Fixture category</dd></div>
+              <div><dt>Owner</dt><dd>Fixture owner</dd></div>
+              <div><dt>Description</dt><dd>A neutral fixture value demonstrates a supplied long-form field without defining product content.</dd></div>
+            </dl>
+          </section>
+          <section class="detail-section detail-meta" aria-labelledby="context-heading">
+            <h3 id="context-heading">Additional information</h3>
+            <dl class="read-meta-list">
+              <div><dt>Created</dt><dd>20XX-01-10</dd></div>
+              <div><dt>Last updated</dt><dd>20XX-01-15</dd></div>
+              <div><dt>Source</dt><dd>Product-supplied reference</dd></div>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </section>
+    <aside id="applied-choices" class="review-choices" aria-labelledby="record-read-choices-title">
+      <div class="review-choices-heading"><strong id="record-read-choices-title">Applied choices</strong><span>Read-only review note outside the product UI</span></div>
+      <div class="review-choice-sections">
+        <section class="review-choice-section">
+          <h2>Formal settings used</h2>
+          <p class="review-choice-empty">None on this screen pattern</p>
+        </section>
+        <section class="review-choice-section">
+          <h2>Pack defaults adopted</h2>
+          <ul class="review-fact-list">
+            <li>Record identity leads the hierarchy</li>
+            <li>Read-only values remain content rather than disabled controls</li>
+            <li>Unrelated fields do not fill equal-width cells</li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Product-supplied variables</h2>
+          <dl class="review-values">
+            <div><dt>Identity</dt><dd>Fixture record 01 / FIX-0001</dd></div>
+            <div><dt>Field priority</dt><dd>Identity only</dd></div>
+            <div><dt>Groups</dt><dd>Summary; Additional information</dd></div>
+            <div><dt>Available actions</dt><dd>Edit; Delete</dd></div>
+          </dl>
+        </section>
+        <section class="review-choice-section">
+          <h2>Implementation choices in this fixture</h2>
+          <fieldset class="review-choice-group" disabled>
+            <legend>Caption placement</legend>
+            <div class="review-choice-options">
+              <label class="review-option is-selected"><input type="radio" name="record-read-caption" checked><span>Left of values</span><strong class="review-selected-label">Selected</strong></label>
+              <label class="review-option"><input type="radio" name="record-read-caption"><span>Above values</span><small>Conditional alternative for narrow layouts or long captions</small></label>
+            </div>
+          </fieldset>
+          <fieldset class="review-choice-group" disabled>
+            <legend>Detail surface</legend>
+            <div class="review-choice-options">
+              <label class="review-option is-selected"><input type="radio" name="record-read-surface" checked><span>One restrained grouped surface</span><strong class="review-selected-label">Selected</strong></label>
+              <label class="review-option"><input type="radio" name="record-read-surface"><span>No additional outer surface</span></label>
+            </div>
+          </fieldset>
+          <ul class="review-treatment-list">
+            <li><span class="review-treatment-label">Shown</span><span>Secondary metadata uses a quieter inline group</span></li>
+            <li><span class="review-treatment-label">Shown</span><span>Title and actions remain reachable in the long-record pattern</span></li>
+          </ul>
+        </section>
+        <section class="review-choice-section">
+          <h2>Not exercised here</h2>
+          <ul class="review-fact-list">
+            <li>Narrow-width caption stacking</li>
+            <li>Promoted facts beyond identity</li>
+            <li>Return destination, permission changes, and group-level actions</li>
+            <li>Collapsed-header state</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
