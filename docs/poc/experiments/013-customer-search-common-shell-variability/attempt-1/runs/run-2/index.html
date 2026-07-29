@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顧客検索 | 業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="header">
+        <button class="icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="workspace-name">業務ワークスペース</p>
+        <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-content">
+        <aside class="drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="disclosure" aria-label="展開中">⌄</span>
+                <ul class="drawer-children">
+                  <li><a class="current" href="#customer-search" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="workspace" id="customer-search" aria-labelledby="page-title">
+          <div class="workspace-content">
+            <header class="page-header">
+              <h1 id="page-title">顧客検索</h1>
+              <p>登録済みの顧客情報を検索・確認します。</p>
+            </header>
+
+            <section class="search-section" aria-label="検索条件">
+              <form id="customer-search-form">
+                <div class="search-fields">
+                  <label>
+                    <span>氏名</span>
+                    <input name="name" type="search" autocomplete="name">
+                  </label>
+                  <label>
+                    <span>生年月日</span>
+                    <input name="birthdate" type="date">
+                  </label>
+                  <label>
+                    <span>電話番号</span>
+                    <input name="phone" type="tel" autocomplete="tel">
+                  </label>
+                  <label>
+                    <span>メールアドレス</span>
+                    <input name="email" type="email" autocomplete="email">
+                  </label>
+                </div>
+                <div class="search-actions">
+                  <button class="button button-primary" type="submit">検索</button>
+                  <button class="button button-secondary" type="reset">クリア</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="results-section" aria-labelledby="results-title">
+              <div class="results-summary">
+                <h2 id="results-title">検索結果 <span id="result-count">6件</span></h2>
+              </div>
+              <div class="table-scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">顧客ID</th>
+                      <th scope="col">氏名</th>
+                      <th scope="col">生年月日</th>
+                      <th scope="col">住所</th>
+                      <th scope="col">電話番号</th>
+                      <th scope="col">メールアドレス</th>
+                      <th scope="col">備考</th>
+                    </tr>
+                  </thead>
+                  <tbody id="customer-results">
+                    <tr data-name="佐藤 花子" data-birthdate="1986-04-12" data-phone="090-1234-5678" data-email="hanako.sato@example.test">
+                      <td><a href="#customer-000001">000001</a></td><td>佐藤 花子</td><td>1986-04-12</td><td>東京都千代田区</td><td>090-1234-5678</td><td>hanako.sato@example.test</td><td>—</td>
+                    </tr>
+                    <tr data-name="鈴木 恒一" data-birthdate="1979-09-28" data-phone="080-2345-6789" data-email="koichi.suzuki@example.test">
+                      <td><a href="#customer-000002">000002</a></td><td>鈴木 恒一</td><td>1979-09-28</td><td>神奈川県横浜市</td><td>080-2345-6789</td><td>koichi.suzuki@example.test</td><td>郵送連絡希望</td>
+                    </tr>
+                    <tr data-name="高橋 美咲" data-birthdate="1992-01-07" data-phone="070-3456-7890" data-email="misaki.takahashi@example.test">
+                      <td><a href="#customer-000003">000003</a></td><td>高橋 美咲</td><td>1992-01-07</td><td>埼玉県さいたま市</td><td>070-3456-7890</td><td>misaki.takahashi@example.test</td><td>—</td>
+                    </tr>
+                    <tr data-name="田中 健" data-birthdate="1968-11-19" data-phone="090-4567-8901" data-email="ken.tanaka@example.test">
+                      <td><a href="#customer-000004">000004</a></td><td>田中 健</td><td>1968-11-19</td><td>大阪府大阪市</td><td>090-4567-8901</td><td>ken.tanaka@example.test</td><td>—</td>
+                    </tr>
+                    <tr data-name="伊藤 真由" data-birthdate="1983-06-03" data-phone="080-5678-9012" data-email="mayu.ito@example.test">
+                      <td><a href="#customer-000005">000005</a></td><td>伊藤 真由</td><td>1983-06-03</td><td>愛知県名古屋市</td><td>080-5678-9012</td><td>mayu.ito@example.test</td><td>メール連絡希望</td>
+                    </tr>
+                    <tr data-name="渡辺 誠" data-birthdate="1975-02-24" data-phone="070-6789-0123" data-email="makoto.watanabe@example.test">
+                      <td><a href="#customer-000006">000006</a></td><td>渡辺 誠</td><td>1975-02-24</td><td>福岡県福岡市</td><td>070-6789-0123</td><td>makoto.watanabe@example.test</td><td>—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pagination" aria-label="ページネーション">
+                <button type="button" disabled>前へ</button>
+                <span aria-current="page">1</span>
+                <button type="button" disabled>次へ</button>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

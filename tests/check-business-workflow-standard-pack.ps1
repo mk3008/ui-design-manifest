@@ -118,13 +118,18 @@ foreach ($needle in @('current environment changes user expectations', 'This is 
 }
 
 $searchConditions = (Get-Content -Raw (Join-Path $pack 'components/search-conditions.md')) -replace '\s+', ' '
-foreach ($needle in @('resolves a search action region', 'complete action group', 'default `end` region', 'rather than falling back to the first field', 'not a new setting')) {
+foreach ($needle in @('resolves a search action region', 'complete action group', 'dedicated condition-action toolbar directly', 'separate structural row', 'default `end` region', 'right edge with the condition region''s right edge', '`justify-content: flex-end`', '`align-items` only for vertical alignment', 'source/tab order and visual order', 'render Search followed by Clear', 'not a new setting', 'concise group caption', 'group description is optional', 'does not require a fieldset border')) {
   if (-not $searchConditions.Contains($needle)) { throw "Search-action placement contract is missing: $needle" }
 }
 
 $resultGrid = (Get-Content -Raw (Join-Path $pack 'components/result-grid.md')) -replace '\s+', ' '
-foreach ($needle in @('one compact summary immediately above the grid', 'does not teach the user how to click', 'stable, human-recognizable primary identifier or title', 'leading identity cell as the record-opening link', 'second trailing `Details` link')) {
+foreach ($needle in @('one compact summary immediately above the grid', 'immediately after the result title on the same heading line', 'Do not show a query or filter summary by default', 'binding supplies an applied-query summary', 'one product-declared attribute in each ordinary grid cell', 'composite cell only when it supplies the constituent attributes', 'stable, human-recognizable primary identifier or title', 'leading identity cell as the record-opening link', 'second trailing `Details` link', 'tone-distinct header row', 'apply those exact values to the header row', '`surface_background` and `text_primary`', 'every ordinary body cell as an opaque data surface', '`background-color: var(--surface-background)`', '`color: var(--text-primary)`', 'each `tbody td`', '`background-color: var(--table-header-background)`', 'each `thead th`', 'horizontal row separator', 'Keep ordinary grid cells free of vertical dividers by default', 'Place the grid directly in its assigned content region', 'acts on the visible result collection', 'result grid''s adjacent toolbar or action zone', 'logical end of that result-summary action zone', 'page-level scope', 'lower-emphasis outlined or tertiary button treatment')) {
   if (-not $resultGrid.Contains($needle)) { throw "Result-grid hierarchy or open-record contract is missing: $needle" }
+}
+
+$pagination = (Get-Content -Raw (Join-Path $pack 'components/pagination.md')) -replace '\s+', ' '
+foreach ($needle in @('plain page number together with Previous and Next controls', 'Do not prefix that number with `Current`, `現在`', 'neighboring page-number buttons', 'random-access page model', 'pagination_region')) {
+  if (-not $pagination.Contains($needle)) { throw "Pagination default contract is missing: $needle" }
 }
 
 $screenTransition = (Get-Content -Raw (Join-Path $pack 'flows/screen-transition.md')) -replace '\s+', ' '
@@ -143,7 +148,7 @@ foreach ($needle in @('keyboard reachable', 'focus indicator', 'color alone', 'A
 }
 
 $theme = (Get-Content -Raw (Join-Path $pack 'foundations/color-and-theme.md')) -replace '\s+', ' '
-foreach ($needle in @('semantic role', 'page and raised surfaces', 'action foreground and background', 'selection foreground, background, and indicator', 'visible focus', 'success', 'information', 'warning', 'error', 'color as the only cue', 'brand color separate', 'requires both `light` and `dark` modes', '`light-only`, `dark-only`, or `selectable`', 'use `light` as the initial mode', 'editable concrete values', 'Header or host-shell contract', 'does not decide whether a theme-selection control appears', '`system` resolves to one of the two required palettes', 'manifest-owned configuration', 'does not own or override the concrete role values', 'product binding')) {
+foreach ($needle in @('semantic role', 'page and raised surfaces', 'result-grid header surface and foreground', 'result grid''s ordinary body uses `surface_background`', 'workspace uses `page_background`', 'action foreground and background', 'selection foreground, background, and indicator', 'visible focus', 'success', 'information', 'warning', 'error', 'color as the only cue', 'brand color separate', 'requires both `light` and `dark` modes', '`light-only`, `dark-only`, or `selectable`', 'use `light` as the initial mode', 'editable concrete values', 'Header or host-shell contract', 'does not decide whether a theme-selection control appears', '`system` resolves to one of the two required palettes', 'manifest-owned configuration', 'does not own or override the concrete role values', 'product binding')) {
   if (-not $theme.Contains($needle)) { throw "Color and theme boundary is missing: $needle" }
 }
 
@@ -179,7 +184,7 @@ foreach ($needle in @('Version 0.2.0 adoption', 'five record-list setting IDs, d
 }
 
 $variability = (Get-Content -Raw (Join-Path $pack 'variability.md')) -replace '\s+', ' '
-foreach ($needle in @('five IDs', 'separate bounded configuration', 'Both light and dark modes are required', 'success, information, warning, and error roles', 'concrete `#RRGGBB` defaults are locally editable', 'user-selection capability', '`light-only`, `dark-only`, and `selectable`', 'logical end without a visible `Theme` caption', 'Use one page title for the current task/destination', 'persistent textual environment indication', 'do not use a decorative watermark as the only cue', 'Read-only desktop details use compact left-caption rows', 'create/edit labels sit above controls', 'without spreading unrelated fields across equal-width cells', 'use left captions for short-caption desktop scanning', 'importance, promoted facts', 'Create then safe cancellation', 'Save then cancellation', '| Breadcrumb |', '| Page header |', '| Environment notice |', '| Record read |', '| Record create |', '| Record edit |', '| Record delete |', '| Wizard |', '| Dashboard |', '| Color and theme |', 'local overrides cannot perform that move')) {
+foreach ($needle in @('five IDs', 'separate bounded configuration', 'Both light and dark modes are required', 'result-grid header', 'success, information, warning, and error roles', 'concrete `#RRGGBB` defaults are locally editable', 'user-selection capability', '`light-only`, `dark-only`, and `selectable`', 'logical end without a visible `Theme` caption', 'Use one page title for the current task/destination', 'persistent textual environment indication', 'do not use a decorative watermark as the only cue', 'Read-only desktop details use compact left-caption rows', 'create/edit labels sit above controls', 'without spreading unrelated fields across equal-width cells', 'use left captions for short-caption desktop scanning', 'importance, promoted facts', 'Create then safe cancellation', 'Save then cancellation', 'concise unboxed group caption', 'separate action row', 'tone-distinct header with horizontal row separators', 'plain current-page number plus Previous and Next controls', '| Breadcrumb |', '| Page header |', '| Environment notice |', '| Record read |', '| Record create |', '| Record edit |', '| Record delete |', '| Wizard |', '| Dashboard |', '| Color and theme |', 'local overrides cannot perform that move')) {
   if (-not $variability.Contains($needle)) { throw "Variability map is missing a responsibility boundary: $needle" }
 }
 
@@ -194,6 +199,8 @@ foreach ($needle in @('Theme colors', 'Theme color defaults', 'separate definiti
 $themeRoleIds = @(
   'page_background',
   'surface_background',
+  'table_header_background',
+  'table_header_foreground',
   'text_primary',
   'text_muted',
   'border_subtle',
@@ -324,6 +331,7 @@ function Assert-ThemeContrast([System.Collections.IDictionary]$palette, [string]
   $checks = @(
     @('text_primary', 'page_background', 4.5),
     @('text_primary', 'surface_background', 4.5),
+    @('table_header_foreground', 'table_header_background', 4.5),
     @('text_muted', 'page_background', 4.5),
     @('text_muted', 'surface_background', 4.5),
     @('action_foreground', 'action_background', 4.5),
@@ -367,7 +375,7 @@ foreach ($role in $themeRoleIds) {
 $themeDefaultText = Get-Content -Raw $themeDefaultPath
 $themeOverrideText = Get-Content -Raw $themeOverridePath
 foreach ($text in @($themeDefaultText, $themeOverrideText)) {
-  foreach ($needle in @('pack_id: example-business-app-standard-pack', 'pack_version: 0.2.0', 'theme_color_contract_version: 1')) {
+  foreach ($needle in @('pack_id: example-business-app-standard-pack', 'pack_version: 0.2.0', 'theme_color_contract_version: 2')) {
     if (-not $text.Contains($needle)) { throw "Theme-color file is missing identity: $needle" }
   }
 }
@@ -385,7 +393,7 @@ foreach ($mode in @('light', 'dark')) {
   foreach ($role in $themeOverrides[$mode].Keys) { $resolved[$role] = $themeOverrides[$mode][$role] }
   $themeContrastChecks += Assert-ThemeContrast $resolved "resolved override $mode"
 }
-if ($themeDefaultValueCount -ne 42) { throw "Expected 42 canonical theme values; found $themeDefaultValueCount." }
+if ($themeDefaultValueCount -ne 46) { throw "Expected 46 canonical theme values; found $themeDefaultValueCount." }
 if ($themeOverrideValueCount -ne 10) { throw "Expected 10 bounded theme override values; found $themeOverrideValueCount." }
 
 $themeNegativeCases = @(

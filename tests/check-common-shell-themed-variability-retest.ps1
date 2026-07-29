@@ -1,8 +1,8 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $experiment = Join-Path $root 'docs/poc/experiments/012-common-shell-variability/attempt-3'
-$manifest = Join-Path $root 'templates/business-app/design-manifest'
-$themeFile = Join-Path $manifest 'configuration/theme-colors.default.yaml'
+$snapshot = Join-Path $experiment 'consumer-input/design-manifest'
+$themeFile = Join-Path $snapshot 'configuration/theme-colors.default.yaml'
 
 foreach ($file in @('README.md', 'evaluation-contract.md', 'consumer-input/user-prompt-ja.md', 'capture-evaluation.ps1', 'comparison.html', 'comparison.css', 'evaluation.md', 'capture-record.json')) {
   if (-not (Test-Path -LiteralPath (Join-Path $experiment $file))) { throw "Missing themed common-shell experiment artifact: $file" }
@@ -13,15 +13,10 @@ foreach ($needle in @('ライトとダークを切り替え可能', '?theme=ligh
   if (-not $prompt.Contains($needle)) { throw "Fixed themed common-shell prompt is missing: $needle" }
 }
 
-$manifestFiles = Get-ChildItem -Recurse -File -LiteralPath $manifest | ForEach-Object { $_.FullName.Substring($manifest.Length).TrimStart('\') }
-$snapshot = Join-Path $experiment 'consumer-input/design-manifest'
-foreach ($relative in $manifestFiles) {
-  $source = Join-Path $manifest $relative
-  $copy = Join-Path $snapshot $relative
-  if (-not (Test-Path -LiteralPath $copy)) { throw "Manifest snapshot is missing: $relative" }
-  if ((Get-FileHash -Algorithm SHA256 -LiteralPath $source).Hash -ne (Get-FileHash -Algorithm SHA256 -LiteralPath $copy).Hash) {
-    throw "Manifest snapshot drifted from the tested input: $relative"
-  }
+$manifestFiles = Get-ChildItem -Recurse -File -LiteralPath $snapshot
+if ($manifestFiles.Count -ne 44) { throw "Expected the historical manifest snapshot to contain 44 files; found $($manifestFiles.Count)." }
+foreach ($relative in @('manifest.md', 'components/header.md', 'components/drawer.md', 'foundations/color-and-theme.md', 'configuration/theme-colors.default.yaml')) {
+  if (-not (Test-Path -LiteralPath (Join-Path $snapshot $relative))) { throw "Historical manifest snapshot is missing: $relative" }
 }
 
 $allowedColors = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
