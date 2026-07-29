@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shell" data-theme="light" data-drawer="open">
+      <header class="header">
+        <div class="header__leading">
+          <button class="icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+            <span aria-hidden="true">☰</span>
+          </button>
+          <p class="header__identity">業務ワークスペース</p>
+        </div>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="ダークテーマに切り替える">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+      </header>
+
+      <div class="shell__body">
+        <aside class="drawer" id="workspace-drawer" aria-label="ワークスペースのセクション">
+          <nav class="drawer__navigation" aria-label="セクション">
+            <div class="drawer__item">セクション A</div>
+            <div class="drawer__group">
+              <div class="drawer__item drawer__parent" aria-expanded="true">
+                <span>セクション B</span>
+                <span class="drawer__disclosure" aria-hidden="true">⌄</span>
+              </div>
+              <div class="drawer__children">
+                <div class="drawer__item drawer__item--child drawer__item--current" aria-current="page">項目 B-1</div>
+                <div class="drawer__item drawer__item--child">項目 B-2</div>
+              </div>
+            </div>
+            <div class="drawer__item">セクション C</div>
+          </nav>
+        </aside>
+        <main class="workspace" aria-label="ワークスペース"></main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

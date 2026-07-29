@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>顧客検索 | Customer Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="global-header">
+    <button id="drawer-toggle" class="icon-button" type="button" aria-label="ナビゲーションを閉じる" aria-expanded="true">☰</button>
+    <a class="product-name" href="#search" data-view="search">Customer Desk</a>
+    <span class="product-context">顧客台帳</span>
+    <span class="header-spacer"></span>
+    <span class="light-chip" aria-label="ライトモード">☀ Light</span>
+  </header>
+
+  <div class="app-frame">
+    <aside id="drawer" class="drawer" aria-label="メインナビゲーション">
+      <div class="drawer-label">WORKSPACE</div>
+      <nav>
+        <a class="nav-item active" href="#search" data-view="search"><span>⌕</span>顧客を検索</a>
+        <a class="nav-item" href="#create" data-view="create"><span>＋</span>顧客を登録</a>
+      </nav>
+      <div class="drawer-footer">Internal demo<br><span>Fictional records only</span></div>
+    </aside>
+
+    <main class="workspace">
+      <div id="search-view" class="view">
+        <nav class="breadcrumb" aria-label="パンくずリスト"><ol><li>顧客台帳</li><li aria-current="page">顧客を検索</li></ol></nav>
+        <div class="page-heading">
+          <div><p class="eyebrow">CUSTOMER DIRECTORY</p><h1>顧客を検索</h1><p>登録済みのお客様情報を確認・管理します。</p></div>
+          <button class="button primary" type="button" data-view="create">＋ 新規顧客</button>
+        </div>
+
+        <section class="search-panel" aria-labelledby="search-title">
+          <div class="section-title"><div><h2 id="search-title">検索条件</h2><p>条件を入力して対象の顧客を絞り込みます。</p></div></div>
+          <form id="search-form">
+            <div class="condition-grid">
+              <label>氏名<input name="name" autocomplete="off" placeholder="例）佐藤 花子"></label>
+              <label>生年月日<input name="birthDate" type="date"></label>
+              <label>電話番号<input name="phone" autocomplete="off" placeholder="例）03-1234-5678"></label>
+              <label>メールアドレス<input name="email" type="email" autocomplete="off" placeholder="例）hanako@example.test"></label>
+            </div>
+            <div class="form-actions"><button class="button primary" type="submit">検索</button><button id="clear-button" class="button secondary" type="button">クリア</button></div>
+          </form>
+        </section>
+
+        <section class="results" aria-labelledby="results-title">
+          <div class="results-topline"><div><h2 id="results-title">検索結果</h2><p id="result-count">6件の顧客</p></div><span class="result-note">全件表示</span></div>
+          <div class="table-wrap"><table><thead><tr><th>顧客ID</th><th>氏名</th><th>生年月日</th><th>電話番号</th><th>メールアドレス</th><th class="action-col"><span class="visually-hidden">操作</span></th></tr></thead><tbody id="result-body"></tbody></table></div>
+        </section>
+      </div>
+
+      <div id="record-view" class="view hidden">
+        <nav class="breadcrumb" aria-label="パンくずリスト"><ol><li><a href="#search" data-view="search">顧客台帳</a></li><li><a href="#search" data-view="search">顧客を検索</a></li><li aria-current="page">顧客詳細</li></ol></nav>
+        <div class="page-heading compact"><div><p class="eyebrow">CUSTOMER RECORD</p><h1 id="record-title">顧客詳細</h1><p id="record-subtitle"></p></div><div class="heading-actions"><button class="button secondary" type="button" id="edit-record">編集</button><button class="button danger-outline" type="button" id="delete-record">削除</button></div></div>
+        <section class="detail-surface"><h2>基本情報</h2><dl id="record-details"></dl><h2 class="notes-heading">メモ</h2><p id="record-notes" class="notes"></p></section>
+      </div>
+
+      <div id="form-view" class="view hidden">
+        <nav class="breadcrumb" aria-label="パンくずリスト"><ol><li><a href="#search" data-view="search">顧客台帳</a></li><li><a href="#search" data-view="search">顧客を検索</a></li><li aria-current="page" id="form-crumb">顧客を登録</li></ol></nav>
+        <div class="page-heading compact"><div><p class="eyebrow">CUSTOMER RECORD</p><h1 id="form-title">顧客を登録</h1><p id="form-description">新しい顧客情報を入力します。保存してもこのデモのデータは変更されません。</p></div></div>
+        <form id="record-form" class="record-form"><div id="identity-row" class="identity-row hidden"><span>顧客ID</span><strong id="form-id"></strong></div><h2>顧客情報</h2><div class="record-fields"><label>氏名<input name="fullName" required></label><label>生年月日<input name="dateOfBirth" type="date" required></label><label>住所<input name="address" required></label><label>電話番号<input name="phone" required></label><label>メールアドレス<input name="email" type="email" required></label><label>メモ<textarea name="notes" rows="4"></textarea></label></div><footer class="form-footer"><button class="button primary" type="submit" id="save-button">保存</button><button class="button secondary" type="button" data-view="search">キャンセル</button></footer></form>
+      </div>
+    </main>
+  </div>
+
+  <div id="delete-dialog" class="dialog-backdrop hidden" role="presentation"><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="delete-title"><p class="dialog-icon">!</p><h2 id="delete-title">この顧客を削除しますか？</h2><p id="delete-copy"></p><p class="non-persistence">このデモでは削除を実行してもデータは変更されません。</p><div class="dialog-actions"><button id="confirm-delete" class="button danger" type="button">削除</button><button id="cancel-delete" class="button secondary" type="button">キャンセル</button></div></section></div>
+  <script src="app.js"></script>
+</body>
+</html>

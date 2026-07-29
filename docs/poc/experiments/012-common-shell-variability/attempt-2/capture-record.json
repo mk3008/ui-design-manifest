@@ -1,0 +1,141 @@
+{
+  "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "chrome_version": "150.0.7871.187",
+  "viewport": "1280x720",
+  "command_mode": "headless=new, disable-gpu; SwiftShader once only after capture-file absence",
+  "command_template": "chrome.exe --headless=new --disable-gpu --window-size=1280,720 --user-data-dir=<temporary-profile> --screenshot=<png> file:///.../index.html?drawer=<open|hidden>&theme=<light|dark>",
+  "captures": [
+    {
+      "run": 1,
+      "drawer": "open",
+      "theme": "light",
+      "png": "runs/run-1/drawer-open-light.png",
+      "fallback_used": false,
+      "bytes": 13854,
+      "width": 1280,
+      "height": 720,
+      "sha256": "24EF3ADA3BA156765A2CED082853BD955733A81001E9DDE91EE4803CAF80B700"
+    },
+    {
+      "run": 1,
+      "drawer": "hidden",
+      "theme": "light",
+      "png": "runs/run-1/drawer-hidden-light.png",
+      "fallback_used": false,
+      "bytes": 7884,
+      "width": 1280,
+      "height": 720,
+      "sha256": "685FA70A8DD1348B8D3DC539EFDFC7910A93A1A9742773DF46871311E3BF981B"
+    },
+    {
+      "run": 1,
+      "drawer": "open",
+      "theme": "dark",
+      "png": "runs/run-1/drawer-open-dark.png",
+      "fallback_used": false,
+      "bytes": 12728,
+      "width": 1280,
+      "height": 720,
+      "sha256": "C3C24B2BE4EB54F9868519FEC39B949BDB4B4942D158C2613A71B3264C8DBDDE"
+    },
+    {
+      "run": 1,
+      "drawer": "hidden",
+      "theme": "dark",
+      "png": "runs/run-1/drawer-hidden-dark.png",
+      "fallback_used": false,
+      "bytes": 6690,
+      "width": 1280,
+      "height": 720,
+      "sha256": "B06A66CCBA4F3E6D79801F986C82D21485F29DE7BA2255F9FF6FE2BC4123C56A"
+    },
+    {
+      "run": 2,
+      "drawer": "open",
+      "theme": "light",
+      "png": "runs/run-2/drawer-open-light.png",
+      "fallback_used": false,
+      "bytes": 14515,
+      "width": 1280,
+      "height": 720,
+      "sha256": "F72ACFBFD74B18EAC42825B44A4CFD58FC5E6996C5F7DC4B0067AE3EF53D984A"
+    },
+    {
+      "run": 2,
+      "drawer": "hidden",
+      "theme": "light",
+      "png": "runs/run-2/drawer-hidden-light.png",
+      "fallback_used": false,
+      "bytes": 8116,
+      "width": 1280,
+      "height": 720,
+      "sha256": "40B593A3B6F5C320171FE26F4E7CEA466CE71E36075729277E421F9189C63A77"
+    },
+    {
+      "run": 2,
+      "drawer": "open",
+      "theme": "dark",
+      "png": "runs/run-2/drawer-open-dark.png",
+      "fallback_used": false,
+      "bytes": 13536,
+      "width": 1280,
+      "height": 720,
+      "sha256": "93E657D03920ACC411100E76027CAEC297FF5A19CE917FABCA365471289E2F68"
+    },
+    {
+      "run": 2,
+      "drawer": "hidden",
+      "theme": "dark",
+      "png": "runs/run-2/drawer-hidden-dark.png",
+      "fallback_used": false,
+      "bytes": 6944,
+      "width": 1280,
+      "height": 720,
+      "sha256": "FE67B0F33C96A6D900229D48478A895FD3ECA8A616F324E7B4E7B213D6A9AC9A"
+    },
+    {
+      "run": 3,
+      "drawer": "open",
+      "theme": "light",
+      "png": "runs/run-3/drawer-open-light.png",
+      "fallback_used": false,
+      "bytes": 13588,
+      "width": 1280,
+      "height": 720,
+      "sha256": "223E7F1308F59890A41331F01447DCDF50A69B25AD212DECCC6E8C545F398126"
+    },
+    {
+      "run": 3,
+      "drawer": "hidden",
+      "theme": "light",
+      "png": "runs/run-3/drawer-hidden-light.png",
+      "fallback_used": false,
+      "bytes": 7834,
+      "width": 1280,
+      "height": 720,
+      "sha256": "BBE135DA0A8D80A3C9D435CC34E2AFBEE13FECAEBD8661DED05E8472E622AD2A"
+    },
+    {
+      "run": 3,
+      "drawer": "open",
+      "theme": "dark",
+      "png": "runs/run-3/drawer-open-dark.png",
+      "fallback_used": false,
+      "bytes": 13964,
+      "width": 1280,
+      "height": 720,
+      "sha256": "203D61CD86E962E9A8FDC23B3FFE3520A2B492C577666225CCB6ADAF05FFBBED"
+    },
+    {
+      "run": 3,
+      "drawer": "hidden",
+      "theme": "dark",
+      "png": "runs/run-3/drawer-hidden-dark.png",
+      "fallback_used": false,
+      "bytes": 8165,
+      "width": 1280,
+      "height": 720,
+      "sha256": "1BC25807839AB001CE1FFBD1322A31B1E3211DD6F50C47669545B4E9806D86DE"
+    }
+  ]
+}

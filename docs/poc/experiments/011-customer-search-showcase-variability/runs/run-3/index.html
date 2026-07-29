@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>顧客検索 | Customer desk</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><button id="menu" aria-label="ナビゲーションを閉じる" aria-expanded="true">☰</button><b><i>CD</i> Customer desk</b><span>顧客管理　<em>Light</em></span></header>
+<div class="shell"><aside id="drawer"><small>WORKSPACE</small><nav><a class="selected" href="#search" data-view="search">⌕　顧客検索</a><a href="#create" data-view="create">＋　顧客を登録</a><a href="#guide" data-view="guide">◫　利用ガイド</a></nav><footer>● 社内デモ環境</footer></aside>
+<main>
+<section id="search-view" class="view active"><div class="crumb">ホーム　/　<b>顧客検索</b></div><div class="title"><div><label>CUSTOMER DIRECTORY</label><h1>顧客検索</h1><p>登録済みの顧客情報を条件で絞り込み、詳細を確認できます。</p></div><button class="primary" data-view="create">＋ 顧客を登録</button></div>
+<article class="panel"><h2>検索条件 <small>条件は複数指定できます</small></h2><form id="search-form"><label>氏名<input id="name" type="search" placeholder="例）佐藤 花子"></label><label>生年月日<input id="birth" type="date"></label><label>電話番号<input id="phone" type="tel" placeholder="例）03-5555-0101"></label><label>メールアドレス<input id="email" type="email" placeholder="例）name@example.test"></label><div class="actions"><button class="primary">検索</button><button type="button" id="clear">クリア</button></div></form></article>
+<article class="results"><div class="result-head"><div><h2>検索結果 <small id="count">6件</small></h2><p id="summary">すべての顧客を表示しています</p></div><small>行の「詳細」を選択して確認</small></div><table><thead><tr><th>顧客ID</th><th>氏名</th><th>生年月日</th><th>電話番号</th><th>メールアドレス</th><th></th></tr></thead><tbody id="rows"></tbody></table></article></section>
+<section id="record-view" class="view"></section><section id="form-view" class="view"></section>
+<section id="guide-view" class="view"><div class="crumb">ホーム　/　<b>利用ガイド</b></div><label>HELP</label><h1>利用ガイド</h1><article class="card"><h2>このサンプルについて</h2><p>外部接続を持たない、架空の6件の顧客データによる静的なデモです。登録・更新・削除の操作は保存されません。</p><button class="primary" data-view="search">顧客検索へ</button></article></section>
+</main></div>
+<dialog id="confirm"><form method="dialog"><label>削除の確認</label><h2>この顧客を削除しますか？</h2><p id="delete-name"></p><p class="warning">このデモでは削除は実行・保存されません。</p><div class="end"><button>キャンセル</button><button class="danger" id="delete">削除する</button></div></form></dialog><script src="app.js"></script></body></html>

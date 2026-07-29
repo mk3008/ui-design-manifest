@@ -1,0 +1,43 @@
+{
+  "chrome_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "chrome_version": "150.0.7871.187",
+  "viewport": {
+    "width": 1440,
+    "height": 1200
+  },
+  "captures": [
+    {
+      "run": 1,
+      "html": "runs/run-1/index.html",
+      "png": "runs/run-1/default.png",
+      "normal_exit_code": 0,
+      "fallback_used": false,
+      "width": 1440,
+      "height": 1200,
+      "png_sha256_raw_byte": "BEFE10F6B64AAA2BBB318E7453B0625EA4C0C7C6ABE00847AB01700F9D9545C9",
+      "png_size_bytes": 97331
+    },
+    {
+      "run": 2,
+      "html": "runs/run-2/index.html",
+      "png": "runs/run-2/default.png",
+      "normal_exit_code": 0,
+      "fallback_used": false,
+      "width": 1440,
+      "height": 1200,
+      "png_sha256_raw_byte": "6276F10D54C0C18C3C253F53FFFD41BC48B9E10EC10989A0DC017E57ADF625B9",
+      "png_size_bytes": 88122
+    },
+    {
+      "run": 3,
+      "html": "runs/run-3/index.html",
+      "png": "runs/run-3/default.png",
+      "normal_exit_code": 0,
+      "fallback_used": false,
+      "width": 1440,
+      "height": 1200,
+      "png_sha256_raw_byte": "766BCFB2FC1576BE7ACDFB05DAF8DF3FF1CADA8B8CDED0184E09F73B23118A9E",
+      "png_size_bytes": 94803
+    }
+  ]
+}

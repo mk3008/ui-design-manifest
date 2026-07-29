@@ -1,0 +1,69 @@
+{
+  "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "chrome_version": "150.0.7871.187",
+  "viewport": "1280x720",
+  "command_mode": "headless=new, disable-gpu; SwiftShader once only after failure",
+  "command_template": "chrome.exe --headless=new --disable-gpu --window-size=1280,720 --user-data-dir=<temporary-profile> --screenshot=<png> file:///.../index.html?drawer=<open|hidden>",
+  "captures": [
+    {
+      "run": 1,
+      "state": "open",
+      "png": "runs/run-1/drawer-open.png",
+      "fallback_used": false,
+      "bytes": 13953,
+      "width": 1280,
+      "height": 720,
+      "sha256": "4BC8DCD0AA353ED358463888DDE9224662952AC626E1FFBC7259CAD8BE4B5FBE"
+    },
+    {
+      "run": 1,
+      "state": "hidden",
+      "png": "runs/run-1/drawer-hidden.png",
+      "fallback_used": false,
+      "bytes": 7814,
+      "width": 1280,
+      "height": 720,
+      "sha256": "D2BB54D4E5D1F0C6B56BADC123DA0C4A2117B15A65EFFCBE0AB35A807072E5EC"
+    },
+    {
+      "run": 2,
+      "state": "open",
+      "png": "runs/run-2/drawer-open.png",
+      "fallback_used": false,
+      "bytes": 13631,
+      "width": 1280,
+      "height": 720,
+      "sha256": "149B4947EDFBB30CD1CD2940899C2BAC394112E013352C30916716ABFA1012CD"
+    },
+    {
+      "run": 2,
+      "state": "hidden",
+      "png": "runs/run-2/drawer-hidden.png",
+      "fallback_used": false,
+      "bytes": 7554,
+      "width": 1280,
+      "height": 720,
+      "sha256": "BEE21B3400AAE74A23D564252999A6DCFFB8E92BA3F5CA14D2309C4CD2AE4A50"
+    },
+    {
+      "run": 3,
+      "state": "open",
+      "png": "runs/run-3/drawer-open.png",
+      "fallback_used": false,
+      "bytes": 12708,
+      "width": 1280,
+      "height": 720,
+      "sha256": "3C21C24ED2EFAA4F7E78F8B7AFCEF8191658E1F47B1B4E864F700BB7CF4CB3F7"
+    },
+    {
+      "run": 3,
+      "state": "hidden",
+      "png": "runs/run-3/drawer-hidden.png",
+      "fallback_used": false,
+      "bytes": 7386,
+      "width": 1280,
+      "height": 720,
+      "sha256": "62B9EC53B002CE62DCFDCD294187437DFB4111534E590C34DD46E1CF88B41845"
+    }
+  ]
+}

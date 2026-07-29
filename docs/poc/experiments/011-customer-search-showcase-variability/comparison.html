@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer search variability comparison</title>
+  <link rel="stylesheet" href="comparison.css">
+</head>
+<body>
+  <main>
+    <section class="intro">
+      <h1>顧客検索ショーケース: Terra medium 3回比較</h1>
+      <p>同じ固定仕様・同じ標準パック・同じ 1440×1200 の初期状態から、独立に生成した3つの静的画面です。いずれも架空の6顧客、Drawer開、Light、検索条件空、検索結果6件です。</p>
+      <p class="notice">このページは差を確認するためのPoCです。各画面は「正解」の候補ではなく、仕様が未固定の部分でどの程度の結果差が出るかを示します。</p>
+    </section>
+
+    <section class="runs" aria-label="Three independently generated customer search screens">
+      <article class="run">
+        <div class="run-heading"><h2>Run 1</h2><p>1440×1200 · Drawer open · Light · 6 results</p></div>
+        <a href="runs/run-1/search-default.png"><img src="runs/run-1/search-default.png" alt="Run 1 customer search screen"></a>
+        <div class="run-links"><a href="runs/run-1/index.html">画面を開く</a><a href="runs/run-1/README.md">実装メモ</a></div>
+      </article>
+      <article class="run">
+        <div class="run-heading"><h2>Run 2</h2><p>1440×1200 · Drawer open · Light · 6 results</p></div>
+        <a href="runs/run-2/search-default.png"><img src="runs/run-2/search-default.png" alt="Run 2 customer search screen"></a>
+        <div class="run-links"><a href="runs/run-2/index.html">画面を開く</a><a href="runs/run-2/README.md">実装メモ</a></div>
+      </article>
+      <article class="run">
+        <div class="run-heading"><h2>Run 3</h2><p>1440×1200 · Drawer open · Light · 6 results</p></div>
+        <a href="runs/run-3/search-default.png"><img src="runs/run-3/search-default.png" alt="Run 3 customer search screen"></a>
+        <div class="run-links"><a href="runs/run-3/index.html">画面を開く</a><a href="runs/run-3/README.md">実装メモ</a></div>
+      </article>
+    </section>
+
+    <section class="comparison">
+      <h2>観察しやすい差</h2>
+      <table>
+        <thead><tr><th>観点</th><th>Run 1</th><th>Run 2</th><th>Run 3</th></tr></thead>
+        <tbody>
+          <tr><th>検索条件の配置</th><td>4条件を横一列</td><td>2列×2行</td><td>4条件を横一列</td></tr>
+          <tr><th>Headerの情報</th><td>製品名と業務文脈</td><td>製品名・業務文脈・Light表示</td><td>製品名・業務文脈・Light表示</td></tr>
+          <tr><th>Drawerの補助情報</th><td>最小限のナビゲーション</td><td>内部デモ注記を含む</td><td>利用ガイドを含む</td></tr>
+          <tr><th>結果領域</th><td>検索結果と操作を分離</td><td>検索結果と新規作成を明示</td><td>検索結果と短い操作説明を併記</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

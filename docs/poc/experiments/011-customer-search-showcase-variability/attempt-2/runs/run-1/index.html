@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>顧客検索</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#results">検索結果へ移動</a>
+    <main class="workspace">
+      <header class="page-header">
+        <div>
+          <h1>顧客検索</h1>
+          <p>条件を指定して顧客情報を検索します。</p>
+        </div>
+      </header>
+
+      <section class="search-panel" aria-labelledby="conditions-heading">
+        <div class="section-heading">
+          <h2 id="conditions-heading">検索条件</h2>
+          <p>氏名、生年月日、電話番号、メールアドレスで絞り込めます。</p>
+        </div>
+        <form id="search-form" novalidate>
+          <div class="condition-grid">
+            <label>氏名<input id="name" name="name" autocomplete="name" /></label>
+            <label>生年月日<input id="birthday" name="birthday" type="date" /></label>
+            <label>電話番号<input id="phone" name="phone" type="tel" autocomplete="tel" /></label>
+            <label>メールアドレス<input id="email" name="email" type="email" autocomplete="email" /></label>
+          </div>
+          <div class="form-actions">
+            <button class="primary-button" type="submit">検索</button>
+            <button class="secondary-button" id="clear-button" type="button">クリア</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-panel" id="results" aria-labelledby="results-heading" tabindex="-1">
+        <div class="results-summary">
+          <div>
+            <h2 id="results-heading">検索結果 <span id="result-count" class="count">0件</span></h2>
+            <p id="result-context" aria-live="polite">すべての顧客を表示しています。</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">顧客ID</th>
+                <th scope="col">氏名</th>
+                <th scope="col">生年月日</th>
+                <th scope="col">住所</th>
+                <th scope="col">電話番号</th>
+                <th scope="col">メールアドレス</th>
+                <th scope="col">備考</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>条件に一致する顧客は見つかりませんでした。</p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

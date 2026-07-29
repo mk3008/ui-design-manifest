@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shell" id="shell">
+      <header class="header">
+        <button class="drawer-toggle" id="drawer-toggle" type="button" aria-label="ナビゲーションを開閉">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+        <div class="workspace-name">業務ワークスペース</div>
+      </header>
+
+      <aside class="drawer" id="drawer" aria-label="ナビゲーション">
+        <nav>
+          <a class="nav-item" href="#section-a">セクション A</a>
+          <div class="nav-group">
+            <a class="nav-item nav-parent" href="#section-b">セクション B <span class="disclosure" aria-hidden="true">⌄</span></a>
+            <div class="nav-children">
+              <a class="nav-item nav-child is-current" href="#item-b-1">項目 B-1</a>
+              <a class="nav-item nav-child" href="#item-b-2">項目 B-2</a>
+            </div>
+          </div>
+          <a class="nav-item" href="#section-c">セクション C</a>
+        </nav>
+      </aside>
+      <main class="work-area" aria-label="ワークスペース"></main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
