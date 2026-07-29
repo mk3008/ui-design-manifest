@@ -1,0 +1,141 @@
+{
+  "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "chrome_version": "150.0.7871.187",
+  "viewport": "1440x1200",
+  "command_mode": "headless=new, disable-gpu; SwiftShader once only after capture-file absence",
+  "command_template": "chrome.exe --headless=new --disable-gpu --window-size=1440,1200 --user-data-dir=<temporary-profile> --screenshot=<png> file:///.../index.html?drawer=<open|hidden>&theme=<light|dark>",
+  "captures": [
+    {
+      "run": 1,
+      "drawer": "open",
+      "theme": "light",
+      "png": "runs/run-1/customer-create-open-light.png",
+      "fallback_used": false,
+      "bytes": 62002,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "108911116E7D574BF48D9FF76E0CA1BE2C5BB9AE2960DCED9A0ADB49DDF4A9B8"
+    },
+    {
+      "run": 1,
+      "drawer": "hidden",
+      "theme": "light",
+      "png": "runs/run-1/customer-create-hidden-light.png",
+      "fallback_used": false,
+      "bytes": 56209,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "1668090F37EE801287A3867CC3D1778E4465228517E44B9DFE91BE2EC28FE9D0"
+    },
+    {
+      "run": 1,
+      "drawer": "open",
+      "theme": "dark",
+      "png": "runs/run-1/customer-create-open-dark.png",
+      "fallback_used": false,
+      "bytes": 62427,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "E750FDECAFE16AC46607933AFB4A2B2370A0369B2BE72C384364D9A1099BE708"
+    },
+    {
+      "run": 1,
+      "drawer": "hidden",
+      "theme": "dark",
+      "png": "runs/run-1/customer-create-hidden-dark.png",
+      "fallback_used": false,
+      "bytes": 56781,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "7B37FF4DEE2D2F2BFE4614AFAB37D6E4B41AD5A92BEF79757261D2B06369936F"
+    },
+    {
+      "run": 2,
+      "drawer": "open",
+      "theme": "light",
+      "png": "runs/run-2/customer-create-open-light.png",
+      "fallback_used": false,
+      "bytes": 53180,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "627D939B0302067317771C97AFDA15951497FD7A3D08C8563AF8C6801757C250"
+    },
+    {
+      "run": 2,
+      "drawer": "hidden",
+      "theme": "light",
+      "png": "runs/run-2/customer-create-hidden-light.png",
+      "fallback_used": false,
+      "bytes": 46613,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "15A5A409FE9A0A8EC59E193D9E4D071E11B21536EC1409B4D477338290A43329"
+    },
+    {
+      "run": 2,
+      "drawer": "open",
+      "theme": "dark",
+      "png": "runs/run-2/customer-create-open-dark.png",
+      "fallback_used": false,
+      "bytes": 54194,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "90689D915C4EA5979795A12A023339F736A5E7CE240C0B84513AE989B765B683"
+    },
+    {
+      "run": 2,
+      "drawer": "hidden",
+      "theme": "dark",
+      "png": "runs/run-2/customer-create-hidden-dark.png",
+      "fallback_used": false,
+      "bytes": 47603,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "D5AB27C76856E10C67D0E77CAA4FDE8CA0238F228AC99B980A2AA6602F5E25E0"
+    },
+    {
+      "run": 3,
+      "drawer": "open",
+      "theme": "light",
+      "png": "runs/run-3/customer-create-open-light.png",
+      "fallback_used": false,
+      "bytes": 62020,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "E0BBA9FBC5CA6CFA5A1978E3862E761444FF9E87149DB397DDF1D4E08514EE55"
+    },
+    {
+      "run": 3,
+      "drawer": "hidden",
+      "theme": "light",
+      "png": "runs/run-3/customer-create-hidden-light.png",
+      "fallback_used": false,
+      "bytes": 55363,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "1EEFB4D734F2A473ED777280F0675AB154736F9D5FB0A9025C550595EC957F8E"
+    },
+    {
+      "run": 3,
+      "drawer": "open",
+      "theme": "dark",
+      "png": "runs/run-3/customer-create-open-dark.png",
+      "fallback_used": false,
+      "bytes": 62290,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "A53E0679C7C0B5343B04697749EFE9821F351185C22501697874E1C54912638D"
+    },
+    {
+      "run": 3,
+      "drawer": "hidden",
+      "theme": "dark",
+      "png": "runs/run-3/customer-create-hidden-dark.png",
+      "fallback_used": false,
+      "bytes": 55745,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "BC52B198E1E094A27053DA37967D52C3FC9120E600BE798D91F141FF870FCF9A"
+    }
+  ]
+}

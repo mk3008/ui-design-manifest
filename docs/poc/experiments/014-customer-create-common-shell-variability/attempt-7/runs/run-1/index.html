@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顧客追加 | 業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="header">
+        <button class="icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="workspace-name">業務ワークスペース</p>
+        <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-content">
+        <aside class="drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="disclosure" aria-label="展開中">⌄</span>
+                <ul class="drawer-children">
+                  <li><a class="current" href="#item-b-1" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="workspace" aria-labelledby="page-title">
+          <div class="page-content">
+            <header class="page-header">
+              <h1 id="page-title">顧客追加</h1>
+              <p>新しい顧客情報を登録します。</p>
+            </header>
+
+            <form id="customer-form" novalidate>
+              <div class="error-summary" id="error-summary" role="alert" tabindex="-1" hidden>
+                <h2>入力内容を確認してください</h2>
+                <ul id="error-list"></ul>
+              </div>
+
+              <section class="field-group" aria-labelledby="customer-information-heading">
+                <h2 id="customer-information-heading">顧客情報</h2>
+
+                <div class="field">
+                  <label for="name">氏名 <span class="required">必須</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-message">
+                  <p class="field-message" id="name-message"></p>
+                </div>
+
+                <div class="field">
+                  <label for="birthdate">生年月日 <span class="required">必須</span></label>
+                  <input id="birthdate" name="birthdate" type="text" inputmode="numeric" placeholder="YYYY-MM-DD" required aria-describedby="birthdate-message">
+                  <p class="field-message helper" id="birthdate-message">生年月日は YYYY-MM-DD 形式で入力してください。</p>
+                </div>
+
+                <div class="field">
+                  <label for="address">住所 <span class="required">必須</span></label>
+                  <input id="address" name="address" type="text" autocomplete="street-address" required aria-describedby="address-message">
+                  <p class="field-message" id="address-message"></p>
+                </div>
+
+                <div class="field">
+                  <label for="phone">電話番号 <span class="required">必須</span></label>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="03-1234-5678" required aria-describedby="phone-message">
+                  <p class="field-message helper" id="phone-message">電話番号は数字とハイフンを使用して入力してください。</p>
+                </div>
+
+                <div class="field">
+                  <label for="email">メールアドレス <span class="required">必須</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="email-message">
+                  <p class="field-message helper" id="email-message">メールアドレスは name@example.com 形式で入力してください。</p>
+                </div>
+
+                <div class="field">
+                  <label for="notes">備考 <span class="optional">任意</span></label>
+                  <textarea id="notes" name="notes" rows="5"></textarea>
+                </div>
+              </section>
+
+              <div class="form-actions">
+                <button class="primary-action" type="submit">保存</button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
