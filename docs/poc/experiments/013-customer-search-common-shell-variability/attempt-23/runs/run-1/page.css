@@ -1,0 +1,106 @@
+.customer-search-page {
+  max-inline-size: 1440px;
+  margin: 0 auto;
+  padding: 28px 32px 36px;
+}
+
+.customer-search-page h1,
+.customer-search-page h2,
+.customer-search-page p { margin: 0; }
+
+.page-header { margin-bottom: 32px; }
+.page-header h1 { font-size: 1.5rem; line-height: 1.35; }
+.page-header p { color: var(--text-muted); margin-top: 8px; }
+
+.condition-pane { inline-size: 100%; max-inline-size: 720px; }
+.condition-pane h2,
+.result-toolbar h2 { font-size: 1.05rem; line-height: 1.4; }
+
+.condition-fields {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.field { min-inline-size: 0; }
+.field label { display: block; font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+.field input {
+  background-color: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  border-radius: 3px;
+  color: var(--text-primary);
+  font: inherit;
+  height: 38px;
+  inline-size: 100%;
+  min-inline-size: 0;
+  padding: 6px 10px;
+}
+
+.field input:focus-visible,
+.button:focus-visible,
+.grid-scroll:focus-visible,
+.identity-cell a:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+.condition-toolbar {
+  display: flex;
+  inline-size: 100%;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.toolbar-actions,
+.pagination-actions { display: flex; gap: 8px; }
+
+.button {
+  border-radius: 3px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-height: 36px;
+  padding: 6px 14px;
+}
+
+.primary-action { background-color: var(--action-background); border: 1px solid var(--action-background); color: var(--action-foreground); }
+.secondary-action { background-color: var(--surface-background); border: 1px solid var(--border-interactive); color: var(--text-primary); }
+
+.result-pane { inline-size: 100%; margin-top: 40px; }
+.result-toolbar { align-items: center; display: flex; gap: 16px; inline-size: 100%; justify-content: space-between; margin-bottom: 12px; }
+.result-toolbar h2 span { color: var(--text-muted); font-size: .9rem; font-weight: 400; margin-inline-start: 4px; }
+
+.grid-scroll { border: 1px solid var(--border-subtle); inline-size: 100%; overflow-x: auto; }
+.grid-scroll table { border-collapse: separate; border-spacing: 0; min-inline-size: 1110px; table-layout: fixed; width: 100%; }
+.grid-scroll th,
+.grid-scroll td { border-bottom: 1px solid var(--border-subtle); padding: 11px 12px; text-align: start; vertical-align: middle; white-space: nowrap; }
+.grid-scroll th { background-color: var(--table-header-background); color: var(--table-header-foreground); font-size: .85rem; font-weight: 700; }
+.grid-scroll td { background-color: var(--surface-background); color: var(--text-primary); font-size: .9rem; }
+.grid-scroll tbody tr:last-child td { border-bottom: 0; }
+.grid-scroll th:nth-child(1), .grid-scroll td:nth-child(1) { inline-size: 116px; }
+.grid-scroll th:nth-child(2), .grid-scroll td:nth-child(2) { inline-size: 130px; }
+.grid-scroll th:nth-child(3), .grid-scroll td:nth-child(3) { inline-size: 125px; }
+.grid-scroll th:nth-child(4), .grid-scroll td:nth-child(4) { inline-size: 270px; }
+.grid-scroll th:nth-child(5), .grid-scroll td:nth-child(5) { inline-size: 145px; }
+.grid-scroll th:nth-child(6), .grid-scroll td:nth-child(6) { inline-size: 240px; }
+.grid-scroll th:nth-child(7), .grid-scroll td:nth-child(7) { inline-size: 220px; }
+.empty-column { inline-size: auto; }
+
+.identity-cell {
+  border-inline-end: 1px solid var(--border-subtle) !important;
+  inset-inline-start: 0;
+  position: sticky;
+  z-index: 1;
+}
+.grid-scroll thead .identity-cell { background-color: var(--table-header-background); z-index: 2; }
+.grid-scroll tbody .identity-cell { background-color: var(--surface-background); }
+.grid-scroll.is-scrolled .identity-cell { box-shadow: 4px 0 7px rgb(0 0 0 / .12); }
+.identity-cell a { color: var(--link); font-weight: 700; }
+
+.pagination { display: flex; inline-size: 100%; justify-content: flex-end; margin-top: 16px; }
+.pagination-actions { align-items: center; }
+.pagination-actions span { min-inline-size: 28px; text-align: center; }
+
+@media (max-width: 720px) {
+  .customer-search-page { padding: 20px 16px 28px; }
+  .condition-fields { grid-template-columns: minmax(0, 1fr); }
+  .result-toolbar { align-items: flex-start; flex-direction: column; }
+}

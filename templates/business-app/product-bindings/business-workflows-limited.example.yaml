@@ -1,6 +1,6 @@
 binding_version: 1
 pack_id: example-business-app-standard-pack
-pack_version: 0.2.0
+pack_version: 0.3.0
 navigation:
   hierarchy_reference: product_owned_navigation_hierarchy
   return_context_reference: product_owned_return_context

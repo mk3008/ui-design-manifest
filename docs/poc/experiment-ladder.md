@@ -30,6 +30,14 @@ The ladder tests small, observable claims in order. It dogfoods two things: whet
 
 **Raw evidence:** exact input packet, files opened, implementation diff, rendered captures at declared viewports, guidance trace, assumptions, and build/test output.
 
+For a repeated-generation experiment, use the
+[three-run Manifest reproducibility protocol](experiments/three-run-reproducibility-protocol.md):
+freeze the complete input set, preserve all outputs unchanged, classify
+deviations before changing any input, and regenerate all runs after an input
+change. The test subject is the fixed Manifest plus product prompt (and a
+separately declared fixture when one is used); never repair a generated output
+to make a three-run result look compliant.
+
 **Pass signal:** the slice runs, the evaluator can trace visible decisions to manifest concepts, and no prohibited source evidence reached the implementer.
 
 **Stop/rework:** source leakage, missing runnable output, unverifiable guidance influence, or gaps that force material invention. Improve the manifest rather than coaching the implementer informally.

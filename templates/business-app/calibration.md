@@ -12,7 +12,7 @@ This source-blind calibration applies the same `design-manifest/` Markdown guida
 
 | ID | Decision | Reason |
 | --- | --- | --- |
-| `search_actions_region` | keep | A finite, logical placement choice; it does not create a search group. |
+| `search_actions_region` | keep | A finite, logical placement choice; it does not create a search group. Its default is logical start for bounded in-page forms. |
 | `search_action_order` | keep | Stable semantic IDs permit bounded order variation; each ID requires an available binding feature. |
 | `pagination_region` | keep | A finite placement choice that applies only to pageable results. |
 | `result_count_presentation` | keep | Visibility is a bounded presentation choice; aggregate meaning remains binding-owned. |

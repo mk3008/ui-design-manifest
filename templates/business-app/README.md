@@ -13,7 +13,7 @@ concrete Light and Dark values while preserving every semantic role. Editing
 
 ## Phase 2 calibration cases
 
-All cases use the same Markdown concepts. Case A uses no override and the supported binding: defaults remain `end`, `[search, clear]`, `end`, `summary`, and `link`. Case B uses `local-overrides/record-list-alternate.yaml`: only placement, order, count visibility, and row-action treatment change. Case C uses the default resolution with `product-bindings/record-list-limited.example.yaml`: Clear, pagination, aggregate summary, and row operation are **not exercised** and their dependent UI is omitted; configuration does not recreate them.
+All cases use the same Markdown concepts. Case A uses no override and the supported binding: defaults are `start`, `[search, clear]`, `end`, `summary`, and `link`. Case B uses `local-overrides/record-list-alternate.yaml`: only placement, order, count visibility, and row-action treatment change. Case C uses the default resolution with `product-bindings/record-list-limited.example.yaml`: Clear, pagination, aggregate summary, and row operation are **not exercised** and their dependent UI is omitted; configuration does not recreate them.
 
 An override is a value-only replacement against `configuration/record-list-options.md`; do not combine override files or add unknown IDs. Scalars and arrays replace whole values; `null` and an empty array are invalid. Check the selected binding after resolving values. A binding and override must identify the same `pack_id` and exact `pack_version`; a pack default/ID/allowed-value removal is breaking and needs an explicit migration or rejection instruction. Configuration cannot add a feature or supply a detail destination.
 
@@ -34,18 +34,21 @@ for a single cross-pack view of invariants, product-owned variables,
 implementation decisions, the five existing record-list configuration IDs,
 and the separate semantic theme-color values.
 
-## Version 0.2.0 adoption
+## Version 0.3.0 adoption
 
-Version `0.2.0` adds fixed guidance and optional product-binding responsibilities
-for record lifecycle, Dialog, Confirmation, Wizard, Dashboard, accessibility,
-and theme. It also adds editable Light and Dark semantic color values as a
-separate configuration definition. The five record-list setting IDs, defaults,
-allowed values, and resolution rules are unchanged.
+Version `0.3.0` changes the default `search_actions_region` from `end` to
+`start` for bounded in-page search conditions. It also fixes in-page Create and
+Save action groups at the logical start of their bounded form pane, while
+retaining logical-end placement for actions in a fluid Grid result toolbar. For
+pinned Grid columns, the boundary now uses the same token and thickness as the
+row separator, with a subtle shadow only during horizontal scroll. The five
+record-list setting IDs and allowed values remain unchanged.
 
 Because this pre-1.0 pack requires exact identity, a consumer must review the
-new guidance and then update its selected override and binding from `0.1.0` to
-`0.2.0`. Existing record-list setting values require no conversion. Consumers
-that accept the pack palette need no theme override; consumers that change
-colors must review and validate one explicit theme-color override. A capability
-that the product does not bind remains unavailable or not exercised; the new
-guidance does not create it.
+new guidance and then update its selected override and binding from `0.2.0` to
+`0.3.0`. A consumer that relied on the former default must explicitly override
+`search_actions_region: end` before moving to this version; otherwise the new
+logical-start default applies. Consumers that accept the pack palette need no
+theme override; consumers that change colors must review and validate one
+explicit theme-color override. A capability that the product does not bind
+remains unavailable or not exercised; the new guidance does not create it.
