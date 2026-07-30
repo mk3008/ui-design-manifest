@@ -1,0 +1,206 @@
+.create-page {
+  margin-inline: auto;
+  max-inline-size: 1180px;
+  padding: clamp(28px, 4vw, 52px) clamp(20px, 4vw, 56px) 64px;
+}
+
+.page-header {
+  margin-block-end: 34px;
+}
+
+.page-header h1,
+.form-intro h2 {
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.page-header h1 {
+  font-size: clamp(1.7rem, 2.2vw, 2.25rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  margin: 10px 0 0;
+}
+
+.customer-form {
+  inline-size: 100%;
+  max-inline-size: 720px;
+}
+
+.form-intro {
+  margin-block-end: 20px;
+}
+
+.form-intro h2 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.field-flow {
+  display: grid;
+  gap: 20px;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+}
+
+.form-field label {
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.required {
+  color: var(--error-foreground, #B42318);
+  font-size: 0.8125rem;
+  margin-inline-start: 4px;
+}
+
+.optional {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-inline-start: 4px;
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  border-radius: 2px;
+  color: var(--text-primary);
+  font: inherit;
+  inline-size: 100%;
+  padding: 9px 11px;
+}
+
+.form-field input {
+  block-size: 42px;
+}
+
+.form-field textarea {
+  min-block-size: 112px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.78;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: var(--error-foreground, #B42318);
+}
+
+.field-help,
+.field-error,
+.submission-note {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.field-help {
+  color: var(--text-muted);
+}
+
+.field-error {
+  color: var(--error-foreground, #B42318);
+  font-weight: 600;
+}
+
+.form-summary {
+  background: var(--surface-background);
+  border-inline-start: 4px solid var(--error-foreground, #B42318);
+  color: var(--text-primary);
+  margin-block: 0 20px;
+  padding: 12px 14px;
+}
+
+.form-summary p {
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.form-summary ul {
+  margin: 0;
+  padding-inline-start: 20px;
+}
+
+.form-summary a {
+  color: var(--link);
+}
+
+.form-action-toolbar {
+  display: flex;
+  inline-size: 100%;
+  justify-content: flex-start;
+  margin-block-start: 28px;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button {
+  border: 1px solid var(--border-interactive);
+  border-radius: 2px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-block-size: 42px;
+  padding: 8px 16px;
+}
+
+.button-primary {
+  background: var(--action-background);
+  border-color: var(--action-background);
+  color: var(--action-foreground);
+}
+
+.button-secondary {
+  background: var(--surface-background);
+  color: var(--text-primary);
+}
+
+.submission-note {
+  color: var(--text-muted);
+  margin-block-start: 12px;
+}
+
+.sr-only {
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .create-page {
+    padding-inline: 20px;
+  }
+
+  .customer-form {
+    max-inline-size: none;
+  }
+}

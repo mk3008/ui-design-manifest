@@ -1,0 +1,192 @@
+.create-screen {
+  margin-inline: auto;
+  max-inline-size: 46rem;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.create-page-heading {
+  margin-block-end: 2.25rem;
+}
+
+.create-page-heading h1,
+.create-form-intro h2,
+.form-error-summary h2 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.create-page-heading h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.create-page-heading p,
+.field-help,
+.form-status {
+  color: var(--text-muted);
+}
+
+.create-page-heading p {
+  margin: .625rem 0 0;
+}
+
+.create-form-intro {
+  margin-block-end: 1.5rem;
+}
+
+.create-form-intro h2 {
+  font-size: 1.25rem;
+}
+
+.create-field-flow {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.create-field {
+  display: grid;
+  gap: .45rem;
+}
+
+.create-field label {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.create-required,
+.create-optional {
+  font-size: .875em;
+  font-weight: 700;
+  margin-inline-start: .35rem;
+}
+
+.create-required,
+.field-error,
+.form-error-summary {
+  color: #B42318;
+}
+
+.create-optional {
+  color: var(--text-muted);
+}
+
+.create-field input,
+.create-field textarea {
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  border-radius: 0;
+  color: var(--text-primary);
+  font: inherit;
+  inline-size: 100%;
+  padding: .625rem .75rem;
+}
+
+.create-field input {
+  block-size: 2.75rem;
+}
+
+.create-field textarea {
+  min-block-size: 7.5rem;
+  resize: vertical;
+}
+
+.create-field input::placeholder,
+.create-field textarea::placeholder {
+  color: var(--text-muted);
+  opacity: .8;
+}
+
+.create-field input:focus-visible,
+.create-field textarea:focus-visible,
+.form-action-toolbar button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.create-field [aria-invalid="true"] {
+  border-color: #B42318;
+}
+
+.field-help,
+.field-error,
+.form-status {
+  font-size: .875rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.form-error-summary {
+  border-inline-start: 4px solid #B42318;
+  margin-block-end: 1.5rem;
+  padding-inline-start: 1rem;
+}
+
+.form-error-summary h2 {
+  color: inherit;
+  font-size: 1rem;
+}
+
+.form-error-summary ul {
+  margin: .5rem 0 0;
+  padding-inline-start: 1.2rem;
+}
+
+.form-action-toolbar {
+  display: flex;
+  inline-size: 100%;
+  justify-content: flex-start;
+  margin-block-start: 2rem;
+}
+
+.form-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.form-action-toolbar button {
+  border-radius: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-block-size: 2.75rem;
+  padding: .625rem 1rem;
+}
+
+.button-primary {
+  background: var(--action-background);
+  border: 1px solid var(--action-background);
+  color: var(--action-foreground);
+}
+
+.button-secondary {
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  color: var(--text-primary);
+}
+
+.form-status {
+  margin-block: 1rem 0;
+  min-block-size: 1.45em;
+}
+
+.shared-shell[data-theme="dark"] .create-required,
+.shared-shell[data-theme="dark"] .field-error,
+.shared-shell[data-theme="dark"] .form-error-summary {
+  color: #FFB4AE;
+}
+
+.shared-shell[data-theme="dark"] .create-field [aria-invalid="true"],
+.shared-shell[data-theme="dark"] .form-error-summary {
+  border-color: #FFB4AE;
+}
+
+@media (max-width: 40rem) {
+  .create-screen {
+    padding-inline: 1rem;
+  }
+}
